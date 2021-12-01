@@ -16,7 +16,7 @@ import Get_nosotros from "./get-nosotros";
 
 //DOMAIN
 
-export const Domain = 'http://127.0.0.1:8000/';
+export const Domain = 'https://tapimotosdk.com/';
 
 //data store
 const keys_storage = [
@@ -209,7 +209,7 @@ const DataHome = () =>{
         },
         functions:{
 
-            clear:()=> keys_storage.map((key,index)=>(localStorage.getItem(key)!== null) && console.log(localStorage.removeItem(key)))
+            clear:()=> keys_storage.map((key,index)=>(localStorage.getItem(key)!== null) && localStorage.removeItem(key))
         }
     }
 
