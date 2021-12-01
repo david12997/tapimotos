@@ -15,6 +15,12 @@ function Nosotros() {
 
            <br></br>
            <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
+           <br></br>
            <Footer_render></Footer_render>
 
         </div>
