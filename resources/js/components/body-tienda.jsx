@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Card_render from './card-product';
 import Spinner from './spinner';
@@ -6,6 +6,12 @@ import Spinner from './spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFilter } from '@fortawesome/free-solid-svg-icons';
 import Filtro_llantas_tienda from './filtros-llantas-tienda';
+import { UpdateStateTienda } from '../pages/products';
+import { useDispatch } from "react-redux";
+import { useNavigate} from 'react-router-dom';
+import { setIndexPagebtns } from './filtros-products';
+import Search_cascos_tienda from './filtros-cascos-tienda';
+import Search_aceites_tienda from './filtros-aceite-tienda';
 
 
 const  Cuerpo_tienda = styled.div`
@@ -15,6 +21,7 @@ const  Cuerpo_tienda = styled.div`
     display:flex;
     justify-content:center;
     padding-top:10px;
+    padding-bottom:50px;
 
     .filtros-desktop-body{
 
@@ -35,11 +42,15 @@ const  Cuerpo_tienda = styled.div`
 
         border-radius:10px 10px 10px 10px;
         background:white;
+        box-shadow:0px 0px 3px rgba(0,0,0,0.4);
     }
     .img-filtro{
 
         background:rgb(0,150,210);
         border-radius:10px 10px 0px 0px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
 
 
     }
@@ -50,6 +61,7 @@ const  Cuerpo_tienda = styled.div`
         background:white;
         padding:10px;
         margin-top:35px;
+        box-shadow:0px 0px 4px rgba(0,0,0,0.4);
 
     }
 
@@ -87,10 +99,57 @@ const  Cuerpo_tienda = styled.div`
 `;
 
 
+
+
+const setCategory = (category,dispatch,page_cascos,page_aceites,page_llantas,btn,navigate)=>{
+
+    let btns = [
+
+        document.querySelector('.Llantas'),
+        document.querySelector('.Aceites'),
+        document.querySelector('.Cascos')
+    ];
+
+    for(let i=0;i<btns.length;i++){
+
+        if(btn.innerHTML === btns[i].innerHTML) {
+
+            btns[i].style.borderLeft = "10px solid rgb(0,150,210)";
+        }else{
+
+            btns[i].style.borderLeft = "0px";
+        }
+    }
+
+
+    setIndexPagebtns();
+
+    UpdateStateTienda(category,dispatch,page_cascos,page_aceites,page_llantas);
+    navigate(`/productos/${category}`)
+}
+
+
+
 const Body_tienda = ({data_state})=>{
 
+    let dispatch = useDispatch();
+    let navigate = useNavigate();
 
-    console.log(data_state.Productos);
+    let btn1 = useRef(null);
+    let btn2 =  useRef(null);
+    let btn3 =  useRef(null);
+
+    let imgFiltro = '/images/ejemplo-llantas.png';
+    let width ='100%';
+
+    if(data_state.Categoria !== null){
+
+        if( data_state.Categoria.type === 'llantas'){ imgFiltro ='/images/ejemplo-llantas.png';width ='100%'}
+        else if( data_state.Categoria.type === 'cascos') {imgFiltro ='/images/casco.png';width='60%'}
+        else if( data_state.Categoria.type === 'aceites') {imgFiltro ='/images/aceite.png';width='65%'}
+        else { imgFiltro ='/images/ejemplo-llantas.png';width='100%'}
+    }
+
 
     const AllProducts = ()=>{
 
@@ -100,8 +159,47 @@ const Body_tienda = ({data_state})=>{
         data_state.Productos[1].map((casco,indice)=>Products.push({name:casco.name,img:"/images/casco.png",price:casco.regular_price}));
         data_state.Productos[0].map((aceite,indice)=>Products.push({name:aceite.name,img:"/images/aceite.png",price:aceite.regular_price}));
 
-       return Products;
+       return Products.sort((a,b)=>(a.price<b.price) &&  Math.random()-0.5);
     }
+
+
+    useEffect(()=>{
+
+        let route =window.location.pathname;
+        if(btn3  !== null){
+
+            let btns = [btn1.current,btn2.current,btn3.current];
+
+            if(route === '/' ){
+
+                for(let i=0;i<btns.length;i++){
+
+                    btns[i].style.borderLeft = "0px";
+
+                }
+
+            }else{
+
+                for(let i=0;i<btns.length;i++){
+
+                    if(route === `/productos/${btns[i].classList[0].toLowerCase()}`) {
+
+                        btns[i].style.borderLeft = "10px solid rgb(0,150,210)";
+                    }else{
+
+                        btns[i].style.borderLeft = "0px";
+                    }
+                }
+
+            }
+        }
+
+
+
+
+    },[btn1,btn2,btn3]);
+
+
 
     return(
 
@@ -111,27 +209,50 @@ const Body_tienda = ({data_state})=>{
                 <div className='filtro'>
 
                     <div className='img-filtro'>
-                        <img style={{width:'100%'}} src='/images/ejemplo-llantas.png'/>
+                        <img style={{width:width}} src={imgFiltro}/>
                     </div>
                     <div className='inputs-filtro'>
 
                         <p style={{width:'100%',margin:'18px',color:'gray'}}><FontAwesomeIcon icon={faFilter}/><b>Filtrar busqueda</b></p>
-                        <Filtro_llantas_tienda></Filtro_llantas_tienda>
+                        {
+                            data_state.Categoria === null
+                            ?
+                            <Filtro_llantas_tienda></Filtro_llantas_tienda>
+                            :
+                            data_state.Categoria.type === 'cascos'
+                            ?
+                            <Search_cascos_tienda></Search_cascos_tienda>
+                            :
+                            data_state.Categoria.type === 'llantas'
+                            ?
+                            <Filtro_llantas_tienda></Filtro_llantas_tienda>
+                            :
+                            data_state.Categoria.type === 'aceites'
+                            ?
+                            <Search_aceites_tienda></Search_aceites_tienda>
+                            :
+                            <Filtro_llantas_tienda></Filtro_llantas_tienda>
+
+
+
+                        }
 
                     </div>
 
                 </div>
 
                 <div className='categories-filtro'>
-                    <p style={{width:'100%',margin:'2px',color:'gray',display:'flex',justifyContent:'center'}}><b>Catgeorias</b></p>
+                    <p style={{width:'100%',margin:'2px',color:'gray',display:'flex',justifyContent:'center'}}>
+                        <b>Catgeorias</b>
+                    </p>
 
-                    <div className='Llantas'>
+                    <div  ref={btn1} className='Llantas' onClick={(e)=>setCategory('llantas',dispatch,1,1,1,e.currentTarget,navigate)}>
                         <img style={{width:'100%'}} src="/images/llantas.png"></img>
                     </div>
-                    <div className='Aceites'>
+                    <div ref={btn2} className='Aceites' onClick={(e)=>setCategory('aceites',dispatch,1,1,1,e.currentTarget,navigate)}>
                         <img style={{width:'100%'}} src="/images/aceite.png"></img>
                     </div>
-                    <div className='Cascos'>
+                    <div ref={btn3} className='Cascos' onClick={(e)=>setCategory('cascos',dispatch,1,1,1,e.currentTarget,navigate)}>
                         <img style={{width:'100%'}} src="/images/casco.png"></img>
                     </div>
                 </div>
@@ -160,13 +281,16 @@ const Body_tienda = ({data_state})=>{
                     ?
                     data_state.Productos[0].map((aceite,index)=><Card_render key={index} img="/images/aceite.png" name={aceite.name} price={aceite.regular_price}/>)
                     :
-                    (data_state.Categoria.name === 'Buscar')
+                    (data_state.Categoria.name === 'Busqueda')
                     ?
-                    data_state.Productos.map((product,index)=><Card_render key={index} img="/images/llantas.png" name={product.nombre_llanta} price={product.precio_llanta}/>)
+                    data_state.Productos.map((product,index)=><Card_render key={index} img={product.img} name={product.nombre_llanta} price={product.precio_llanta}/>)
                     :
                     <div>Ups, categoria erronea.</div>
                 }
+
+
             </div>
+
         </Cuerpo_tienda>
     )
 

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import Btn1_render from "./btn1";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import {  faCartPlus } from '@fortawesome/free-solid-svg-icons';
+
+import {  useDispatch } from "react-redux";
+import { UpdateCart, UpdateCuantity } from "../database";
+
 
 const Card_element = styled.div`
 
@@ -124,6 +128,98 @@ const Card_element = styled.div`
 const Card_render = ({img,name,price}) =>{
 
 
+    const [cuantity, setCuantity ] = useState(1);
+    const [añadido,setAñadido] = useState(0)
+    const dispatch = useDispatch();
+    const btn_carrito = useRef(null);
+
+
+
+    const UpdateCarrito_component = (btn) =>{
+
+        let current_cart = JSON.parse(localStorage.getItem('products_carrito'));
+
+        if(current_cart === null){
+
+            setAñadido(1);
+            dispatch(UpdateCart([{name:name,img:img,price:price}]));
+            dispatch(UpdateCuantity(current_cart.length));
+
+
+        }else{
+
+            if(añadido === 1){
+
+                for(let i =0; i<current_cart.length;i++){
+
+                    if(current_cart[i].name === name) {
+
+                        setAñadido(0);
+                        current_cart.splice(i,1);
+                        dispatch(UpdateCart(current_cart));
+                        dispatch(UpdateCuantity(current_cart.length));
+                    }
+                }
+
+            }else{
+
+                setAñadido(1);
+                current_cart.push({name:name,img:img,price:price});
+                dispatch(UpdateCart(current_cart));
+                dispatch(UpdateCuantity(current_cart.length));
+
+            }
+
+        }
+
+        añadido === 0 ?  btn.style.color='rgb(0,150,210)' : btn.style.color='gray';
+    }
+
+    const LessCuantity = (max)=>{
+
+        if(cuantity > 1) setCuantity(cuantity-1);
+        if(cuantity === 1) setCuantity(max);
+
+
+    }
+
+    const MoreCuantity = (max)=>{
+
+
+        if(cuantity === max) setCuantity(1);
+        if(cuantity < max) setCuantity(cuantity+1);
+
+    }
+
+    let redirect = ()=>{
+
+        window.location.href=`https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+el+producto+${name}+de+la+pagina+tapimotosdk.com`;
+    }
+
+    useEffect(()=>{
+
+        let current_cart = JSON.parse(localStorage.getItem('products_carrito'));
+
+        if(current_cart !== null){
+
+            for(let i =0; i<current_cart.length;i++){
+
+                if(current_cart[i].name === name) {
+
+                    setAñadido(1);
+
+                    añadido === 0 ?  btn_carrito.current.style.color='rgb(0,150,210)'
+                    : btn_carrito.current.style.color='gray';
+
+                }
+            }
+
+            dispatch(UpdateCart(current_cart));
+            dispatch(UpdateCuantity(current_cart.length));
+        }
+    },[btn_carrito]);
+
+
     return(
 
         <Card_element>
@@ -141,16 +237,16 @@ const Card_render = ({img,name,price}) =>{
                 <div className="container-cantidad">
                     <b style={{color:'gray'}}>Cantidad</b>
                     <div className="controls-cuantity">
-                        <div style={{fontWeight:'bold'}} className="btn-less btn btn-danger"><b>-</b></div>
-                        <input type="number" className="cuantity"></input>
-                        <div style={{fontWeight:'bold'}} className="btn-more btn btn-success"><b>+</b></div>
+                        <div onClick={()=>LessCuantity(4)} style={{fontWeight:'bold'}} className="btn-less btn btn-danger"><b>-</b></div>
+                        <input type="number" className="cuantity" readOnly value={cuantity}></input>
+                        <div onClick={()=>MoreCuantity(4)} style={{fontWeight:'bold'}} className="btn-more btn btn-success"><b>+</b></div>
                     </div>
                 </div>
                 <div className="iconos">
-                    <div style={{fontSize:'27px',color:'green'}} className="whatsapp">
+                    <div style={{fontSize:'27px',color:'green'}} className="whatsapp"  onClick={()=>redirect()}>
                         <FontAwesomeIcon icon={faWhatsapp}/>
                     </div>
-                    <div  style={{fontSize:'24px',color:'gray'}} className="add-cart">
+                    <div ref={btn_carrito} style={{fontSize:'24px',color:'gray'}} className="add-cart" onClick={(e)=>UpdateCarrito_component(e.currentTarget)}>
                     <FontAwesomeIcon icon={faCartPlus}/>
                     </div>
                 </div>

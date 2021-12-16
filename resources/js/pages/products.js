@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 
 //data ajax localstorage
-import  { DataProducts } from '../services/store';
+import  { DataHome, DataProducts } from '../services/store';
 
 //data redux
 import {  Productos, Paginacion, Filtros, Categoria, Busqueda } from '../database/index';
@@ -16,14 +16,37 @@ import Body_tienda from '../components/body-tienda';
 
 
 
+//FALTA ARREGLAR PARA QUE SOLO ACEPTE CATEGORIAS EXISTENTES EN LA RUTA
+//falta aarrelgar los filtros de busqueda
+//falta integrar barra de busqueda input
+//falta hacer funcionable el carrito
+//falta terminar funcionamiento del card
+//falta vista del producto y  proceso de pago
 
 
+export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,page_llantas,not_null) =>{
 
-export const UpdateStateTienda = (category,dispatch) =>{
+    let filtros = JSON.parse(localStorage.getItem('filtros_state'));
+    let category_store = JSON.parse(localStorage.getItem('category'));
+
+    not_null !== 'not null'  && dispatch(Productos(null));
+
+    if(category==='busqueda' && not_null === 'not null'){
 
 
-    if(category==='busqueda'){
+        console.log( 'filtros: ',filtros);
+        console.log('category: ',category_store);
 
+        if(category_store.type === 'llantas'){
+
+            DataHome().search_llantas.llantas_for_marcaAnchoPerfilRin(filtros[0].value,filtros[1].value,filtros[2].value,filtros[3].value).then(data=>{
+
+                dispatch( Productos(data[0]));
+
+            });
+        }
+
+        dispatch(Paginacion({first_page:1,last_page:50}));
         dispatch(Busqueda(true));
         return 0;
 
@@ -33,50 +56,84 @@ export const UpdateStateTienda = (category,dispatch) =>{
     }
 
 
-    dispatch(Productos(null));
-
 
     if(category === 'llantas'){
 
-        dispatch(Categoria({name:'Llantas'}));
-        dispatch(Filtros({marca:['Marca:','--'],ancho:['Ancho:','--'],perfil:['Perfil:','--'],rin:['N° rin:','--']}));
-
-        DataProducts().Products.getLlantas('').then(data=>{
+        DataProducts().Products.getLlantas(`?page=${page_llantas}`).then(data=>{
             dispatch( Productos(data));
 
         });
+
+        dispatch(Categoria({name:'Llantas',type:'llantas'}));
+
+        dispatch(Filtros([
+            {type:'Marca',value:'--'},
+            {type:'Ancho',value:'--'},
+            {type:'Perfil',value:'--'},
+            {type:'N° rin',value:'--'}
+
+        ]));
+        dispatch(Paginacion({first_page:1,last_page:50}));
+
+;
     }
 
     if(category === 'cascos'){
 
-        dispatch(Categoria({name:'Cascos'}));
-        dispatch(Filtros({marca:['Marca:','--'],color:['Color:','--']}));
-        DataProducts().Products.getCascos('').then(data=>{
+        DataProducts().Products.getCascos(`&page=${page_cascos}`).then(data=>{
 
             dispatch( Productos(data));
 
         });
+        dispatch(Categoria({name:'Cascos',type:'cascos'}));
+        dispatch(Filtros([
+            {type:'Marca',value:'--'},
+            {type:'Color',value:'--'}
+
+        ]));
+        dispatch(Paginacion({first_page:1,last_page:50}));
+
+
     }
 
     if(category === 'aceites'){
 
-        dispatch(Categoria({name:'Aceites'}));
-        dispatch(Filtros({marca:['Marca:','--'],tipo:['Tipo de moto:','--']}));
-        DataProducts().Products.getAceites('').then(data=>{
+        DataProducts().Products.getAceites(`&page=${page_aceites}`).then(data=>{
 
             dispatch( Productos(data));
 
         });
+        dispatch(Categoria({name:'Aceites',type:'aceites'}));
+        dispatch(Filtros([
+            {type:'Marca',value:'--'},
+            {type:'Tipo',value:'--'}
+
+        ]));
+        dispatch(Paginacion({first_page:1,last_page:50}));
+
+
     }
 
     if( category=== 'todo' || category === undefined || category === null){
 
-        dispatch(Categoria({name:'Todo'}));
-        DataProducts().Products.getAll('','','').then(data=>{
+        DataProducts().Products.getAll(`&page=${page_cascos}`,`&page=${page_aceites}`,`?page=${page_llantas}`).then(data=>{
 
             dispatch( Productos(data));
 
         });
+
+        dispatch(Categoria({name:'Todo',type:'todo'}));
+        dispatch(Filtros([
+            {type:'Marca',value:'--'},
+            {type:'Ancho',value:'--'},
+            {type:'Perfil',value:'--'},
+            {type:'N° rin',value:'--'}
+
+        ]));
+        dispatch(Paginacion({first_page:1,last_page:50}));
+
+
+
     }
 
 }
@@ -104,17 +161,29 @@ const  Products = () => {
 
     useEffect(()=>{
 
+        document.title='Productos';
+        let links = document.getElementsByClassName('link');
+        for(let i=0; i<links.length;i++)(links[i].innerText === 'Productos') ? links[i].classList.add('link-activo'):links[i].classList.remove('link-activo')
 
-
-        UpdateStateTienda(category,dispatch);
 
         if(category === 'busqueda' && StateTienda.Productos === null){
 
+            UpdateStateTienda('todo',dispatch,1,1,1);
             navegar('/productos');
+
+        }else if(category === 'busqueda'  && StateTienda.Productos !== null){
+
+            UpdateStateTienda(category,dispatch,1,1,1,'not null');
+        }else{
+
+            UpdateStateTienda(category,dispatch,1,1,1);
+
         }
 
 
     },[]);
+
+
 
     return (
 

@@ -1,14 +1,11 @@
 import React,{useRef,useState, useEffect} from 'react';
 import styled from "styled-components";
-
-
-
-
 import {useNavigate} from 'react-router-dom';
 
 import {DataHome} from "../services/store";
 import { useDispatch } from 'react-redux';
 import {  Productos, Paginacion, Filtros, Categoria, Busqueda } from '../database/index';
+import { setIndexPagebtns } from './filtros-products';
 
 const Filtro_llantas_element = styled.div`
 
@@ -53,17 +50,26 @@ const Filtro_llantas_tienda = ()=>{
     let redirect = useNavigate();
 
 
-    const GetLlantasMarca = (value)=>{
+    const GetLlantasMarca = (value,dispatch)=>{
 
         setCargandoAncho('Cargando resultados...');
         setCargandoMarca(value);
 
         if(value !== 'Marca de la llanta' && value!== 'Cargando resultados...'){
 
+            dispatch(Filtros([
+                {type:'Marca ',value:value},
+                {type:'Ancho ',value:'--'},
+                {type:'Perfil  ',value:'--'},
+                {type:'N° rin ',value:'--'}
+
+            ]));
+
             DataHome().search_llantas.llantas_for_marca(value).then(data=>{
 
                 (data[0].length === 0) ? set_llantasForMarca(['Sin resultados'])  :set_llantasForMarca(data[0]);
                 setCargandoAncho('Ancho de la llanta');
+
             })
 
         }else{
@@ -76,7 +82,7 @@ const Filtro_llantas_tienda = ()=>{
 
 
 
-    const GetLlantasMarcaAncho=(marca,ancho)=>{
+    const GetLlantasMarcaAncho=(marca,ancho,dispatch)=>{
 
         setCargandoPerfil('Cargando resultados...');
         setCargandoAncho(ancho);
@@ -84,11 +90,19 @@ const Filtro_llantas_tienda = ()=>{
 
         if(ancho !== 'Ancho de la llanta' && ancho !== 'Sin resultados'  && ancho !== 'Cargando resultados...'){
 
-            DataHome().search_llantas.llantas_for_marcaAncho(marca,ancho).then(data=>{
+            dispatch(Filtros([
+                {type:'Marca ',value:marca},
+                {type:'Ancho ',value:ancho},
+                {type:'Perfil  ',value:'--'},
+                {type:'N° rin ',value:'--'}
 
+            ]));
+
+            DataHome().search_llantas.llantas_for_marcaAncho(marca,ancho).then(data=>{
 
                 (data[0].length === 0) ? setLlantasMarcaAncho(['Sin resultados'])  :setLlantasMarcaAncho(data[0]);
                 setCargandoPerfil('Perfil de la llanta');
+
 
             })
         }else{
@@ -100,13 +114,21 @@ const Filtro_llantas_tienda = ()=>{
     }
 
 
-    const GetLlantasMarcaAnchoPerfil=(marca,ancho,perfil)=>{
+    const GetLlantasMarcaAnchoPerfil=(marca,ancho,perfil,dispatch)=>{
 
         setCargandoRin('Cargando resultados...');
         setCargandoPerfil(perfil)
 
 
         if(perfil !== 'Perfil de la llanta' && perfil !== 'Sin resultados'  && perfil !== 'Cargando resultados...'){
+
+            dispatch(Filtros([
+                {type:'Marca ',value:marca},
+                {type:'Ancho ',value:ancho},
+                {type:'Perfil  ',value:perfil},
+                {type:'N° rin ',value:'--'}
+
+            ]));
 
             DataHome().search_llantas.llantas_for_marcaAnchoPerfil(marca,ancho,perfil).then(data=>{
 
@@ -127,19 +149,39 @@ const Filtro_llantas_tienda = ()=>{
 
         if(rin !== 'Numero de rin'  && rin !== 'Sin resultados'  && rin !== 'Cargando resultados...' ){
 
-            dispatch(Categoria({name:categoria}));
-            dispatch(Filtros({marca:['Marca',marca],ancho:['Ancho',ancho],perfil:['Perfil',perfil],rin:['N° rin',rin]}));
+            dispatch(Categoria({name:categoria,type:'llantas'}));
+            dispatch(Filtros([
+                {type:'Marca ',value:marca},
+                {type:'Ancho ',value:ancho},
+                {type:'Perfil  ',value:perfil},
+                {type:'N° rin ',value:rin}
+
+            ]));
 
             setCargandoRin(rin);
+            dispatch(Productos(null));
             DataHome().search_llantas.llantas_for_marcaAnchoPerfilRin(marca,ancho,perfil,rin).then(data=>{
 
-                console.log(data);
+                console.log('from filtros-llantas-tienda.jsx ',data);
                 dispatch(Productos(data[0]));
-                dispatch(Busqueda(true))
+                dispatch(Busqueda(true));
 
-                navegar('/productos/busqueda')
+
 
             })
+            setIndexPagebtns();
+
+            $('.filtros-mobile').css('animation-name','close');
+            setTimeout(()=>{
+                $('.filtros-mobile').css('display','none');
+            },600);
+
+            setCargandoMarca('Marca de la llanta');
+            setCargandoAncho('Ancho de la llanta');
+            setCargandoPerfil('Perfil de la llanta');
+            setCargandoRin('Numero de rin')
+
+            navegar('/productos/busqueda');
 
         }
 
@@ -158,6 +200,12 @@ const Filtro_llantas_tienda = ()=>{
 
         });
 
+        return ()=>{
+
+            setMarcaLlantas('Marca de la llanta');
+        }
+
+
     },[])
 
 
@@ -166,7 +214,7 @@ const Filtro_llantas_tienda = ()=>{
     return(
 
         <Filtro_llantas_element>
-            <select  value={cargandoMarca} ref={Marca_llantas_element}   onChange={(e)=>GetLlantasMarca(e.target.value)}>
+            <select  value={cargandoMarca} ref={Marca_llantas_element}   onChange={(e)=>GetLlantasMarca(e.target.value,dispath)}>
 
                 <option value="Marca de la llanta">Marca de la llanta</option>
                 {
@@ -176,7 +224,7 @@ const Filtro_llantas_tienda = ()=>{
             </select>
 
 
-            <select value={cargandoAncho} ref={Ancho_llantas_element} onChange={(e)=>GetLlantasMarcaAncho(Marca_llantas_element.current.value,e.target.value)}>
+            <select value={cargandoAncho} ref={Ancho_llantas_element} onChange={(e)=>GetLlantasMarcaAncho(Marca_llantas_element.current.value,e.target.value,dispath)}>
                 <option value="Ancho de la llanta">Ancho de la llanta</option>
                 {
                     (llantas_for_marca === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_for_marca.map((ancho_llanta,index)=><option value={ancho_llanta} key={index}>{ancho_llanta}</option>)
@@ -185,7 +233,7 @@ const Filtro_llantas_tienda = ()=>{
             </select>
 
 
-            <select  value={cargandoPerfil}  ref={Perfil_llantas_element} onChange={(e)=>GetLlantasMarcaAnchoPerfil(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,e.target.value)}>
+            <select  value={cargandoPerfil}  ref={Perfil_llantas_element} onChange={(e)=>GetLlantasMarcaAnchoPerfil(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,e.target.value,dispath)}>
                 <option value="Perfil de la llanta" >Perfil de la llanta</option>
                 {
                     (llantas_marcaAncho === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_marcaAncho.map((perfil_llanta,index)=><option value={perfil_llanta} key={index}>{perfil_llanta}</option>)
@@ -193,7 +241,7 @@ const Filtro_llantas_tienda = ()=>{
             </select>
 
 
-            <select value={cargandoRin} onChange={(e)=>GoSearchLlantaRin(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,Perfil_llantas_element.current.value,e.target.value,'Buscar',dispath,redirect)}>
+            <select value={cargandoRin} onChange={(e)=>GoSearchLlantaRin(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,Perfil_llantas_element.current.value,e.target.value,'Busqueda',dispath,redirect)}>
                 <option value="Numero de rin" >Numero de rin</option>
                 {
                     (llantas_marcaAnchoPerfil === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_marcaAnchoPerfil.map((numero_rin,index)=><option value={numero_rin} key={index}>{numero_rin}</option>)

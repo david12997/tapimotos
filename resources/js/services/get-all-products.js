@@ -25,7 +25,7 @@ async function Get_all_products(page_cascos,page_aceites,page_llantas){
         const aceites = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=358&per_page=9'+page_aceites);
         (aceites === undefined) ? response.push('Error can not get data') : response.push(ParseData(aceites));
 
-        const llantas = await Get(Domain +'api/llantas/'+page_llantas);
+        const llantas = await Get(Domain +'api/llantas'+page_llantas);
         (llantas === undefined) ? response.push('Error can not get data') : response.push(ParseData(llantas));
 
 

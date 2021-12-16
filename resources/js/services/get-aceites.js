@@ -19,7 +19,7 @@ async function Get_aceites(page){
     try {
 
 
-        const data = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=358'+page);
+        const data = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=358&per_page=9'+page);
         (data === undefined) ? response.push('Error can not get data') : response.push(ParseData(data));
 
 

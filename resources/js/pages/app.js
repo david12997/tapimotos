@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, Suspense} from 'react';
+import React, {useRef,  Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -22,6 +22,7 @@ import {DataHome} from '../services/store';
 import {Provider} from 'react-redux';
 import {  database_store } from '../database';
 import Spinner from '../components/spinner';
+import Filtro_llantas_mobile_tienda from '../components/mobile-filtro-llantas-tienda';
 
 
 
@@ -34,24 +35,14 @@ function App() {
     const screen_mobile = useRef(null);
 
 
-    useEffect(()=>{
-
-        let minuto = 60000;
-        setInterval(()=>{
-
-            DataHome().functions.clear();
-
-
-        },(minuto*9));
-
-    },[]);
-
     return (
         <div>
             <BrowserRouter>
 
                 <Provider store={database_store}>
 
+
+                    <Filtro_llantas_mobile_tienda></Filtro_llantas_mobile_tienda>
                     <Screen_menu_mobile  ref={screen_mobile} ></Screen_menu_mobile>
                     <Header_render></Header_render>
                     <Nav_render screen_nav={screen_mobile}></Nav_render>

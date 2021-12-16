@@ -128,8 +128,8 @@ const Contacto = styled.div`
 const Contacto_render = ()=>{
 
     let redirects =[
-        'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina',
-        'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina',
+        'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com',
+        'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com',
         'https://www.facebook.com/Tapimotos-DK-110123437269115'
 
     ];
@@ -190,7 +190,7 @@ const Contacto_render = ()=>{
 
             </div>
             <br></br>
-            <hr></hr>
+            <br></br>
 
         </Contacto>
     )

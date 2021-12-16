@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import {  faEnvelope, faMapMarked } from '@fortawesome/free-solid-svg-icons';
+import Filtro_llantas_mobile_tienda from './mobile-filtro-llantas-tienda';
 
 
 const Header = styled.div`
@@ -65,12 +66,13 @@ const Header_render = ()=>{
 
     let redirect = ()=>{
 
-        window.location.href='https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina';
+        window.location.href='https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com';
     }
 
     return(
 
         <div>
+
             <Header>
                 <div className='text-contacto'>
                     <strong> Contacto </strong>

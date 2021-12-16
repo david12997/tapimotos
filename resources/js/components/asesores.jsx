@@ -54,25 +54,25 @@ const Asesores_render =  () =>{
             'img':'./images/asesor.png',
             'asesor':'Asesor1',
             'number':'3208168103',
-            'email':'asesor1@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina'
+            'email':'asesor1@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
         },
         {
             'img':'./images/asesor.png',
             'asesor':'Asesor2',
             'number':'3118928239',
-            'email':'asesor2@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina'
+            'email':'asesor2@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
         },
         {
             'img':'./images/asesor.png',
             'asesor':'Asesor3',
             'number':'3208168103',
-            'email':'asesor3@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina'
+            'email':'asesor3@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
         },
         {
             'img':'./images/asesor.png',
             'asesor':'Asesor4',
             'number':'3118928239',
-            'email':'asesor4@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina'
+            'email':'asesor4@tapimotosdk.com','link':'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
         }
     ];
 

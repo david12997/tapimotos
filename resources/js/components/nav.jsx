@@ -5,6 +5,8 @@ import { faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons'
 import {  faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
+import { useSelector } from 'react-redux';
+
 
 
 const open_nav_mobile = (nav) =>{
@@ -14,8 +16,13 @@ const open_nav_mobile = (nav) =>{
 }
 
 
+
 const Carrito = ({fondo_numero}) =>{
 
+
+    const data_carrito = {
+        cantidad:useSelector(state=>state.carrito.cantidad)
+    }
 
     return (
 
@@ -35,7 +42,7 @@ const Carrito = ({fondo_numero}) =>{
             alignItems:'center'
             }}>
 
-            <strong>0</strong>
+            <strong>{data_carrito.cantidad}</strong>
         </div>
         <img style={{width:'100%'}} src='/images/carrito.svg'></img>
     </div>
@@ -82,7 +89,7 @@ const Nav_render = ({screen_nav})=>{
 
     let my_links = [link_home,link_products,link_services,link_credits,link_about];
     let redirects =[
-        'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina',
+        'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com',
         'https://www.facebook.com/Tapimotos-DK-110123437269115'
 
     ];
@@ -91,6 +98,11 @@ const Nav_render = ({screen_nav})=>{
 
         (window.location.pathname === '/') && link_home.current.classList.add('link-activo');
         (window.location.pathname === '/productos') && link_products.current.classList.add('link-activo');
+        (window.location.pathname === '/productos') && link_products.current.classList.add('link-activo');
+        (window.location.pathname === '/productos/llantas') && link_products.current.classList.add('link-activo');
+        (window.location.pathname === '/productos/cascos') && link_products.current.classList.add('link-activo');
+        (window.location.pathname === '/productos/aceites') && link_products.current.classList.add('link-activo');
+        (window.location.pathname === '/productos/busqueda') && link_products.current.classList.add('link-activo');
         (window.location.pathname === '/servicios') && link_services.current.classList.add('link-activo');
         (window.location.pathname === '/creditos') && link_credits.current.classList.add('link-activo');
         (window.location.pathname === '/nosotros') && link_about.current.classList.add('link-activo');

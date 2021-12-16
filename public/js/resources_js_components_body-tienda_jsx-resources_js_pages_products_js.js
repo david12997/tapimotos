@@ -1,5 +1,4 @@
-"use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_components_filtros-products_jsx-resources_js_pages_products_js"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_components_body-tienda_jsx-resources_js_pages_products_js"],{
 
 /***/ "./resources/js/components/body-tienda.jsx":
 /*!*************************************************!*\
@@ -7,6 +6,7 @@
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -248,6 +248,7 @@ var Body_tienda = function Body_tienda(_ref) {
   \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -298,6 +299,7 @@ var Btn1_render = function Btn1_render(_ref) {
   \**************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -444,6 +446,7 @@ var Card_render = function Card_render(_ref) {
   \************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -734,317 +737,9 @@ var Filtro_llantas_tienda = function Filtro_llantas_tienda() {
 /*!******************************************************!*\
   !*** ./resources/js/components/filtros-products.jsx ***!
   \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "setIndexPagebtns": () => (/* binding */ setIndexPagebtns),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _search_product__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search-product */ "./resources/js/components/search-product.jsx");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _pages_products__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/products */ "./resources/js/pages/products.js");
-/* harmony import */ var _mobile_filtro_llantas_tienda__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mobile-filtro-llantas-tienda */ "./resources/js/components/mobile-filtro-llantas-tienda.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _templateObject;
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-
-
-
-
-
-
-
-var Filtros_html = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n\n\n    .filtros{\n\n        width:100%;\n    }\n\n    .buscador{\n        padding:12px;\n        width:100%;\n        display:flex;\n        justify-content:flex-end;\n    }\n\n    .titulo{\n\n        width:100%;\n        height:40px;\n        margin-top:20px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        position:relative;\n    }\n\n    .title-category{\n\n        background:transparent;\n        border:0px;\n        font-size:20px;\n        font-weight:bold;\n        margin-left:12%;\n    }\n\n    .btn-filtrar-busqueda{\n\n        position:absolute;\n        color:gray;\n        margin-right:64%;\n    }\n\n    .filtro-aplicado{\n\n        display:flex;\n        justify-content:space-around;\n        align-items:center;\n        flex-wrap:wrap;\n\n    }\n\n    .container-filter{\n\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        width:107px;\n        margin-top:-6px;\n    }\n\n    .filter{\n\n        color:gray;\n\n    }\n\n    .container-pagination{\n\n        width:100%;\n        height:50px;\n        background:rgb(255, 137, 12);\n        display:flex;\n        justify-content:center;\n        align-items:center;\n    }\n\n    .container-link-pages{\n        width:100%;\n    }\n    .bg-white, .btn-light{\n\n        width:36px;\n        height:36px;\n        margin:2px;\n    }\n\n    .container-buscador-desktop{\n\n        display:none;\n    }\n\n    .container-filtros-desktop{\n\n        display:none;\n    }\n\n\n    @media(min-width:800px){\n\n        .buscador{\n\n            display:none;\n        }\n\n        .btn-filtrar-busqueda{\n\n            display:none;\n        }\n\n        .filtro-aplicado{\n\n            display:none;\n        }\n\n        .container-pagination{\n\n            height:80px;\n            justify-content:space-around;\n        }\n\n        .title-category{\n\n            margin-left:0px;\n        }\n\n        .container-buscador-desktop{\n\n            border-left:2px solid white;\n            display:flex;\n            justify-content:center;\n            align-items:center;\n            width:300px;\n        }\n\n        .container-filtros-desktop{\n\n            border-right:2px solid white;\n            display:flex;\n            width:300px;\n            justify-content:space-around;\n            aign-items:center\n            padding:5px;\n            font-size:15px;\n        }\n\n        .container-filter{\n\n            display:flex;\n            justify-content:space-around;\n            flex-wrap:wrap;\n            width:100px;\n            margin-left:5px;\n            margin-right:5px;\n            margin-top:0px;\n        }\n\n        .filter{\n\n            color:white;\n        }\n\n        .bg-white, .btn-light{\n\n            width:40px;\n            height:40px;\n            margin:3px;\n            font-size:17px;\n        }\n\n\n    }\n\n\n"])));
-
-var CheckPageCurrent = function CheckPageCurrent(i, current_page, buttons) {
-  if (current_page === parseInt(buttons[i].innerText)) {
-    buttons[i].classList.remove('bg-white');
-    buttons[i].classList.add('bg-secondary');
-    buttons[i].classList.add('text-white');
-  } else {
-    buttons[i].classList.add('bg-white');
-    buttons[i].classList.remove('bg-secondary');
-    buttons[i].classList.remove('text-white');
-  }
-};
-
-var UpdateLessIndexPage = function UpdateLessIndexPage(data, buttons, route, current_page) {
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].previousSibling.classList[2] === 'anterior' && $(buttons[i]).hasClass('bg-secondary')) {
-      buttons[0].innerHTML = parseInt(buttons[0].innerHTML) - 3;
-      buttons[1].innerHTML = parseInt(buttons[1].innerHTML) - 3;
-      buttons[2].innerHTML = parseInt(buttons[2].innerHTML) - 3;
-      buttons[0].classList.remove('bg-white');
-      buttons[0].classList.add('bg-secondary');
-      buttons[0].classList.add('text-white');
-      CheckPageCurrent(i, current_page, buttons);
-    }
-
-    CheckPageCurrent(i, current_page, buttons);
-  }
-};
-
-var UpdateMoreIndexPage = function UpdateMoreIndexPage(data, buttons, route, current_page) {
-  for (var i = 0; i < buttons.length; i++) {
-    if (buttons[i].nextSibling.classList[2] === 'siguiente' && $(buttons[i]).hasClass('bg-secondary')) {
-      buttons[0].innerHTML = parseInt(buttons[0].innerHTML) + 3;
-      buttons[1].innerHTML = parseInt(buttons[1].innerHTML) + 3;
-      buttons[2].innerHTML = parseInt(buttons[2].innerHTML) + 3;
-      buttons[0].classList.remove('bg-white');
-      buttons[0].classList.add('bg-secondary');
-      buttons[0].classList.add('text-white');
-      CheckPageCurrent(i, current_page, buttons);
-    }
-
-    CheckPageCurrent(i, current_page, buttons);
-  }
-};
-
-var setIndexPagebtns = function setIndexPagebtns() {
-  var buttons = document.getElementsByClassName('index-page');
-
-  for (var i = 0; i < buttons.length; i++) {
-    if (i === 0) {
-      $(buttons[i]).addClass('bg-secondary');
-      $(buttons[i]).addClass('text-white');
-      $(buttons[i]).removeClass('bg-white');
-    } else {
-      $(buttons[i]).removeClass('bg-secondary');
-      $(buttons[i]).removeClass('text-white');
-      $(buttons[i]).addClass('bg-white');
-    }
-
-    buttons[i].innerHTML = i + 1;
-  }
-};
-
-var redirect = function redirect(route, redireccion, dispatch, page_cascos, page_aceites, page_llantas, setPage) {
-  setIndexPagebtns();
-  setPage(1);
-  (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, page_cascos, page_aceites, page_llantas); //update btn-img main categories
-
-  var btns = [document.querySelector('.Llantas'), document.querySelector('.Aceites'), document.querySelector('.Cascos')];
-
-  if (route === 'todo') {
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].style.borderLeft = "0px";
-    }
-  } else {
-    for (var _i = 0; _i < btns.length; _i++) {
-      if (route === btns[_i].classList.value.toLowerCase()) {
-        btns[_i].style.borderLeft = "10px solid rgb(0,150,210)";
-      } else {
-        btns[_i].style.borderLeft = "0px";
-      }
-    }
-  }
-
-  route === 'llantas' && redireccion('/productos/llantas');
-  route === 'cascos' && redireccion('/productos/cascos');
-  route === 'aceites' && redireccion('/productos/aceites');
-  route === 'todo' && redireccion('/productos');
-};
-
-var nextPage = function nextPage(current_page, max_page, min_page, data, setPage, route, dispatch) {
-  console.log(data.Productos); //limit max page
-  //data.Productos[0].products.length for category llantas
-  //data.Productos[2].data.length for category todo
-  //data.Productos[0].length for categories llantas and aceites
-
-  if (current_page !== min_page && current_page !== max_page && current_page < max_page) current_page++;
-  if (current_page === max_page + 1) current_page = min_page;
-  if (current_page === min_page) current_page++;
-  setPage(current_page);
-  var buttons = document.getElementsByClassName('index-page');
-  UpdateMoreIndexPage(data, buttons, route, current_page);
-
-  if (route === 'busqueda') {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, current_page, current_page, current_page, 'not null');
-  } else {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, current_page, current_page, current_page);
-  }
-};
-
-var previusPage = function previusPage(current_page, max_page, min_page, setPage, route, dispatch) {
-  var buttons = document.getElementsByClassName('index-page');
-  if (buttons[0].innerText === '1' && $(buttons[0]).hasClass('bg-secondary')) return 0; // this line no permite indice de pagina negativo
-
-  if (current_page !== min_page && current_page !== max_page && current_page > min_page) current_page--;
-  if (current_page === max_page) current_page--;
-  if (current_page <= 0) current_page = max_page;
-  setPage(current_page);
-  UpdateLessIndexPage('Less page', buttons, route, current_page);
-
-  if (route === 'busqueda') {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, current_page, current_page, current_page, 'not null');
-  } else {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, current_page, current_page, current_page);
-  }
-};
-
-var ClickIndexPage = function ClickIndexPage(category, dispatch, page_cascos, page_aceites, page_llantas, setPage) {
-  var buttons = document.getElementsByClassName('index-page');
-
-  for (var i = 0; i < buttons.length; i++) {
-    CheckPageCurrent(i, parseInt(page_llantas), buttons);
-  }
-
-  setPage(page_llantas);
-
-  if (category === 'busqueda') {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(category, dispatch, page_cascos, page_aceites, page_llantas, 'not null');
-  } else {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(category, dispatch, page_cascos, page_aceites, page_llantas);
-  }
-};
-
-var Filtros_render = function Filtros_render(_ref) {
-  var data_state = _ref.data_state;
-  var redireccion = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useNavigate)();
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useDispatch)();
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
-      _useState2 = _slicedToArray(_useState, 2),
-      page = _useState2[0],
-      setPage = _useState2[1];
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(Filtros_html, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mobile_filtro_llantas_tienda__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "filtros",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "buscador",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_search_product__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "titulo",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-          className: "btn-filtrar-busqueda",
-          onClick: function onClick() {
-            return console.log('click');
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
-            icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__.faFilter
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            children: " Filtrar busqueda"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("select", {
-          value: data_state.Categoria !== null && data_state.Categoria.name,
-          onChange: function onChange(e) {
-            return redirect(e.currentTarget.value.toLowerCase(), redireccion, dispatch, 1, 1, 1, setPage);
-          },
-          className: "title-category",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
-            defaultValue: "/",
-            children: "Todo"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
-            defaultValue: "llantas",
-            children: "Llantas"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
-            defaultValue: "cascos",
-            children: "Cascos"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
-            defaultValue: "aceites",
-            children: "Aceites"
-          })]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "filtro-aplicado",
-        children: data_state.Filtros !== null && data_state.Filtros.map(function (filtro, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
-            className: "container-filter",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
-              className: "filter",
-              children: [filtro.type, " : "]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
-              children: [" ", filtro.value]
-            })]
-          }, index);
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "container-pagination",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "container-filtros-desktop",
-          children: data_state.Filtros !== null && data_state.Filtros.map(function (filtro, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
-              className: "container-filter",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
-                className: "filter",
-                children: [filtro.type, "  : "]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
-                children: [" ", filtro.value]
-              })]
-            }, index);
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-          className: "contanier-link-pages",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "btn  btn-light anterior",
-            onClick: function onClick() {
-              return previusPage(page, data_state.Paginacion.last_page, data_state.Paginacion.first_page, setPage, data_state.Categoria.name.toLowerCase(), dispatch);
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
-              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__.faAngleLeft
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "btn  bg-secondary text-white index-page",
-            onClick: function onClick(e) {
-              return ClickIndexPage(data_state.Categoria.name.toLowerCase(), dispatch, e.currentTarget.innerHTML, e.currentTarget.innerHTML, e.currentTarget.innerHTML, setPage);
-            },
-            children: "1"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "btn  bg-white  index-page",
-            onClick: function onClick(e) {
-              return ClickIndexPage(data_state.Categoria.name.toLowerCase(), dispatch, e.currentTarget.innerHTML, e.currentTarget.innerHTML, e.currentTarget.innerHTML, setPage);
-            },
-            children: "2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "btn  bg-white  index-page",
-            onClick: function onClick(e) {
-              return ClickIndexPage(data_state.Categoria.name.toLowerCase(), dispatch, e.currentTarget.innerHTML, e.currentTarget.innerHTML, e.currentTarget.innerHTML, setPage);
-            },
-            children: "3"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-            className: "btn btn-light siguiente",
-            onClick: function onClick() {
-              return nextPage(page, data_state.Paginacion.last_page, data_state.Paginacion.first_page, data_state, setPage, data_state.Categoria.name.toLowerCase(), dispatch);
-            },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
-              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__.faAngleRight
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-          className: "container-buscador-desktop",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_search_product__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-        })]
-      })]
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Filtros_render);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\resources\\js\\components\\filtros-products.jsx: Unexpected token (431:71)\n\n\u001b[0m \u001b[90m 429 |\u001b[39m                 \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"titulo\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 430 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 431 |\u001b[39m                     \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"btn-filtrar-busqueda\"\u001b[39m onClick\u001b[33m=\u001b[39m{()\u001b[33m=>\u001b[39m}\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 432 |\u001b[39m                         \u001b[33m<\u001b[39m\u001b[33mFontAwesomeIcon\u001b[39m icon\u001b[33m=\u001b[39m{faFilter}\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 433 |\u001b[39m                         \u001b[33m<\u001b[39m\u001b[33mspan\u001b[39m\u001b[33m>\u001b[39m \u001b[33mFiltrar\u001b[39m busqueda\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mspan\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 434 |\u001b[39m                     \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object._raise (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:541:17)\n    at Object.raiseWithData (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:534:17)\n    at Object.raise (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:495:17)\n    at Object.unexpected (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:3580:16)\n    at Object.parseExprAtom (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:12026:22)\n    at Object.parseExprAtom (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:7477:20)\n    at Object.parseExprSubscripts (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:11584:23)\n    at Object.parseUpdate (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:11564:21)\n    at Object.parseMaybeUnary (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:11539:23)\n    at Object.parseMaybeUnaryOrPrivate (C:\\Users\\david\\Desktop\\Proyectos\\Tapimotos\\tapimotos2\\tapimotos\\node_modules\\@babel\\parser\\lib\\index.js:11353:61)");
 
 /***/ }),
 
@@ -1054,6 +749,7 @@ var Filtros_render = function Filtros_render(_ref) {
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -1217,88 +913,13 @@ var Footer_render = function Footer_render() {
 
 /***/ }),
 
-/***/ "./resources/js/components/mobile-filtro-llantas-tienda.jsx":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/mobile-filtro-llantas-tienda.jsx ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _templateObject;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var Container_filtro_mobile = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n\n    width:100%;\n    height:100%;\n    background:white;\n    position:fixed;\n    z-index:9999;\n\n\n"])));
-
-var Filtro_llantas_mobile_tienda = function Filtro_llantas_mobile_tienda() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Container_filtro_mobile, {});
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Filtro_llantas_mobile_tienda);
-
-/***/ }),
-
-/***/ "./resources/js/components/search-product.jsx":
-/*!****************************************************!*\
-  !*** ./resources/js/components/search-product.jsx ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _templateObject;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-
-
-
-var Buscador = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:250px;\n    height:60px;\n    display:flex;\n    justify-content:center;\n    align-items:center;\n\n    .input-search{\n\n        width:90%;\n        height:75%;\n        color:gray;\n        border:0px;\n        box-shadow:0px 0px 5px rgba(0,0,0,0.35);\n        border-radius:5px 0px 0px 5px;\n    }\n\n    .btn-search{\n\n        font-size:20px;\n        box-shadow:0px 0px 5px rgba(0,0,0,0.35);\n    }\n"])));
-
-var Buscador_render = function Buscador_render() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Buscador, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-      className: "input-search",
-      type: "text",
-      placeholder: "Buscar producto"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-      className: "btn btn-secondary btn-search",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__.FontAwesomeIcon, {
-        icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__.faSearch
-      })
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Buscador_render);
-
-/***/ }),
-
 /***/ "./resources/js/pages/products.js":
 /*!****************************************!*\
   !*** ./resources/js/pages/products.js ***!
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "UpdateStateTienda": () => (/* binding */ UpdateStateTienda),

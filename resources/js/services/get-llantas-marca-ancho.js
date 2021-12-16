@@ -6,7 +6,7 @@ import { Domain } from "./store";
 
 const ParseData = (data)=>{
 
-    console.log(data)
+    //console.log(data)
 
     let perfil_llanta = [];
 

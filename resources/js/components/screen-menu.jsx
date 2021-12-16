@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons'
-import { faHome, faBox, faBriefcase, faFolderPlus, faMotorcycle, faAngleLeft, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faBox, faBriefcase, faFolderPlus, faMotorcycle,  faPhoneAlt, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { keyframes } from 'styled-components';
 import {Link} from 'react-router-dom';
 
@@ -75,11 +75,12 @@ const Screen_menu_mobile = React.forwardRef(({},ref) =>{
         <Menu ref={ref}  animation={animation}>
 
             <button
-                className='btn btn-primary btn-block text-white  d-flex justify-content-start'
+                className='btn btn-primary btn-block text-white  d-flex justify-content-end'
                 onClick={()=>{setAnimation(close_screen);hidde_screen(ref,setAnimation,open_screen)}}
             >
-                <div style={{fontSize:'22px'}}><FontAwesomeIcon icon={faAngleLeft} /></div>
-                <b style={{fontSize:'18px', marginLeft:'33%'}}>Menu</b>
+
+                <b style={{fontSize:'18px', marginRight:'44%'}}>Menu</b>
+                <div style={{fontSize:'22px'}}><FontAwesomeIcon icon={faAngleRight} /></div>
             </button>
 
 

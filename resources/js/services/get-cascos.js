@@ -19,7 +19,7 @@ async function Get_cascos(page){
     try {
 
 
-        const data = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=356'+page);
+        const data = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=356&per_page=9'+page);
         (data === undefined) ? response.push('Error can not get data') : response.push(ParseData(data));
 
 

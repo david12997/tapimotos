@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_components_filtros-products_jsx-resources_js_pages_products_js"],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_products_js"],{
 
 /***/ "./resources/js/components/body-tienda.jsx":
 /*!*************************************************!*\
@@ -12,17 +12,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _card_product__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./card-product */ "./resources/js/components/card-product.jsx");
 /* harmony import */ var _spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./spinner */ "./resources/js/components/spinner.jsx");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
 /* harmony import */ var _filtros_llantas_tienda__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filtros-llantas-tienda */ "./resources/js/components/filtros-llantas-tienda.jsx");
 /* harmony import */ var _pages_products__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/products */ "./resources/js/pages/products.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
-/* harmony import */ var _filtros_products__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./filtros-products */ "./resources/js/components/filtros-products.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -39,8 +38,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-var Cuerpo_tienda = styled_components__WEBPACK_IMPORTED_MODULE_9__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    background:#eeecec;\n    display:flex;\n    justify-content:center;\n    padding-top:10px;\n    padding-bottom:50px;\n\n    .filtros-desktop-body{\n\n        display:none;\n    }\n\n    .container-productos{\n\n        width:90%;\n        height:99%;\n        display:flex;\n        justify-content:space-around;\n        flex-wrap:wrap;\n        padding:8px;\n    }\n\n    .filtro{\n\n        border-radius:10px 10px 10px 10px;\n        background:white;\n        box-shadow:0px 0px 4px rgba(0,0,0,0.4);\n    }\n    .img-filtro{\n\n        background:rgb(0,150,210);\n        border-radius:10px 10px 0px 0px;\n\n\n    }\n\n    .categories-filtro{\n\n        border-radius:10px 10px 10px 10px;\n        background:white;\n        padding:10px;\n        margin-top:35px;\n        box-shadow:0px 0px 4px rgba(0,0,0,0.4);\n\n    }\n\n    .Llantas, .Aceites, .Cascos{\n\n        margin-left:10%;\n        width:80%;\n        margin-top:12px;\n        margin-bottom:12px;\n        border-bottom:2px solid gray;\n        cursor:pointer;\n    }\n\n    @media(min-width:800px){\n\n        .filtros-desktop-body{\n\n            display:block;\n            width:20%;\n            border-radius:10px 10px 10px 10px;\n            margin-top:33px;\n\n        }\n\n        .container-productos{\n\n            width:75%;\n            height:99%;\n\n        }\n\n\n    }\n\n"])));
+var Cuerpo_tienda = styled_components__WEBPACK_IMPORTED_MODULE_8__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    background:#eeecec;\n    display:flex;\n    justify-content:center;\n    padding-top:10px;\n    padding-bottom:50px;\n\n    .filtros-desktop-body{\n\n        display:none;\n    }\n\n    .container-productos{\n\n        width:90%;\n        height:99%;\n        display:flex;\n        justify-content:space-around;\n        flex-wrap:wrap;\n        padding:8px;\n    }\n\n    .filtro{\n\n        border-radius:10px 10px 10px 10px;\n        background:white;\n        box-shadow:0px 0px 4px rgba(0,0,0,0.4);\n    }\n    .img-filtro{\n\n        background:rgb(0,150,210);\n        border-radius:10px 10px 0px 0px;\n\n\n    }\n\n    .categories-filtro{\n\n        border-radius:10px 10px 10px 10px;\n        background:white;\n        padding:10px;\n        margin-top:35px;\n        box-shadow:0px 0px 4px rgba(0,0,0,0.4);\n\n    }\n\n    .Llantas, .Aceites, .Cascos{\n\n        margin-left:10%;\n        width:80%;\n        margin-top:12px;\n        margin-bottom:12px;\n        border-bottom:2px solid gray;\n        cursor:pointer;\n    }\n\n    @media(min-width:800px){\n\n        .filtros-desktop-body{\n\n            display:block;\n            width:20%;\n            border-radius:10px 10px 10px 10px;\n            margin-top:33px;\n\n        }\n\n        .container-productos{\n\n            width:75%;\n            height:99%;\n\n        }\n\n\n    }\n\n"])));
 
 var setCategory = function setCategory(category, dispatch, page_cascos, page_aceites, page_llantas, btn, navigate) {
   var btns = [document.querySelector('.Llantas'), document.querySelector('.Aceites'), document.querySelector('.Cascos')];
@@ -53,7 +51,22 @@ var setCategory = function setCategory(category, dispatch, page_cascos, page_ace
     }
   }
 
-  (0,_filtros_products__WEBPACK_IMPORTED_MODULE_7__.setIndexPagebtns)();
+  var buttons = document.getElementsByClassName('index-page');
+
+  for (var _i = 0; _i < buttons.length; _i++) {
+    if (_i === 0) {
+      $(buttons[_i]).addClass('bg-secondary');
+      $(buttons[_i]).addClass('text-white');
+      $(buttons[_i]).removeClass('bg-white');
+    } else {
+      $(buttons[_i]).removeClass('bg-secondary');
+      $(buttons[_i]).removeClass('text-white');
+      $(buttons[_i]).addClass('bg-white');
+    }
+
+    buttons[_i].innerHTML = _i + 1;
+  }
+
   (0,_pages_products__WEBPACK_IMPORTED_MODULE_5__.UpdateStateTienda)(category, dispatch, page_cascos, page_aceites, page_llantas);
   navigate("/productos/".concat(category));
 };
@@ -61,7 +74,7 @@ var setCategory = function setCategory(category, dispatch, page_cascos, page_ace
 var Body_tienda = function Body_tienda(_ref) {
   var data_state = _ref.data_state;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.useNavigate)();
   var btn1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var btn2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var btn3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
@@ -106,47 +119,47 @@ var Body_tienda = function Body_tienda(_ref) {
           btns[i].style.borderLeft = "0px";
         }
       } else {
-        for (var _i = 0; _i < btns.length; _i++) {
-          if (route === "/productos/".concat(btns[_i].classList[0].toLowerCase())) {
-            btns[_i].style.borderLeft = "10px solid rgb(0,150,210)";
+        for (var _i2 = 0; _i2 < btns.length; _i2++) {
+          if (route === "/productos/".concat(btns[_i2].classList[0].toLowerCase())) {
+            btns[_i2].style.borderLeft = "10px solid rgb(0,150,210)";
           } else {
-            btns[_i].style.borderLeft = "0px";
+            btns[_i2].style.borderLeft = "0px";
           }
         }
       }
     }
   }, [btn1, btn2, btn3]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(Cuerpo_tienda, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(Cuerpo_tienda, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "filtros-desktop-body",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "filtro",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "img-filtro",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
             style: {
               width: '100%'
             },
             src: "/images/ejemplo-llantas.png"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
           className: "inputs-filtro",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("p", {
             style: {
               width: '100%',
               margin: '18px',
               color: 'gray'
             },
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__.FontAwesomeIcon, {
-              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_11__.faFilter
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_3__.FontAwesomeIcon, {
+              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_10__.faFilter
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
               children: "Filtrar busqueda"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_filtros_llantas_tienda__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_filtros_llantas_tienda__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
         className: "categories-filtro",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
           style: {
             width: '100%',
             margin: '2px',
@@ -154,40 +167,40 @@ var Body_tienda = function Body_tienda(_ref) {
             display: 'flex',
             justifyContent: 'center'
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("b", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
             children: "Catgeorias"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           ref: btn1,
           className: "Llantas",
           onClick: function onClick(e) {
             return setCategory('llantas', dispatch, 1, 1, 1, e.currentTarget, navigate);
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
             style: {
               width: '100%'
             },
             src: "/images/llantas.png"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           ref: btn2,
           className: "Aceites",
           onClick: function onClick(e) {
             return setCategory('aceites', dispatch, 1, 1, 1, e.currentTarget, navigate);
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
             style: {
               width: '100%'
             },
             src: "/images/aceite.png"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           ref: btn3,
           className: "Cascos",
           onClick: function onClick(e) {
             return setCategory('cascos', dispatch, 1, 1, 1, e.currentTarget, navigate);
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
             style: {
               width: '100%'
             },
@@ -195,43 +208,43 @@ var Body_tienda = function Body_tienda(_ref) {
           })
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
       className: "container-productos",
-      children: data_state.Productos === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_spinner__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: data_state.Productos === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_spinner__WEBPACK_IMPORTED_MODULE_2__["default"], {
         width: "250px",
         height: "250px",
         size: "20px"
       }) : data_state.Categoria.name === 'Todo' ? AllProducts().map(function (product, indice) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
           img: product.img,
           name: product.name,
           price: product.price
         }, indice);
       }) : data_state.Categoria.name === 'Llantas' ? data_state.Productos[0].products.map(function (llantas, indice) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
           img: llantas.img,
           name: llantas.nombre_llanta,
           price: llantas.precio_llanta
         }, indice);
       }) : data_state.Categoria.name === 'Cascos' ? data_state.Productos[0].map(function (casco, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
           img: "/images/casco.png",
           name: casco.name,
           price: casco.regular_price
         }, index);
       }) : data_state.Categoria.name === 'Aceites' ? data_state.Productos[0].map(function (aceite, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
           img: "/images/aceite.png",
           name: aceite.name,
           price: aceite.regular_price
         }, index);
       }) : data_state.Categoria.name === 'Busqueda' ? data_state.Productos.map(function (product, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_card_product__WEBPACK_IMPORTED_MODULE_1__["default"], {
           img: product.img,
           name: product.nombre_llanta,
           price: product.precio_llanta
         }, index);
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         children: "Ups, categoria erronea."
       })
     })]
@@ -742,15 +755,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _search_product__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./search-product */ "./resources/js/components/search-product.jsx");
 /* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _pages_products__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/products */ "./resources/js/pages/products.js");
-/* harmony import */ var _mobile_filtro_llantas_tienda__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./mobile-filtro-llantas-tienda */ "./resources/js/components/mobile-filtro-llantas-tienda.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject;
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -777,8 +789,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-
-var Filtros_html = styled_components__WEBPACK_IMPORTED_MODULE_7__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n\n\n    .filtros{\n\n        width:100%;\n    }\n\n    .buscador{\n        padding:12px;\n        width:100%;\n        display:flex;\n        justify-content:flex-end;\n    }\n\n    .titulo{\n\n        width:100%;\n        height:40px;\n        margin-top:20px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        position:relative;\n    }\n\n    .title-category{\n\n        background:transparent;\n        border:0px;\n        font-size:20px;\n        font-weight:bold;\n        margin-left:12%;\n    }\n\n    .btn-filtrar-busqueda{\n\n        position:absolute;\n        color:gray;\n        margin-right:64%;\n    }\n\n    .filtro-aplicado{\n\n        display:flex;\n        justify-content:space-around;\n        align-items:center;\n        flex-wrap:wrap;\n\n    }\n\n    .container-filter{\n\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        width:107px;\n        margin-top:-6px;\n    }\n\n    .filter{\n\n        color:gray;\n\n    }\n\n    .container-pagination{\n\n        width:100%;\n        height:50px;\n        background:rgb(255, 137, 12);\n        display:flex;\n        justify-content:center;\n        align-items:center;\n    }\n\n    .container-link-pages{\n        width:100%;\n    }\n    .bg-white, .btn-light{\n\n        width:36px;\n        height:36px;\n        margin:2px;\n    }\n\n    .container-buscador-desktop{\n\n        display:none;\n    }\n\n    .container-filtros-desktop{\n\n        display:none;\n    }\n\n\n    @media(min-width:800px){\n\n        .buscador{\n\n            display:none;\n        }\n\n        .btn-filtrar-busqueda{\n\n            display:none;\n        }\n\n        .filtro-aplicado{\n\n            display:none;\n        }\n\n        .container-pagination{\n\n            height:80px;\n            justify-content:space-around;\n        }\n\n        .title-category{\n\n            margin-left:0px;\n        }\n\n        .container-buscador-desktop{\n\n            border-left:2px solid white;\n            display:flex;\n            justify-content:center;\n            align-items:center;\n            width:300px;\n        }\n\n        .container-filtros-desktop{\n\n            border-right:2px solid white;\n            display:flex;\n            width:300px;\n            justify-content:space-around;\n            aign-items:center\n            padding:5px;\n            font-size:15px;\n        }\n\n        .container-filter{\n\n            display:flex;\n            justify-content:space-around;\n            flex-wrap:wrap;\n            width:100px;\n            margin-left:5px;\n            margin-right:5px;\n            margin-top:0px;\n        }\n\n        .filter{\n\n            color:white;\n        }\n\n        .bg-white, .btn-light{\n\n            width:40px;\n            height:40px;\n            margin:3px;\n            font-size:17px;\n        }\n\n\n    }\n\n\n"])));
+var Filtros_html = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n\n\n    .filtros{\n\n        width:100%;\n    }\n\n    .buscador{\n        padding:12px;\n        width:100%;\n        display:flex;\n        justify-content:flex-end;\n    }\n\n    .titulo{\n\n        width:100%;\n        height:40px;\n        margin-top:20px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        position:relative;\n    }\n\n    .title-category{\n\n        background:transparent;\n        border:0px;\n        font-size:20px;\n        font-weight:bold;\n        margin-left:12%;\n    }\n\n    .btn-filtrar-busqueda{\n\n        position:absolute;\n        color:gray;\n        margin-right:64%;\n    }\n\n    .filtro-aplicado{\n\n        display:flex;\n        justify-content:space-around;\n        align-items:center;\n        flex-wrap:wrap;\n\n    }\n\n    .container-filter{\n\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        width:107px;\n        margin-top:-6px;\n    }\n\n    .filter{\n\n        color:gray;\n\n    }\n\n    .container-pagination{\n\n        width:100%;\n        height:50px;\n        background:rgb(255, 137, 12);\n        display:flex;\n        justify-content:center;\n        align-items:center;\n    }\n\n    .container-link-pages{\n        width:100%;\n    }\n    .bg-white, .btn-light{\n\n        width:36px;\n        height:36px;\n        margin:2px;\n    }\n\n    .container-buscador-desktop{\n\n        display:none;\n    }\n\n    .container-filtros-desktop{\n\n        display:none;\n    }\n\n\n    @media(min-width:800px){\n\n        .buscador{\n\n            display:none;\n        }\n\n        .btn-filtrar-busqueda{\n\n            display:none;\n        }\n\n        .filtro-aplicado{\n\n            display:none;\n        }\n\n        .container-pagination{\n\n            height:80px;\n            justify-content:space-around;\n        }\n\n        .title-category{\n\n            margin-left:0px;\n        }\n\n        .container-buscador-desktop{\n\n            border-left:2px solid white;\n            display:flex;\n            justify-content:center;\n            align-items:center;\n            width:300px;\n        }\n\n        .container-filtros-desktop{\n\n            border-right:2px solid white;\n            display:flex;\n            width:300px;\n            justify-content:space-around;\n            aign-items:center\n            padding:5px;\n            font-size:15px;\n        }\n\n        .container-filter{\n\n            display:flex;\n            justify-content:space-around;\n            flex-wrap:wrap;\n            width:100px;\n            margin-left:5px;\n            margin-right:5px;\n            margin-top:0px;\n        }\n\n        .filter{\n\n            color:white;\n        }\n\n        .bg-white, .btn-light{\n\n            width:40px;\n            height:40px;\n            margin:3px;\n            font-size:17px;\n        }\n\n\n    }\n\n\n"])));
 
 var CheckPageCurrent = function CheckPageCurrent(i, current_page, buttons) {
   if (current_page === parseInt(buttons[i].innerText)) {
@@ -898,12 +909,7 @@ var previusPage = function previusPage(current_page, max_page, min_page, setPage
   if (current_page <= 0) current_page = max_page;
   setPage(current_page);
   UpdateLessIndexPage('Less page', buttons, route, current_page);
-
-  if (route === 'busqueda') {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, current_page, current_page, current_page, 'not null');
-  } else {
-    (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, current_page, current_page, current_page);
-  }
+  (0,_pages_products__WEBPACK_IMPORTED_MODULE_4__.UpdateStateTienda)(route, dispatch, current_page, current_page, current_page);
 };
 
 var ClickIndexPage = function ClickIndexPage(category, dispatch, page_cascos, page_aceites, page_llantas, setPage) {
@@ -924,7 +930,7 @@ var ClickIndexPage = function ClickIndexPage(category, dispatch, page_cascos, pa
 
 var Filtros_render = function Filtros_render(_ref) {
   var data_state = _ref.data_state;
-  var redireccion = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useNavigate)();
+  var redireccion = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useDispatch)();
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
@@ -932,115 +938,112 @@ var Filtros_render = function Filtros_render(_ref) {
       page = _useState2[0],
       setPage = _useState2[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(Filtros_html, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_mobile_filtro_llantas_tienda__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(Filtros_html, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "filtros",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "buscador",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_search_product__WEBPACK_IMPORTED_MODULE_1__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_search_product__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "titulo",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "btn-filtrar-busqueda",
-          onClick: function onClick() {
-            return console.log('click');
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
-            icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__.faFilter
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+            icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faFilter
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             children: " Filtrar busqueda"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("select", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
           value: data_state.Categoria !== null && data_state.Categoria.name,
           onChange: function onChange(e) {
             return redirect(e.currentTarget.value.toLowerCase(), redireccion, dispatch, 1, 1, 1, setPage);
           },
           className: "title-category",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             defaultValue: "/",
             children: "Todo"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             defaultValue: "llantas",
             children: "Llantas"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             defaultValue: "cascos",
             children: "Cascos"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("option", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             defaultValue: "aceites",
             children: "Aceites"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "filtro-aplicado",
         children: data_state.Filtros !== null && data_state.Filtros.map(function (filtro, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
             className: "container-filter",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("b", {
               className: "filter",
               children: [filtro.type, " : "]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("b", {
               children: [" ", filtro.value]
             })]
           }, index);
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "container-pagination",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "container-filtros-desktop",
           children: data_state.Filtros !== null && data_state.Filtros.map(function (filtro, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("p", {
               className: "container-filter",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("b", {
                 className: "filter",
                 children: [filtro.type, "  : "]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("b", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("b", {
                 children: [" ", filtro.value]
               })]
             }, index);
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "contanier-link-pages",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btn  btn-light anterior",
             onClick: function onClick() {
               return previusPage(page, data_state.Paginacion.last_page, data_state.Paginacion.first_page, setPage, data_state.Categoria.name.toLowerCase(), dispatch);
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
-              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__.faAngleLeft
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faAngleLeft
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btn  bg-secondary text-white index-page",
             onClick: function onClick(e) {
               return ClickIndexPage(data_state.Categoria.name.toLowerCase(), dispatch, e.currentTarget.innerHTML, e.currentTarget.innerHTML, e.currentTarget.innerHTML, setPage);
             },
             children: "1"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btn  bg-white  index-page",
             onClick: function onClick(e) {
               return ClickIndexPage(data_state.Categoria.name.toLowerCase(), dispatch, e.currentTarget.innerHTML, e.currentTarget.innerHTML, e.currentTarget.innerHTML, setPage);
             },
             children: "2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btn  bg-white  index-page",
             onClick: function onClick(e) {
               return ClickIndexPage(data_state.Categoria.name.toLowerCase(), dispatch, e.currentTarget.innerHTML, e.currentTarget.innerHTML, e.currentTarget.innerHTML, setPage);
             },
             children: "3"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             className: "btn btn-light siguiente",
             onClick: function onClick() {
               return nextPage(page, data_state.Paginacion.last_page, data_state.Paginacion.first_page, data_state, setPage, data_state.Categoria.name.toLowerCase(), dispatch);
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
-              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_9__.faAngleRight
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__.FontAwesomeIcon, {
+              icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_8__.faAngleRight
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "container-buscador-desktop",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_search_product__WEBPACK_IMPORTED_MODULE_1__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_search_product__WEBPACK_IMPORTED_MODULE_1__["default"], {})
         })]
       })]
-    })]
+    })
   });
 };
 
@@ -1214,36 +1217,6 @@ var Footer_render = function Footer_render() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer_render);
-
-/***/ }),
-
-/***/ "./resources/js/components/mobile-filtro-llantas-tienda.jsx":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/mobile-filtro-llantas-tienda.jsx ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _templateObject;
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
-
-
-
-var Container_filtro_mobile = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n\n    width:100%;\n    height:100%;\n    background:white;\n    position:fixed;\n    z-index:9999;\n\n\n"])));
-
-var Filtro_llantas_mobile_tienda = function Filtro_llantas_mobile_tienda() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(Container_filtro_mobile, {});
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Filtro_llantas_mobile_tienda);
 
 /***/ }),
 

@@ -28,7 +28,7 @@ async function Get_llantas(page){
     try {
 
 
-        const data = await Get(Domain +'api/llantas/'+page);
+        const data = await Get(Domain +'api/llantas'+page);
         (data === undefined) ? response.push('Error can not get data') : response.push(ParseData(data));
 
 

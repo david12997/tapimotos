@@ -154,7 +154,9 @@ const Search_llantas = ()=>{
         setCargandoPerfil(perfil)
 
 
+
         if(perfil !== 'Perfil de la llanta' && perfil !== 'Sin resultados'  && perfil !== 'Cargando resultados...'){
+
 
             DataHome().search_llantas.llantas_for_marcaAnchoPerfil(marca,ancho,perfil).then(data=>{
 
@@ -175,19 +177,35 @@ const Search_llantas = ()=>{
 
         if(rin !== 'Numero de rin'  && rin !== 'Sin resultados'  && rin !== 'Cargando resultados...' ){
 
-            dispatch(Categoria({name:categoria}));
-            dispatch(Filtros({marca:['Marca',marca],ancho:['Ancho',ancho],perfil:['Perfil',perfil],rin:['N° rin',rin]}));
+            dispatch(Categoria({name:categoria,type:'llantas'}));
+            dispatch(Filtros([
+                {type:'Marca ',value:marca},
+                {type:'Ancho ',value:ancho},
+                {type:'Perfil ',value:perfil},
+                {type:'N° rin ',value:rin}
+
+            ]));
+            //[marca:['Marca',marca],ancho:['Ancho',ancho],perfil:['Perfil',perfil],rin:['N° rin',rin]]
 
             setCargandoRin(rin);
+            dispatch(Productos(null));
+
+            $('.llantas-inputs').empty();
+            $('.llantas-inputs').append(`
+                <div class="spinner-border text-secondary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            `);
+
             DataHome().search_llantas.llantas_for_marcaAnchoPerfilRin(marca,ancho,perfil,rin).then(data=>{
 
-                console.log(data);
+                console.log('from search-llantas,jsx ',data);
                 dispatch(Productos(data[0]));
                 dispatch(Busqueda(true))
-
-                navegar('/productos/busqueda')
+                navegar('/productos/busqueda');
 
             })
+
 
         }
 
@@ -247,7 +265,7 @@ const Search_llantas = ()=>{
                 }
             </select>
 
-            <select value={cargandoRin} onChange={(e)=>GoSearchLlantaRin(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,Perfil_llantas_element.current.value,e.target.value,'Buscar',dispath,redirect)}>
+            <select value={cargandoRin} onChange={(e)=>GoSearchLlantaRin(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,Perfil_llantas_element.current.value,e.target.value,'Busqueda',dispath,redirect)}>
                 <option value="Numero de rin" >Numero de rin</option>
                 {
                     (llantas_marcaAnchoPerfil === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_marcaAnchoPerfil.map((numero_rin,index)=><option value={numero_rin} key={index}>{numero_rin}</option>)

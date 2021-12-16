@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Asesores_render from '../components/asesores';
 import Btn_whatsapp from '../components/btn-whatsapp';
 import Contacto_render from '../components/contacto';
@@ -11,7 +11,13 @@ import Services_render from '../components/services';
 
 const Home = () => {
 
+    useEffect(()=>{
 
+        document.title='Inicio';
+        let links = document.getElementsByClassName('link');
+        for(let i=0; i<links.length;i++)(links[i].innerText === 'Inicio') ? links[i].classList.add('link-activo'):links[i].classList.remove('link-activo')
+
+    },[]);
 
     return (
         <div>

@@ -96,7 +96,7 @@ const Contenido_aobut_render = ()=>{
                 <div className="galeria">
 
                     <div className="container-img">
-                        <img src="http://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-4.jpg"></img>
+                        <img src="https://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-4.jpg"></img>
                         <div className="texto"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo quam, commodo nec sagittis ac,
                          blandit sed neque. Donec erat lectus, sollicitudin feugiat lorem ut,
                         </div>
@@ -106,7 +106,7 @@ const Contenido_aobut_render = ()=>{
                     </div>
 
                     <div className="container-img">
-                        <img src="http://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-3.jpg"></img>
+                        <img src="https://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-3.jpg"></img>
                         <div className="texto"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo quam, commodo nec sagittis ac,
                          blandit sed neque. Donec erat lectus, sollicitudin feugiat lorem ut,
                         </div>
@@ -118,7 +118,7 @@ const Contenido_aobut_render = ()=>{
 
 
                     <div className="container-img">
-                        <img src="http://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-5.jpg"></img>
+                        <img src="https://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-5.jpg"></img>
                         <div className="texto"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo quam, commodo nec sagittis ac,
                          blandit sed neque. Donec erat lectus, sollicitudin feugiat lorem ut,
                         </div>
@@ -142,15 +142,15 @@ const Contenido_aobut_render = ()=>{
             <div style={{width:'100%'}} className="instalaciones d-flex justify-content-around align-items-center flex-wrap">
 
                     <div style={{width:'300px',margin:'15px'}} className="videos ">
-                        <video style={{width:'100%'}}  controls src="http://tapimotosdk.com/blog/wp-content/uploads/2021/11/video-api-2-1.mp4"></video>
+                        <video style={{width:'100%'}}  controls src="https://tapimotosdk.com/video/video-api-2.mp4"></video>
                     </div>
 
                     <div style={{width:'300px',margin:'15px'}} className="videos ">
-                        <video style={{width:'100%'}}  controls src="http://tapimotosdk.com/blog/wp-content/uploads/2021/11/video-tapi-1-1.mp4"></video>
+                        <video style={{width:'100%'}}  controls src="https://tapimotosdk.com/video/video-tapi-1.mp4"></video>
                     </div>
 
                     <div style={{width:'300px',margin:'15px'}} className="videos ">
-                        <video style={{width:'100%'}}  controls src="http://tapimotosdk.com/blog/wp-content/uploads/2021/11/video-tapi-3-1.mp4"></video>
+                        <video style={{width:'100%'}}  controls src="https://tapimotosdk.com/video/video-tapi-3.mp4"></video>
                     </div>
             </div>
 

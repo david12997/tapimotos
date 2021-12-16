@@ -24,10 +24,7 @@ Route::apiResource('llantas', LlantasTapimotoController::class);
 Route::apiResource('marca-llantas',MarcasLlantaController::class);
 
 Route::get('/search/llantas/{marca}',[LlantasTapimotoController::class, 'search_for_marca']);
-
 Route::get('/search/llantas/{marca}/{ancho}',[LlantasTapimotoController::class, 'search_for_marca_ancho']);
-
 Route::get('/search/llantas/{marca}/{ancho}/{perfil}',[LlantasTapimotoController::class, 'search_for_marca_ancho_perfil']);
-
 Route::get('/search/llantas/{marca}/{ancho}/{perfil}/{rin}',[LlantasTapimotoController::class, 'search_for_marca_ancho_perfil_rin']);
 
