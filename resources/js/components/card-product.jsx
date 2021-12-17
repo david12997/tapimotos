@@ -137,13 +137,24 @@ const Card_render = ({img,name,price}) =>{
 
     const UpdateCarrito_component = (btn) =>{
 
+        console.log(btn.style.color);
+        //falta arreglar el btn card producto añadir al carrito cuandos se elimina ese mismo producto desde el carrito
+
+        if(btn.style.color === 'gray'){
+            setAñadido(0);
+        }else{
+            setAñadido(1);
+        }
+
+        console.log(añadido);
+
         let current_cart = JSON.parse(localStorage.getItem('products_carrito'));
 
         if(current_cart === null){
 
             setAñadido(1);
             dispatch(UpdateCart([{name:name,img:img,price:price}]));
-            dispatch(UpdateCuantity(current_cart.length));
+            dispatch(UpdateCuantity(1));
 
 
         }else{
@@ -173,6 +184,7 @@ const Card_render = ({img,name,price}) =>{
         }
 
         añadido === 0 ?  btn.style.color='rgb(0,150,210)' : btn.style.color='gray';
+
     }
 
     const LessCuantity = (max)=>{
@@ -222,13 +234,13 @@ const Card_render = ({img,name,price}) =>{
 
     return(
 
-        <Card_element>
+        <Card_element >
             <div className="img-product">
                 <img style={{height:'100%'}} src={img}/>
 
             </div>
             <div className="name-product">
-                <p className="name"><b>{name}</b></p>
+                <p className="name name-product-card-element"><b>{name}</b></p>
             </div>
             <div className="price-product">
                 <p><b>$ {new Intl.NumberFormat().format(Math.ceil(parseInt(price)))} COP</b> <b style={{color:'gray'}}>C/U</b> </p>
@@ -246,7 +258,7 @@ const Card_render = ({img,name,price}) =>{
                     <div style={{fontSize:'27px',color:'green'}} className="whatsapp"  onClick={()=>redirect()}>
                         <FontAwesomeIcon icon={faWhatsapp}/>
                     </div>
-                    <div ref={btn_carrito} style={{fontSize:'24px',color:'gray'}} className="add-cart" onClick={(e)=>UpdateCarrito_component(e.currentTarget)}>
+                    <div ref={btn_carrito} style={{fontSize:'24px',color:'gray'}} className="add-cart add-cart-element" onClick={(e)=>UpdateCarrito_component(e.currentTarget)}>
                     <FontAwesomeIcon icon={faCartPlus}/>
                     </div>
                 </div>

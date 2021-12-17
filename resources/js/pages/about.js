@@ -3,14 +3,28 @@ import Contenido_aobut_render from '../components/contenido-about';
 import Footer_render from '../components/footer';
 import Portada_nosotros from '../components/portada-about';
 
+//update carrito
+import {  useDispatch } from "react-redux";
+import { UpdateCart, UpdateCuantity } from "../database";
+
 
 
 function Nosotros() {
+
+    let dispatch = useDispatch();
 
     useEffect(()=>{
         document.title = 'Nosotros';
         let links = document.getElementsByClassName('link');
         for(let i=0; i<links.length;i++)(links[i].innerText === 'Nosotros') ? links[i].classList.add('link-activo'):links[i].classList.remove('link-activo')
+
+        //update carrito
+        let carrito = JSON.parse(localStorage.getItem('products_carrito'));
+        if(carrito !== null){
+
+            dispatch(UpdateCart(carrito));
+            dispatch(UpdateCuantity(carrito.length));
+        }
 
     },[])
 

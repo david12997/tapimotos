@@ -1,4 +1,4 @@
-import React, {useRef,  Suspense} from 'react';
+import React, {useRef,  Suspense, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
@@ -15,18 +15,12 @@ const Creditos = React.lazy(()=> import('./credits'));
 const Nosotros = React.lazy(()=> import('./about'));
 
 
-//data ajax - localstorage
-import {DataHome} from '../services/store';
-
 //data redux
 import {Provider} from 'react-redux';
 import {  database_store } from '../database';
 import Spinner from '../components/spinner';
 import Filtro_llantas_mobile_tienda from '../components/mobile-filtro-llantas-tienda';
-
-
-
-// INCORPORAR REACT LAZY DONT FORGET
+import Screen_carrito from '../components/carrito-screen-mobile';
 
 
 
@@ -41,7 +35,7 @@ function App() {
 
                 <Provider store={database_store}>
 
-
+                    <Screen_carrito></Screen_carrito>
                     <Filtro_llantas_mobile_tienda></Filtro_llantas_mobile_tienda>
                     <Screen_menu_mobile  ref={screen_mobile} ></Screen_menu_mobile>
                     <Header_render></Header_render>

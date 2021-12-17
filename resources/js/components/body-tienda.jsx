@@ -148,6 +148,9 @@ const Body_tienda = ({data_state})=>{
         else if( data_state.Categoria.type === 'cascos') {imgFiltro ='/images/casco.png';width='60%'}
         else if( data_state.Categoria.type === 'aceites') {imgFiltro ='/images/aceite.png';width='65%'}
         else { imgFiltro ='/images/ejemplo-llantas.png';width='100%'}
+    }else{
+
+        imgFiltro = '/images/ejemplo-llantas.png';
     }
 
 

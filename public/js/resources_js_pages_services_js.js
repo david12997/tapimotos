@@ -183,8 +183,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_contenido_services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/contenido-services */ "./resources/js/components/contenido-services.jsx");
 /* harmony import */ var _components_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/footer */ "./resources/js/components/footer.jsx");
 /* harmony import */ var _components_portada_services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/portada-services */ "./resources/js/components/portada-services.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _database__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../database */ "./resources/js/database/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
+
+
+ //update carrito
 
 
 
@@ -192,16 +197,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Services() {
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     document.title = 'Servicios';
     var links = document.getElementsByClassName('link');
 
     for (var i = 0; i < links.length; i++) {
       links[i].innerText === 'Servicios' ? links[i].classList.add('link-activo') : links[i].classList.remove('link-activo');
+    } //update carrito
+
+
+    var carrito = JSON.parse(localStorage.getItem('products_carrito'));
+
+    if (carrito !== null) {
+      dispatch((0,_database__WEBPACK_IMPORTED_MODULE_5__.UpdateCart)(carrito));
+      dispatch((0,_database__WEBPACK_IMPORTED_MODULE_5__.UpdateCuantity)(carrito.length));
     }
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_portada_services__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_contenido_services__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_portada_services__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_contenido_services__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
   });
 }
 

@@ -8,15 +8,33 @@ import Main_img from '../components/main-img';
 import Main_search from '../components/main-search';
 import Services_render from '../components/services';
 
+//update carrito
+import {  useDispatch } from "react-redux";
+import { UpdateCart, UpdateCuantity } from "../database";
+
+
+
 
 const Home = () => {
 
+    let dispatch = useDispatch();
+
     useEffect(()=>{
 
+        //reset title page
         document.title='Inicio';
+
+        //update menu page
         let links = document.getElementsByClassName('link');
         for(let i=0; i<links.length;i++)(links[i].innerText === 'Inicio') ? links[i].classList.add('link-activo'):links[i].classList.remove('link-activo')
 
+        //update carrito
+        let carrito = JSON.parse(localStorage.getItem('products_carrito'));
+        if(carrito !== null){
+
+            dispatch(UpdateCart(carrito));
+            dispatch(UpdateCuantity(carrito.length));
+        }
     },[]);
 
     return (

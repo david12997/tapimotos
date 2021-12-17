@@ -16,6 +16,13 @@ const open_nav_mobile = (nav) =>{
 }
 
 
+const OpenScreenCarrito = ()=>{
+
+    $('.screen-carrito-mobile').css('display','block');
+    $('.screen-carrito-mobile').css('animation-name','open-carrito');
+
+
+}
 
 const Carrito = ({fondo_numero}) =>{
 
@@ -24,9 +31,11 @@ const Carrito = ({fondo_numero}) =>{
         cantidad:useSelector(state=>state.carrito.cantidad)
     }
 
+
+
     return (
 
-        <div style={{width:'40px',position:'relative'}}>
+        <div onClick={()=>OpenScreenCarrito()} style={{width:'40px',position:'relative',cursor:'pointer'}}>
 
         <div style={{
             background:fondo_numero,
@@ -134,7 +143,7 @@ const Nav_render = ({screen_nav})=>{
                     <Logo width='150px'></Logo>
                     <div style={{width:'30%',display:'flex',justifyContent:'space-between',alignItems:'center',marginRight:'12px'}}>
 
-                        <Carrito fondo_numero='#0096D2'></Carrito>
+                        <Carrito onClick={()=>console.log('click 1')} fondo_numero='#0096D2'></Carrito>
                         <Bars screen_nav={screen_nav}></Bars>
 
                     </div>

@@ -1200,13 +1200,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_main_img__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/main-img */ "./resources/js/components/main-img.jsx");
 /* harmony import */ var _components_main_search__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/main-search */ "./resources/js/components/main-search.jsx");
 /* harmony import */ var _components_services__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/services */ "./resources/js/components/services.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _database__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../database */ "./resources/js/database/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
 
 
 
+
+
+ //update carrito
 
 
 
@@ -1214,16 +1219,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Home = function Home() {
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_9__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    document.title = 'Inicio';
+    //reset title page
+    document.title = 'Inicio'; //update menu page
+
     var links = document.getElementsByClassName('link');
 
     for (var i = 0; i < links.length; i++) {
       links[i].innerText === 'Inicio' ? links[i].classList.add('link-activo') : links[i].classList.remove('link-activo');
+    } //update carrito
+
+
+    var carrito = JSON.parse(localStorage.getItem('products_carrito'));
+
+    if (carrito !== null) {
+      dispatch((0,_database__WEBPACK_IMPORTED_MODULE_10__.UpdateCart)(carrito));
+      dispatch((0,_database__WEBPACK_IMPORTED_MODULE_10__.UpdateCuantity)(carrito.length));
     }
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_main_img__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_btn_whatsapp__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_main_search__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_credits__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_services__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_contacto__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_asesores__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_main_img__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_btn_whatsapp__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_main_search__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_credits__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_services__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_contacto__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_asesores__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
   });
 };
 
