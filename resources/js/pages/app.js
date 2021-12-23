@@ -13,7 +13,7 @@ const Products = React.lazy(()=> import('./products'));
 const Services = React.lazy(()=> import('./services'));
 const Creditos = React.lazy(()=> import('./credits'));
 const Nosotros = React.lazy(()=> import('./about'));
-
+const Pay = React.lazy(()=>import('./pay'));
 
 //data redux
 import {Provider} from 'react-redux';
@@ -22,7 +22,6 @@ import Spinner from '../components/spinner';
 import Filtro_llantas_mobile_tienda from '../components/mobile-filtro-llantas-tienda';
 import Screen_carrito from '../components/carrito-screen-mobile';
 import Detail_render from '../components/screen-see-details';
-import Pay from './pay';
 
 
 

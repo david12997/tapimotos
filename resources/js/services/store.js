@@ -16,8 +16,8 @@ import Get_nosotros from "./get-nosotros";
 import Search_all_products from "./search-all";
 
 //DOMAIN
-//export const Domain = 'https://tapimotosdk.com/';
-export const Domain = 'http://127.0.0.1:8000/';
+export const Domain = 'https://tapimotosdk.com/';
+//export const Domain = 'http://127.0.0.1:8000/';
 
 
 
