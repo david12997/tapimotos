@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { DataProducts } from "../services/store";
+
+import { useDispatch } from "react-redux";
+import { Productos, Categoria, Busqueda } from "../database";
+import { useNavigate } from "react-router-dom";
 
 const Buscador = styled.div`
 
@@ -31,14 +36,37 @@ const Buscador = styled.div`
 
 const Buscador_render = ()=>{
 
+    const input_value = useRef(null);
+    const dispatch = useDispatch();
+    const navegar = useNavigate();
+
+    let Search = (e,data)=>{
+
+        e.preventDefault();
+        if(data.current.value === '') return 0;
+
+        dispatch(Categoria({name:'Busqueda',type:'buscar'}));
+        dispatch(Productos(null));
+        navegar('/productos/busqueda');
+        DataProducts().Products.SearchAll(data.current.value).then(response=>{
+
+            dispatch(Productos(response));
+            dispatch(Busqueda(true))
+
+        });
+
+        data.current.value = "";
+    }
 
     return(
 
         <Buscador>
-            <input className="input-search" type='text' placeholder="Buscar producto"></input>
-            <button className="btn btn-secondary btn-search">
-                <FontAwesomeIcon icon={faSearch} />
-            </button>
+            <form style={{width:'100%',height:'100%'}} className="d-flex justify-content-center align-items-center" onSubmit={(e)=>Search(e,input_value)}>
+                <input ref={input_value} className="input-search" type='text' placeholder="Buscar producto"></input>
+                <button type="submit" className="btn btn-secondary btn-search">
+                    <FontAwesomeIcon icon={faSearch} />
+                </button>
+            </form>
         </Buscador>
     )
 }

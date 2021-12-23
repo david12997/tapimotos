@@ -8,12 +8,16 @@ import {  faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 import {  useDispatch } from "react-redux";
 import { UpdateCart, UpdateCuantity } from "../database";
+import { UpdateProduct } from "../database";
+import { UpdateProductsBuy,UpdateTypeBuy } from "../database";
+
+import { useNavigate } from "react-router-dom";
 
 
 const Card_element = styled.div`
 
     width:300px;
-    height:450px;
+    height:460px;
     margin:5px;
     background:white;
     box-shadow:0px 0px 4px rgba(0,0,0,0.4);
@@ -113,7 +117,7 @@ const Card_element = styled.div`
     .ver-detalle{
 
         width:100%;
-        height:30px;
+        height:40px;
         display:flex;
         justify-content:center;
         align-items:center;
@@ -125,65 +129,64 @@ const Card_element = styled.div`
 
 `;
 
-const Card_render = ({img,name,price}) =>{
+const Card_render = ({img,name,price, all_data}) =>{
 
 
     const [cuantity, setCuantity ] = useState(1);
-    const [añadido,setAñadido] = useState(0)
     const dispatch = useDispatch();
     const btn_carrito = useRef(null);
+    const navegar = useNavigate();
+
+    let añadido = 0;
 
 
 
     const UpdateCarrito_component = (btn) =>{
 
-        console.log(btn.style.color);
-        //falta arreglar el btn card producto añadir al carrito cuandos se elimina ese mismo producto desde el carrito
+        if(btn.style.color==='gray') añadido = 0;
+        else añadido = 1;
 
-        if(btn.style.color === 'gray'){
-            setAñadido(0);
-        }else{
-            setAñadido(1);
-        }
-
-        console.log(añadido);
 
         let current_cart = JSON.parse(localStorage.getItem('products_carrito'));
-
         if(current_cart === null){
 
-            setAñadido(1);
+            añadido = 1;
             dispatch(UpdateCart([{name:name,img:img,price:price}]));
             dispatch(UpdateCuantity(1));
+            btn.style.color='rgb(0,150,210)';
 
 
         }else{
 
             if(añadido === 1){
 
+                let current_cart = JSON.parse(localStorage.getItem('products_carrito'));
                 for(let i =0; i<current_cart.length;i++){
 
-                    if(current_cart[i].name === name) {
+                    if(current_cart[i].name.trim() === name.trim()) {
 
-                        setAñadido(0);
+                        añadido=0;
                         current_cart.splice(i,1);
+
                         dispatch(UpdateCart(current_cart));
                         dispatch(UpdateCuantity(current_cart.length));
+
+                        btn.style.color='gray';
                     }
                 }
 
             }else{
 
-                setAñadido(1);
+                añadido = 1;
                 current_cart.push({name:name,img:img,price:price});
+
                 dispatch(UpdateCart(current_cart));
                 dispatch(UpdateCuantity(current_cart.length));
 
+                btn.style.color='rgb(0,150,210)';
+
             }
-
         }
-
-        añadido === 0 ?  btn.style.color='rgb(0,150,210)' : btn.style.color='gray';
 
     }
 
@@ -208,6 +211,21 @@ const Card_render = ({img,name,price}) =>{
         window.location.href=`https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+el+producto+${name}+de+la+pagina+tapimotosdk.com`;
     }
 
+    let OpenDetails = ()=>{
+
+        dispatch(UpdateProduct(all_data));
+        $('.screen-see-details').css('display','block');
+        $('.screen-see-details').css('animation-name','open-details')
+    }
+
+    let ComprarProducto = (cuantity)=>{
+
+        dispatch(UpdateProductsBuy([{product_data:all_data,cuantity:cuantity}]));
+        dispatch(UpdateTypeBuy('Individual'));
+        navegar('/pagar');
+
+    }
+
     useEffect(()=>{
 
         let current_cart = JSON.parse(localStorage.getItem('products_carrito'));
@@ -216,12 +234,11 @@ const Card_render = ({img,name,price}) =>{
 
             for(let i =0; i<current_cart.length;i++){
 
-                if(current_cart[i].name === name) {
+                if(current_cart[i].name.trim() === name.trim()) {
 
-                    setAñadido(1);
+                    añadido = 1;
+                    btn_carrito.current.style.color='rgb(0,150,210)';
 
-                    añadido === 0 ?  btn_carrito.current.style.color='rgb(0,150,210)'
-                    : btn_carrito.current.style.color='gray';
 
                 }
             }
@@ -264,11 +281,11 @@ const Card_render = ({img,name,price}) =>{
                 </div>
 
             </div>
-            <div className="container-btn-comprar">
+            <div className="container-btn-comprar" onClick={()=>ComprarProducto(cuantity)}>
                 <Btn1_render width="90%" height="80%" title="Comprar" color="rgb(255,137,12)"></Btn1_render>
 
             </div>
-            <div className="ver-detalle">
+            <div className="ver-detalle" onClick={()=>OpenDetails()}>
                 <p style={{paddingTop:'15px'}}><b>Ver detalles</b></p>
             </div>
         </Card_element>

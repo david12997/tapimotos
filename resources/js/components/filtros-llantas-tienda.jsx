@@ -57,14 +57,6 @@ const Filtro_llantas_tienda = ()=>{
 
         if(value !== 'Marca de la llanta' && value!== 'Cargando resultados...'){
 
-            dispatch(Filtros([
-                {type:'Marca ',value:value},
-                {type:'Ancho ',value:'--'},
-                {type:'Perfil  ',value:'--'},
-                {type:'N° rin ',value:'--'}
-
-            ]));
-
             DataHome().search_llantas.llantas_for_marca(value).then(data=>{
 
                 (data[0].length === 0) ? set_llantasForMarca(['Sin resultados'])  :set_llantasForMarca(data[0]);
@@ -90,13 +82,6 @@ const Filtro_llantas_tienda = ()=>{
 
         if(ancho !== 'Ancho de la llanta' && ancho !== 'Sin resultados'  && ancho !== 'Cargando resultados...'){
 
-            dispatch(Filtros([
-                {type:'Marca ',value:marca},
-                {type:'Ancho ',value:ancho},
-                {type:'Perfil  ',value:'--'},
-                {type:'N° rin ',value:'--'}
-
-            ]));
 
             DataHome().search_llantas.llantas_for_marcaAncho(marca,ancho).then(data=>{
 
@@ -122,20 +107,13 @@ const Filtro_llantas_tienda = ()=>{
 
         if(perfil !== 'Perfil de la llanta' && perfil !== 'Sin resultados'  && perfil !== 'Cargando resultados...'){
 
-            dispatch(Filtros([
-                {type:'Marca ',value:marca},
-                {type:'Ancho ',value:ancho},
-                {type:'Perfil  ',value:perfil},
-                {type:'N° rin ',value:'--'}
-
-            ]));
-
             DataHome().search_llantas.llantas_for_marcaAnchoPerfil(marca,ancho,perfil).then(data=>{
 
                 (data[0].length === 0) ? setLlantasMarcaAnchoPerfil(['Sin resultados'])  :setLlantasMarcaAnchoPerfil(data[0]);
                 setCargandoRin('Numero de rin');
 
             })
+
         }else{
 
             setCargandoRin('Numero de rin');

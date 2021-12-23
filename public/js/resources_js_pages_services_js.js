@@ -107,7 +107,7 @@ var Conteindo_services = function Conteindo_services() {
                 },
                 className: "card-text"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                href: "#",
+                href: service.link,
                 className: "btn btn-secondary btn-block text-white",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
                   children: "Ver m\xE1s"

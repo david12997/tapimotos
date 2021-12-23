@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,7 +6,9 @@ import {  faAngleRight ,faTrash} from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from "react-redux";
 
 import {  useDispatch } from "react-redux";
-import { UpdateCart, UpdateCuantity } from "../database";
+import { UpdateCart, UpdateCuantity, UpdateProductsBuy, UpdateTypeBuy } from "../database";
+import Btn1_render from "./btn1";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -127,12 +129,29 @@ const CartLleno = ({name,price,img}) =>{
 
     }
 
+    const [cuantity, setCuantity] =  useState(1);
+
+    const LessCuantity = (max)=>{
+
+        if(cuantity > 1) setCuantity(cuantity-1);
+        if(cuantity === 1) setCuantity(max);
+
+
+    }
+
+    const MoreCuantity = (max)=>{
+
+
+        if(cuantity === max) setCuantity(1);
+        if(cuantity < max) setCuantity(cuantity+1);
+
+    }
     return(
 
         <div style={{width:'100%',height:'130px',borderTop:'1px solid rgba(0,0,0,0.3)',borderBottom:'1px solid rgba(0,0,0,0.3)'}} className="d-flex justify-content-center align-items-center product-carrito">
 
             <div style={{width:'30%',height:'100%'}} className="imagen-producto d-flex justify-content-center align-items-center">
-                <img style={{height:'100%'}} src={img}></img>
+                <img style={{height:'80%'}} src={img}></img>
             </div>
 
 
@@ -147,18 +166,23 @@ const CartLleno = ({name,price,img}) =>{
                 </div>
 
                 <div style={{width:'100%',height:'30%',position:'relative'}} className="controles-producto d-flex justify-content-center align-items-center">
-                    <div style={{fontSize:'16px'}} className="btn btn-danger">
+
+
+                    <div onClick={()=>LessCuantity(4)} style={{fontSize:'16px'}} className="btn btn-danger">
                         <b>-</b>
                     </div>
 
-                    <input style={{width:'30px',height:'40px',marginLeft:'6px',marginRight:'6px'}} type="text" value="1" readOnly></input>
+                    <input className="cuantity-product-carrito" style={{width:'30px',height:'40px',marginLeft:'6px',marginRight:'6px'}} type="text" value={cuantity} readOnly></input>
 
-                    <div style={{fontSize:'16px'}} className="btn btn-success">
+                    <div onClick={()=>MoreCuantity(4)}  style={{fontSize:'16px'}} className="btn btn-success">
                         <b>+</b>
                     </div>
+
+
                     <div style={{position:'absolute',fontSize:'12px',color:'gray',marginLeft:'-72%'}} className="cantidad-title">
                        <b>cantidad</b>
                     </div>
+
                     <div onClick={()=>DeleteOfCart(name)} style={{position:'absolute',fontSize:'25px',color:'red',marginLeft:'79%'}} className="eliminar">
                         <FontAwesomeIcon icon={faTrash}/>
                     </div>
@@ -175,11 +199,15 @@ const CartLleno = ({name,price,img}) =>{
 
 const Screen_carrito = ()=>{
 
+    let dispatch = useDispatch();
+    let navegar = useNavigate();
+
     const stateCarrito = {
 
         productos:useSelector(state=>state.carrito.productos),
         cantidad:useSelector(state=>state.carrito.cantidad)
-    }
+    };
+
 
     const CloseScreenCarrito = ()=>{
 
@@ -190,6 +218,35 @@ const Screen_carrito = ()=>{
 
 
     }
+
+    const ComprarCarrito = ()=>{
+
+        let data_pay_carrito = [];
+
+        for(let i=0; i < stateCarrito.productos.length;i++){
+
+            data_pay_carrito.push({
+
+                product_data:stateCarrito.productos[i],
+                cuantity:$('.cuantity-product-carrito')[i].value
+            })
+        }
+
+        dispatch(UpdateProductsBuy(data_pay_carrito));
+        dispatch(UpdateTypeBuy('Carrito'));
+
+        $('.screen-carrito-mobile').css('animation-name','close-carrito');
+
+        setTimeout(()=>{
+            $('.screen-carrito-mobile').css('display','none');
+        },900);
+
+        navegar('/pagar');
+
+
+    }
+
+
 
     return(
 
@@ -211,6 +268,26 @@ const Screen_carrito = ()=>{
 
                 }
             </div>
+            <br></br>
+
+            {
+
+                stateCarrito.productos !== null &&
+                stateCarrito.productos.length !== undefined &&
+                stateCarrito.productos.length !== null &&
+                stateCarrito.productos.length !== 0 &&
+                <div  style={{width:'100%',fontSize:'18px'}}>
+                    <div style={{width:'100%'}} onClick={()=>ComprarCarrito()}>
+                        <Btn1_render  width="100%" height="60px" title="Comprar ahora" color="rgb(0,150,210)"></Btn1_render>
+                    </div>
+                    <p style={{width:'100%',margin:'5px',color:'gray'}} className="d-flex justify-content-center align-items-center">
+                        <b>ó</b>
+                    </p>
+                    <p style={{width:'100%',color:"green"}} className="d-flex justify-content-center align-items-center">
+                        <b>¡Comprar en whatsapp!</b>
+                    </p>
+                </div>
+            }
 
 
         </Carrito_mobile>

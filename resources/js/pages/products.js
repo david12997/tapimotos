@@ -16,10 +16,7 @@ import Body_tienda from '../components/body-tienda';
 
 
 
-//FALTA ARREGLAR PARA QUE SOLO ACEPTE CATEGORIAS EXISTENTES EN LA RUTA
-//falta aarrelgar los filtros de busqueda
-//falta integrar barra de busqueda input
-//falta hacer funcionable el carrito
+
 //falta terminar funcionamiento del card
 //falta vista del producto y  proceso de pago
 
@@ -32,10 +29,6 @@ export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,pag
     not_null !== 'not null'  && dispatch(Productos(null));
 
     if(category==='busqueda' && not_null === 'not null'){
-
-
-        console.log( 'filtros: ',filtros);
-        console.log('category: ',category_store);
 
         if(category_store.type === 'llantas'){
 
@@ -54,8 +47,6 @@ export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,pag
 
         dispatch(Busqueda(false));
     }
-
-
 
     if(category === 'llantas'){
 

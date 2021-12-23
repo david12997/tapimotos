@@ -5,6 +5,7 @@ import Spinner from './spinner';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFilter } from '@fortawesome/free-solid-svg-icons';
+
 import Filtro_llantas_tienda from './filtros-llantas-tienda';
 import { UpdateStateTienda } from '../pages/products';
 import { useDispatch } from "react-redux";
@@ -158,11 +159,65 @@ const Body_tienda = ({data_state})=>{
 
         let Products = []
 
-        data_state.Productos[2].data.map((llantas,indice)=>Products.push({name:llantas.nombre_llanta,img:llantas.img,price:llantas.precio_llanta}));
-        data_state.Productos[1].map((casco,indice)=>Products.push({name:casco.name,img:"/images/casco.png",price:casco.regular_price}));
-        data_state.Productos[0].map((aceite,indice)=>Products.push({name:aceite.name,img:"/images/aceite.png",price:aceite.regular_price}));
+        data_state.Productos[2].data.map((llantas,indice)=>Products.push({
+            name:llantas.nombre_llanta,
+            img:llantas.img,
+            price:llantas.precio_llanta,
+            all:llantas,
+            category:'Llantas'})
+        );
+
+        data_state.Productos[1].map((casco,indice)=>Products.push({
+            name:casco.name,
+            img:(casco.images.length !==0) ? casco.images[0].src :'/images/casco.png',
+            price:casco.regular_price,
+            all:casco,
+            category:'Cascos'})
+        );
+
+        data_state.Productos[0].map((aceite,indice)=>Products.push({
+            name:aceite.name,
+            img:(aceite.images.length !==0) ? aceite.images[0].src :'/images/aceite.png',
+            price:aceite.regular_price,
+            all:aceite,
+            category:'Aceites'})
+        );
 
        return Products.sort((a,b)=>(a.price<b.price) &&  Math.random()-0.5);
+    }
+
+    const AllProductsSearch = () =>{
+
+        let Products = [];
+
+        if( data_state.Productos[0] !== undefined && data_state.Productos[0].length !== 0){
+
+            data_state.Productos[0].map((aceite,indice)=>Products.push({
+                name:aceite.name,
+                img:(aceite.images.length !==0) ? aceite.images[0].src :'/images/aceite.png',
+                price:aceite.regular_price,
+                all:aceite,
+                category:'Aceites'})
+            );
+        }
+
+        if(data_state.Productos[1] !== undefined && data_state.Productos[1].length !== 0){
+
+            data_state.Productos[1].map((casco,indice)=>Products.push({
+                name:casco.name,
+                img:(casco.images.length !==0) ? casco.images[0].src :'/images/casco.png',
+                price:casco.regular_price,
+                all:casco,
+                category:'Cascos'})
+            );
+        }
+
+        if(data_state.Productos[2] !== undefined && data_state.Productos[2].length !== 0){
+
+            data_state.Productos[2].map((llantas,indice)=>Products.push({name:llantas.nombre_llanta,img:llantas.img,price:llantas.precio_llanta,all:llantas,category:'Llantas'}));
+        }
+
+        return Products.sort((a,b)=>(a.price<b.price) &&  Math.random()-0.5);
     }
 
 
@@ -270,23 +325,27 @@ const Body_tienda = ({data_state})=>{
                     :
                     (data_state.Categoria.name === 'Todo')
                     ?
-                    AllProducts().map((product,indice)=><Card_render key={indice} img={product.img} name={product.name} price={product.price}/>)
+                    AllProducts().map((product,indice)=><Card_render all_data={product} key={indice} img={product.img} name={product.name} price={product.price}/>)
                     :
                     (data_state.Categoria.name === 'Llantas')
                     ?
-                    data_state.Productos[0].products.map((llantas,indice)=><Card_render key={indice} img={llantas.img} name={llantas.nombre_llanta} price={llantas.precio_llanta}/>)
+                    data_state.Productos[0].products.map((llantas,indice)=><Card_render all_data={{all:llantas,category:'Llantas',img:llantas.img,name:llantas.nombre_llanta,price:llantas.precio_llanta}} key={indice} img={llantas.img} name={llantas.nombre_llanta} price={llantas.precio_llanta}/>)
                     :
                     (data_state.Categoria.name === 'Cascos')
                     ?
-                    data_state.Productos[0].map((casco,index)=><Card_render key={index} img="/images/casco.png" name={casco.name} price={casco.regular_price}/>)
+                    data_state.Productos[0].map((casco,index)=><Card_render all_data={casco} key={index} img="/images/casco.png" name={casco.name} price={casco.regular_price}/>)
                     :
                     (data_state.Categoria.name === 'Aceites')
                     ?
-                    data_state.Productos[0].map((aceite,index)=><Card_render key={index} img="/images/aceite.png" name={aceite.name} price={aceite.regular_price}/>)
+                    data_state.Productos[0].map((aceite,index)=><Card_render all_data={aceite} key={index} img="/images/aceite.png" name={aceite.name} price={aceite.regular_price}/>)
                     :
-                    (data_state.Categoria.name === 'Busqueda')
+                    (data_state.Categoria.name === 'Busqueda') && (data_state.Categoria.type !== 'buscar')
                     ?
-                    data_state.Productos.map((product,index)=><Card_render key={index} img={product.img} name={product.nombre_llanta} price={product.precio_llanta}/>)
+                    data_state.Productos.map((product,index)=><Card_render all_data={{all:product,category:'Llantas',img:product.img,name:product.nombre_llanta,price:product.precio_llanta}} key={index} img={product.img} name={product.nombre_llanta} price={product.precio_llanta}/>)
+                    :
+                    (data_state.Categoria.name === 'Busqueda') && (data_state.Categoria.type === 'buscar')
+                    ?
+                    AllProductsSearch().map((product,indice)=><Card_render all_data={product} key={indice} img={product.img} name={product.name} price={product.price}/>)
                     :
                     <div>Ups, categoria erronea.</div>
                 }

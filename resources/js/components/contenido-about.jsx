@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import Asesores_render from "./asesores";
 import Contacto_render from "./contacto";
 
 
@@ -155,6 +156,9 @@ const Contenido_aobut_render = ()=>{
             </div>
 
             <Contacto_render></Contacto_render>
+            <br></br>
+            <hr></hr>
+            <Asesores_render></Asesores_render>
 
         </Contenido_about>
     )

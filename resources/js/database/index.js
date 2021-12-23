@@ -78,8 +78,52 @@ const CarritoSlice = createSlice({
     }
 })
 
+
+
+const VistaProductoSlice = createSlice({
+
+    name:'vista_producto',
+    initialState:{
+        producto:null
+    },
+    reducers:{
+
+        UpdateProduct:(state,action)=>{
+
+            state.producto = action.payload;
+        }
+    }
+})
+
+
+
+const DataBuy = createSlice({
+
+    name:'comprar',
+    initialState:{
+
+        productos:null,
+        type:null
+    },
+    reducers:{
+
+        UpdateProductsBuy:(state,action)=>{
+
+            state.productos = action.payload;
+        },
+
+        UpdateTypeBuy:(state,action)=>{
+
+            state.type = action.payload;
+        }
+    }
+})
+
+
 export const  {Productos,Paginacion,Filtros,Categoria,Busqueda} = TiendaSlice.actions;
 export const { UpdateCart, UpdateCuantity} = CarritoSlice.actions;
+export const { UpdateProduct } =  VistaProductoSlice.actions;
+export const { UpdateProductsBuy, UpdateTypeBuy} =  DataBuy.actions;
 
 
 
@@ -90,6 +134,8 @@ export const database_store = configureStore({
     reducer:{
 
         tienda:TiendaSlice.reducer,
-        carrito:CarritoSlice.reducer
+        carrito:CarritoSlice.reducer,
+        vista_producto:VistaProductoSlice.reducer,
+        comprar:DataBuy.reducer
     }
 })

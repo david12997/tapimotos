@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\RedirectResponse;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,13 @@ Route::get('/nosotros', function () {
     return view('about');
 });
 
+Route::get('/pagar', function () {
+    return view('pay');
+});
+
+Route::get('/pagos/{status}', function ($status) {
+    dd($status);
+});
 
 
 

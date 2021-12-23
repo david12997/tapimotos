@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\LlantasTapimoto;
 use App\Http\Requests\StoreLlantasTapimotoRequest;
 use App\Http\Requests\UpdateLlantasTapimotoRequest;
+use Illuminate\Support\Facades\DB;
 
 class LlantasTapimotoController extends Controller
 {
@@ -134,5 +135,12 @@ class LlantasTapimotoController extends Controller
 
         return \response($llantas);
 
+    }
+
+    public function Search_all($data){
+
+        $llantas1 = DB::table('llantas_tapimotos')->where('nombre_llanta','LIKE',"%$data%")->orWhere('marca_llanta','LIKE',"%$data%")->get();
+
+        return \response($llantas1);
     }
 }

@@ -13,6 +13,7 @@ import Get_all_products from "./get-all-products";
 import Get_llantas_for_marcaAnchoPerfil from "./get-llanta-marca-ancho-perfil";
 import Get_llantas_for_marcaAnchoPerfilRin from "./get-llanta-marca-ancho-perfil-rin";
 import Get_nosotros from "./get-nosotros";
+import Search_all_products from "./search-all";
 
 //DOMAIN
 //export const Domain = 'https://tapimotosdk.com/';
@@ -81,7 +82,9 @@ const DataProducts = () =>{
 
             getServices:()=>Get_services().then(data =>data),
 
-            getCredits:()=>Get_credits().then(data =>data)
+            getCredits:()=>Get_credits().then(data =>data),
+
+            SearchAll:(data)=>Search_all_products(data)
 
 
         }

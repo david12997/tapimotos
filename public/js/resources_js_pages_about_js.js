@@ -1,6 +1,170 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_pages_about_js"],{
 
+/***/ "./resources/js/components/asesor.jsx":
+/*!********************************************!*\
+  !*** ./resources/js/components/asesor.jsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.es.js");
+/* harmony import */ var _btn1__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./btn1 */ "./resources/js/components/btn1.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+
+
+var Asesor = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:330px;\n    height:200px;\n    display:grid;\n    grid-template-columns: 1fr 1fr;\n    grid-template-rows: 2fr 1fr;\n    grid-template-areas:\n        \"imagen  datos\"\n        \"btn     btn  \";\n    grid-gap:10px;\n\n\n    .imagen{\n\n        grid-column-start: imagen;\n        grid-column-end: imagen;\n        grid-row-start:imagen;\n        grid-row-end:imagen;\n\n\n    }\n\n    .datos{\n\n        grid-column-start: datos;\n        grid-column-end: datos;\n        grid-row-start:datos;\n        grid-row-end:datos;\n\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        flex-wrap:wrap;\n        color:gray;\n    }\n\n    .dato{\n\n        width:90%;\n        height:30%;\n        margin-top:3px;\n        font-size:16px;\n\n\n    }\n\n    .btn-asesor{\n\n        grid-column-start: btn;\n        grid-column-end: btn;\n        grid-row-start:btn;\n        grid-row-end:btn;\n\n\n    }\n\n"])));
+
+var Asesor_render = function Asesor_render(_ref) {
+  var img = _ref.img,
+      asesor = _ref.asesor,
+      number = _ref.number,
+      email = _ref.email,
+      link = _ref.link;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Asesor, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "imagen",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+        style: {
+          width: '90%'
+        },
+        src: img
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "datos",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "dato",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+          children: asesor
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "dato",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__.FontAwesomeIcon, {
+          icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faWhatsapp
+        }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("b", {
+          children: [" ", number]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "dato",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+          children: email
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "btn-asesor",
+      onClick: function onClick() {
+        return window.location.href = link;
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_btn1__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        color: "rgb(233,128,8)",
+        width: "330px",
+        height: "47px",
+        title: "Contactar"
+      })
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Asesor_render);
+
+/***/ }),
+
+/***/ "./resources/js/components/asesores.jsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/asesores.jsx ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _asesor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./asesor */ "./resources/js/components/asesor.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+
+
+
+
+
+var Asesores = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    display:flex;\n    justify-content:space-around;\n    flex-wrap:wrap;\n    margin-top:100px;\n\n    .asesores{\n\n       margin-top:50px;\n\n    }\n\n    .main-title{\n\n        margin-top:50px;\n        width:100%;\n        height:50px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        font-size:17px;\n\n\n    }\n\n    @media(min-width:800px){\n\n        .asesores{\n\n            margin:70px;\n        }\n\n        .main-title{\n\n            font-size:18px;\n        }\n    }\n\n"])));
+
+var Asesores_render = function Asesores_render() {
+  var data = [{
+    'img': './images/asesor.png',
+    'asesor': 'Asesor1',
+    'number': '3208168103',
+    'email': 'asesor1@tapimotosdk.com',
+    'link': 'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
+  }, {
+    'img': './images/asesor.png',
+    'asesor': 'Asesor2',
+    'number': '3118928239',
+    'email': 'asesor2@tapimotosdk.com',
+    'link': 'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
+  }, {
+    'img': './images/asesor.png',
+    'asesor': 'Asesor3',
+    'number': '3208168103',
+    'email': 'asesor3@tapimotosdk.com',
+    'link': 'https://api.whatsapp.com/send/?phone=573208168103&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
+  }, {
+    'img': './images/asesor.png',
+    'asesor': 'Asesor4',
+    'number': '3118928239',
+    'email': 'asesor4@tapimotosdk.com',
+    'link': 'https://api.whatsapp.com/send/?phone=573118928239&text=Hola%21+estoy+interesad%40+en+los+productos+de+la+pagina+tapimotosdk.com'
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    style: {
+      width: '100%'
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Asesores, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "main-title",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+          children: "\xBFNECESITAS AYUDA?"
+        })
+      }), data.map(function (dato, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "asesores",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_asesor__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            img: dato.img,
+            asesor: dato.asesor,
+            number: dato.number,
+            email: dato.email,
+            link: dato.link
+          })
+        }, index);
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {})]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Asesores_render);
+
+/***/ }),
+
 /***/ "./resources/js/components/contacto.jsx":
 /*!**********************************************!*\
   !*** ./resources/js/components/contacto.jsx ***!
@@ -113,9 +277,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var _contacto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contacto */ "./resources/js/components/contacto.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _asesores__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./asesores */ "./resources/js/components/asesores.jsx");
+/* harmony import */ var _contacto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contacto */ "./resources/js/components/contacto.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject;
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
@@ -125,106 +290,107 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Contenido_about = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n\n    .title-nosotros{\n\n        margin-top:35px;\n        width:100%;\n        height:50px;\n        display:flex;\n        justify-content:center;\n        align-item:center;\n        font-size:20px;\n        font-weigt:bold;\n    }\n\n    .contenido1{\n\n        width:100%;\n        padding:10px;\n    }\n\n    .text1{\n\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        color:gray;\n        font-size:18px;\n        font-weight:bold;\n        padding:18px;\n\n    }\n\n    .galeria{\n        margin-top:9px;\n        width:100%;\n\n        display:flex;\n        justify-content:space-around;\n        align-items:center;\n        flex-wrap:wrap;\n\n\n\n    .container-img{\n\n        width:300px;\n        height:400px;\n        margin:30px;\n        border-radius:10px;\n    }\n\n    .texto{\n        margin:5px;\n        color:gray;\n        font-weight:bold;\n    }\n\n    img{\n        width:100%;\n        height:180px;\n    }\n\n\n\n"])));
+
+var Contenido_about = styled_components__WEBPACK_IMPORTED_MODULE_4__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n\n    .title-nosotros{\n\n        margin-top:35px;\n        width:100%;\n        height:50px;\n        display:flex;\n        justify-content:center;\n        align-item:center;\n        font-size:20px;\n        font-weigt:bold;\n    }\n\n    .contenido1{\n\n        width:100%;\n        padding:10px;\n    }\n\n    .text1{\n\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        color:gray;\n        font-size:18px;\n        font-weight:bold;\n        padding:18px;\n\n    }\n\n    .galeria{\n        margin-top:9px;\n        width:100%;\n\n        display:flex;\n        justify-content:space-around;\n        align-items:center;\n        flex-wrap:wrap;\n\n\n\n    .container-img{\n\n        width:300px;\n        height:400px;\n        margin:30px;\n        border-radius:10px;\n    }\n\n    .texto{\n        margin:5px;\n        color:gray;\n        font-weight:bold;\n    }\n\n    img{\n        width:100%;\n        height:180px;\n    }\n\n\n\n"])));
 
 var Contenido_aobut_render = function Contenido_aobut_render() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Contenido_about, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(Contenido_about, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "title-nosotros",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
         children: "Nosotros"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "contenido1",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "text1",
         children: "Tapimotos es una distribuidora de llantas, accesorios y respuestos para tu moto, todos nuestros productos estan garantizados, nos enfocamos en presentar productos de la mas alta calidad, contamos con  el mejor equipo para atender tus dudas y darte el mejor servicio ...."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "galeria",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "container-img",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "https://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-4.jpg"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "texto",
             children: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo quam, commodo nec sagittis ac, blandit sed neque. Donec erat lectus, sollicitudin feugiat lorem ut,"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "btn btn-secondary mt-3 btn-block",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
               children: "Ver m\xE1s..."
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "container-img",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "https://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-3.jpg"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "texto",
             children: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo quam, commodo nec sagittis ac, blandit sed neque. Donec erat lectus, sollicitudin feugiat lorem ut,"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "btn btn-secondary mt-3 btn-block",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
               children: "Ver m\xE1s..."
             })
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "container-img",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "https://tapimotosdk.com/blog/wp-content/uploads/2021/11/nosotros-tapi-5.jpg"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "texto",
             children: " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo quam, commodo nec sagittis ac, blandit sed neque. Donec erat lectus, sollicitudin feugiat lorem ut,"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             className: "btn btn-secondary mt-3 btn-block",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
               children: "Ver m\xE1s..."
             })
           })]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "title-nosotros",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
         children: "Nuestras instalaciones"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       style: {
         width: '100%'
       },
       className: "instalaciones d-flex justify-content-around align-items-center flex-wrap",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         style: {
           width: '300px',
           margin: '15px'
         },
         className: "videos ",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("video", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("video", {
           style: {
             width: '100%'
           },
           controls: true,
           src: "https://tapimotosdk.com/video/video-api-2.mp4"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         style: {
           width: '300px',
           margin: '15px'
         },
         className: "videos ",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("video", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("video", {
           style: {
             width: '100%'
           },
           controls: true,
           src: "https://tapimotosdk.com/video/video-tapi-1.mp4"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         style: {
           width: '300px',
           margin: '15px'
         },
         className: "videos ",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("video", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("video", {
           style: {
             width: '100%'
           },
@@ -232,7 +398,7 @@ var Contenido_aobut_render = function Contenido_aobut_render() {
           src: "https://tapimotosdk.com/video/video-tapi-3.mp4"
         })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_contacto__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_contacto__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_asesores__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
   });
 };
 

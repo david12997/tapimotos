@@ -12,8 +12,8 @@ const Btn1 = styled.div`
 
     .btn1{
 
-        width:100%;
-        height:90%;
+        width:99%;
+        height:89%;
         boder-radius:10px;
         background:${prop=>prop.color};
         display:flex;
@@ -24,6 +24,17 @@ const Btn1 = styled.div`
         box-shadow:2px 2px 6px rgba(0,0,0,0.4);
         font-size:17px;
         cursor:pointer;
+    }
+
+    .btn1:hover{
+
+        width:100%;
+        height:91%;
+    }
+
+    .btn1:active{
+        width:98%;
+        height:88%;
     }
 
 

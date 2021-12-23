@@ -66,7 +66,7 @@ const Conteindo_services = ()=>{
                                 <div className="card-body">
                                     <h5 className="card-title"><b>{service.title}</b></h5>
                                     <p style={{height:'150px',overflow:'hidden',color:'gray',fontWeight:'bold'}} dangerouslySetInnerHTML={{ __html: service.content }} className="card-text"/>
-                                    <a href="#" className="btn btn-secondary btn-block text-white"><b>Ver más</b></a>
+                                    <a href={service.link} className="btn btn-secondary btn-block text-white"><b>Ver más</b></a>
                                 </div>
                             </div>
                         </div>
