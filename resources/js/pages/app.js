@@ -15,7 +15,7 @@ const Creditos = React.lazy(()=> import('./credits'));
 const Nosotros = React.lazy(()=> import('./about'));
 const Pay = React.lazy(()=>import('./pay'));
 
-//data redux
+//data reduxs
 import {Provider} from 'react-redux';
 import {  database_store } from '../database';
 import Spinner from '../components/spinner';
