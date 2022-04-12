@@ -27,7 +27,6 @@ export const Domain = 'https://tapimotosdk.com/';
 //export const Domain = 'http://127.0.0.1:8000/';
 
 
-
 const DataHome = () =>{
 
 

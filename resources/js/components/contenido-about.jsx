@@ -16,9 +16,9 @@ const Contenido_about = styled.div`
         height:50px;
         display:flex;
         justify-content:center;
-        align-item:center;
+        align-items:center;
         font-size:20px;
-        font-weigt:bold;
+        font-weight:bold;
     }
 
     .contenido1{
@@ -70,7 +70,7 @@ const Contenido_about = styled.div`
     }
 
 
-
+    }
 `;
 
 

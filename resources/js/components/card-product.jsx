@@ -166,7 +166,6 @@ const Card_render = ({img,name,price, all_data}) =>{
 
     let añadido = 0;
 
-    console.log(all_data)
 
     const UpdateCarrito_component = (btn) =>{
 
