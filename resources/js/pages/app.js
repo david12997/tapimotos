@@ -22,6 +22,7 @@ import Spinner from '../components/spinner';
 import Filtro_llantas_mobile_tienda from '../components/mobile-filtro-llantas-tienda';
 import Screen_carrito from '../components/carrito-screen-mobile';
 import Detail_render from '../components/screen-see-details';
+import Destroy from './destroy';
 
 
 
@@ -52,6 +53,7 @@ function App() {
                         <Route path="/creditos" element={ <Suspense  fallback={<Spinner></Spinner>}> <Creditos></Creditos></Suspense>}> </Route>
                         <Route path="/nosotros" element={ <Suspense  fallback={<Spinner></Spinner>}> <Nosotros></Nosotros></Suspense> }> </Route>
                         <Route path="/pagar" element={ <Suspense  fallback={<Spinner></Spinner>}> <Pay></Pay> </Suspense> }> </Route>
+                        <Route path="/pagos/estado/:status" element={ <Suspense  fallback={<Spinner></Spinner>}><Destroy></Destroy> </Suspense> }> </Route>
 
                     </Routes>
 

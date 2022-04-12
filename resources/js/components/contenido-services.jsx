@@ -30,7 +30,7 @@ const Conteindo_services = ()=>{
 
     useEffect(()=>{
 
-        DataProducts().Products.getServices().then(data=>{
+        DataProducts().Products.getServicesPage().then(data=>{
 
             setServicios(data[0]);
         })

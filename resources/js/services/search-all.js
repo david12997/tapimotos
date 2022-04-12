@@ -13,19 +13,19 @@ const ParseData = (data)=>{
 
 
 
-async function Search_all_products(data){
+async function Search_all_products(data,page_cascos,page_aceites,page_llantas){
 
     const response = [];
 
     try {
 
-        const cascos = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=356&search='+data);
-        (cascos === undefined) ? response.push('Error can not get data') : response.push(ParseData(cascos));
+        //const cascos = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=356&per_page=3&search='+data+page_cascos);
+        //(cascos === undefined) ? response.push('Error can not get data') : response.push(ParseData(cascos));
 
-        const aceites = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=358&search='+data);
-        (aceites === undefined) ? response.push('Error can not get data') : response.push(ParseData(aceites));
+        //const aceites = await Get('https://tapimotosdk.com/blog/wp-json/public-woo/v1/products?category=358&per_page=3&search='+data+page_aceites);
+        //(aceites === undefined) ? response.push('Error can not get data') : response.push(ParseData(aceites));
 
-        const llantas = await Get(Domain +'api/search/all/'+data);
+        const llantas = await Get(Domain +'api/search/all/'+data+page_llantas);
         (llantas === undefined) ? response.push('Error can not get data') : response.push(ParseData(llantas));
 
 

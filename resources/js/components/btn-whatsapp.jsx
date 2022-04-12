@@ -72,7 +72,7 @@ const Btn_whatsapp = () => {
 
                 <div className='container-btn-whatsapp' onClick={()=>redirect()}>
                     <div className='img-whatsapp'>
-                        <img style={{width:'100%'}} src='./images/logo-whatsapp.svg'></img>
+                        <img style={{width:'100%',transform:'rotate(346deg)'}} src='./images/logo-whatsapp.svg'></img>
                     </div>
                     <b>¿Que estas buscando?</b>
 

@@ -21,14 +21,23 @@ import Body_tienda from '../components/body-tienda';
 //falta vista del producto y  proceso de pago
 
 
-export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,page_llantas,not_null) =>{
+export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,page_llantas,data_busqueda) =>{
 
     let filtros = JSON.parse(localStorage.getItem('filtros_state'));
     let category_store = JSON.parse(localStorage.getItem('category'));
 
-    not_null !== 'not null'  && dispatch(Productos(null));
+    dispatch(Productos(null));
 
-    if(category==='busqueda' && not_null === 'not null'){
+    if(category==='busqueda'){
+
+        if(category_store.type === 'buscar' && data_busqueda !== undefined){
+
+            DataProducts().Products.SearchAll(data_busqueda,`&page=${page_cascos}`,`&page=${page_aceites}`,`?page=${page_llantas}`).then(response=>{
+
+                dispatch(Productos(response));
+
+            });
+        }
 
         if(category_store.type === 'llantas'){
 
@@ -39,7 +48,14 @@ export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,pag
             });
         }
 
-        dispatch(Paginacion({first_page:1,last_page:50}));
+        if(category_store.type === 'llantas v2'){
+
+            DataHome().search_v2.llantas_ancho_perfil_rin_resultado(filtros[1].value,filtros[2].value,filtros[3].value).then(data=>{
+
+                dispatch( Productos(data[0]));
+
+            });
+        }
         dispatch(Busqueda(true));
         return 0;
 
@@ -154,7 +170,12 @@ const  Products = () => {
 
         document.title='Productos';
         let links = document.getElementsByClassName('link');
-        for(let i=0; i<links.length;i++)(links[i].innerText === 'Productos') ? links[i].classList.add('link-activo'):links[i].classList.remove('link-activo')
+
+        for(let i=0; i<links.length;i++)(links[i].innerText === 'Productos')
+        ?
+        links[i].classList.add('link-activo')
+        :
+        links[i].classList.remove('link-activo')
 
 
         if(category === 'busqueda' && StateTienda.Productos === null){
@@ -164,7 +185,8 @@ const  Products = () => {
 
         }else if(category === 'busqueda'  && StateTienda.Productos !== null){
 
-            UpdateStateTienda(category,dispatch,1,1,1,'not null');
+            let data_busqueda = JSON.parse(localStorage.getItem('category'));
+            UpdateStateTienda(category,dispatch,1,1,1,data_busqueda);
         }else{
 
             UpdateStateTienda(category,dispatch,1,1,1);

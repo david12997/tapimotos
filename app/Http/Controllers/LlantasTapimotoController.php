@@ -139,7 +139,7 @@ class LlantasTapimotoController extends Controller
 
     public function Search_all($data){
 
-        $llantas1 = DB::table('llantas_tapimotos')->where('nombre_llanta','LIKE',"%$data%")->orWhere('marca_llanta','LIKE',"%$data%")->get();
+        $llantas1 = DB::table('llantas_tapimotos')->where('identificador','LIKE',"%$data%")->orWhere('nombre_llanta','LIKE',"%$data%")->orWhere('marca_llanta','LIKE',"%$data%")->paginate(9);
 
         return \response($llantas1);
     }

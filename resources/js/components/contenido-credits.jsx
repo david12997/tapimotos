@@ -30,7 +30,7 @@ const Conteindo_credits = ()=>{
 
     useEffect(()=>{
 
-        DataProducts().Products.getCredits().then(data=>{
+        DataProducts().Products.getCreditsPage().then(data=>{
 
             setCreditos(data[0]);
         })

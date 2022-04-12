@@ -205,7 +205,8 @@ var Btn_whatsapp = function Btn_whatsapp() {
           className: "img-whatsapp",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
             style: {
-              width: '100%'
+              width: '100%',
+              transform: 'rotate(346deg)'
             },
             src: "./images/logo-whatsapp.svg"
           })
@@ -374,7 +375,7 @@ var Creditos_render = function Creditos_render() {
     };
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Creditos, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "title-main d-flex justify-content-center align-items-center",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
         children: "Financiaci\xF3n y Creditos"
@@ -437,7 +438,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Btn_category = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:300px;\n    height:100px;\n    background:", ";\n    border-radius:10px;\n    display:flex;\n    margin-top:25px;\n    cursor:pointer;\n    box-shadow:3px 3px 8px rgba(0,0,0,0.3);\n\n    .textos{\n\n        width:60%;\n        height:100%;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n\n    }\n\n    .img{\n\n        width:40%;\n        height:100%;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n    }\n\n    @media(min-width:800px){\n\n        margin-bottom:18px;\n    }\n\n"])), function (prop) {
+var Btn_category = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:360px;\n    height:100px;\n    background:", ";\n    border-radius:10px;\n    display:flex;\n    margin-top:25px;\n    cursor:pointer;\n    box-shadow:3px 3px 8px rgba(0,0,0,0.3);\n    overflow:hidden ;\n\n    .textos{\n\n        width:60%;\n        height:100%;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n\n    }\n\n    .img{\n\n        width:40%;\n        height:100%;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n    }\n\n    @media(min-width:800px){\n\n        margin-bottom:18px;\n    }\n\n"])), function (prop) {
   return prop.color;
 });
 
@@ -574,15 +575,8 @@ var Main_search = function Main_search() {
     'name': 'LLANTAS',
     'discount': '20% OFF',
     'img': './images/llantas.png'
-  }, {
-    'name': 'CASCOS',
-    'discount': '20% OFF',
-    'img': './images/casco.png'
-  }, {
-    'name': 'ACEITES',
-    'discount': '20% OFF',
-    'img': './images/aceite.png'
-  }];
+  } //{'name':'LLANTAS POR MARCA','discount':'20% OFF','img':'./images/llantas.png'}
+  ];
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(defaultData),
       _useState2 = _slicedToArray(_useState, 2),
@@ -600,10 +594,13 @@ var Main_search = function Main_search() {
       setTypeSearch = _useState6[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    /*
     //defaultData must be equal to data[0] at  DataHome().main_search.response()
-    (0,_services_store__WEBPACK_IMPORTED_MODULE_6__.DataHome)().main_search.response().then(function (data) {
-      data[0] !== 'Error can not get data' && setCategories(data[0]);
-    });
+    DataHome().main_search.response().then(data =>{
+         console.log(data[0][0]);
+        //(data[0] !== 'Error can not get data') && setCategories(data[0])
+        (data[0] !== 'Error can not get data') && setCategories([data[0][0]])
+     });*/
     return function () {
       setCategories(defaultData);
     };
@@ -624,11 +621,16 @@ var Main_search = function Main_search() {
       }
     }
 
-    window.scrollTo(0, 780);
+    $('html, body').animate({
+      scrollTop: $('#scrollhere').offset().top
+    }, 1000);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_styles_styles_main_search__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      style: {
+        'overflow': 'hidden'
+      },
       className: "contenedor-btns",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "btns",
@@ -650,6 +652,7 @@ var Main_search = function Main_search() {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
       className: "main-search",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        id: "scrollhere",
         className: "title-search",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("b", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("li", {
@@ -827,12 +830,14 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Llantas = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:390px;\n    background:#eeecec;\n\n    .llantas-title{\n\n        width:70%;\n        margin-left:15%;\n        height:60px;\n        background:rgb(233, 128, 8);\n        color:white;\n        border-radius:0px 0px 10px 10px;\n        display:flex;\n        justify-content:Center;\n        align-items:center;\n        font-size:16px;\n\n    }\n\n    .llantas-inputs{\n\n        width:100%;\n        margin-top:14px;\n        height:320px;\n    }\n\n    select{\n\n        width:80%;\n        height:45px;\n        border:0px;\n        margin-left:10%;\n        margin-top:28px;\n        border-radius:7px;\n        color:gray;\n        box-shadow:0px 0px 8px rgba(0,0,0,0.3);\n        background:white;\n\n    }\n\n    @media(min-width:800px){\n\n        height:225px;\n\n\n        .llantas-title{\n\n            width:20%;\n            margin-left:5%;\n        }\n\n        .llantas-inputs{\n\n            height:130px;\n            display:flex;\n            justify-content:space-around;\n            align-items:center;\n            flex-wrap:wrap;\n        }\n\n        select{\n\n            width:250px;\n            margin-left:0;\n            font-size:18px;\n\n        }\n    }\n"])));
+var Llantas = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:390px;\n    background:#eeecec;\n\n    .llantas-title{\n\n        width:70%;\n        margin-left:15%;\n        height:60px;\n        background:rgb(233, 128, 8);\n        color:white;\n        border-radius:0px 0px 10px 10px;\n        display:flex;\n        justify-content:Center;\n        align-items:center;\n        font-size:16px;\n\n    }\n\n    .llantas-inputs{\n\n        width:100%;\n        margin-top:14px;\n        height:320px;\n    }\n\n    select{\n\n        width:80%;\n        height:45px;\n        border:0px;\n        margin-left:10%;\n        margin-top:28px;\n        border-radius:7px;\n        color:gray;\n        box-shadow:0px 0px 8px rgba(0,0,0,0.3);\n        background:white;\n\n    }\n\n    .incluir-marca{\n\n        width:100%;\n        height:22px;\n        display:flex ;\n        justify-content:center ;\n        align-items:center;\n    }\n\n    .incluir-marca > b{\n        background: #0096d2;\n        color:white;\n        padding:7px ;\n        border-radius:5px;\n        font-size:16px ;\n\n    }\n\n    @media(min-width:800px){\n\n        height:225px;\n\n\n        .llantas-title{\n\n            width:20%;\n            margin-left:5%;\n        }\n\n        .llantas-inputs{\n\n            height:130px;\n            display:flex;\n            justify-content:space-around;\n            align-items:center;\n            flex-wrap:wrap;\n        }\n\n        select{\n\n            width:250px;\n            margin-left:0;\n            font-size:18px;\n\n        }\n    }\n"])));
 
 var Search_llantas = function Search_llantas() {
   var Marca_llantas_element = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var Ancho_llantas_element = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   var Perfil_llantas_element = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var v2_Ancho_llantas_element = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var v2_Perfil_llantas_element = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Marca de la llanta'),
       _useState2 = _slicedToArray(_useState, 2),
@@ -873,6 +878,40 @@ var Search_llantas = function Search_llantas() {
       _useState16 = _slicedToArray(_useState15, 2),
       llantas_marcaAnchoPerfil = _useState16[0],
       setLlantasMarcaAnchoPerfil = _useState16[1];
+  /* search llantas sin marca */
+
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState18 = _slicedToArray(_useState17, 2),
+      v2_anchoLlantas = _useState18[0],
+      v2_setAnchoLlantas = _useState18[1];
+
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState20 = _slicedToArray(_useState19, 2),
+      v2_perfilLlantas = _useState20[0],
+      v2_setPerfilLlantas = _useState20[1];
+
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+      _useState22 = _slicedToArray(_useState21, 2),
+      v2_rinLlantas = _useState22[0],
+      v2_setRinLlantas = _useState22[1];
+  /* mostar buscador con marca o sin marca */
+
+
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Incluir marca'),
+      _useState24 = _slicedToArray(_useState23, 2),
+      msg = _useState24[0],
+      setMsg = _useState24[1];
+
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('none'),
+      _useState26 = _slicedToArray(_useState25, 2),
+      conMarca = _useState26[0],
+      setConMarca = _useState26[1];
+
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('flex'),
+      _useState28 = _slicedToArray(_useState27, 2),
+      sinMarca = _useState28[0],
+      setSinMarca = _useState28[1];
 
   var dispath = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
   var redirect = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
@@ -942,13 +981,82 @@ var Search_llantas = function Search_llantas() {
       setCargandoRin(rin);
       dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Productos)(null));
       $('.llantas-inputs').empty();
-      $('.llantas-inputs').append("\n                <div class=\"spinner-border text-secondary\" role=\"status\">\n                    <span class=\"sr-only\">Loading...</span>\n                </div>\n            ");
+      $('.llantas-inputs').append("\n                <div class=\"d-flex justify-content-center align-items-center\">\n                    <div style=\"width:100px;height:100px;font-size:20px;\" class=\"spinner-border text-secondary d-flex justify-content-center align-items-center\" role=\"status\">\n                        <span class=\"sr-only\">Loading...</span>\n                    </div>\n                </div>\n            ");
       (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataHome)().search_llantas.llantas_for_marcaAnchoPerfilRin(marca, ancho, perfil, rin).then(function (data) {
         console.log('from search-llantas,jsx ', data);
         dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Productos)(data[0]));
         dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Busqueda)(true));
         navegar('/productos/busqueda');
       });
+    }
+  };
+  /* Metodos search llantas sin marca */
+
+
+  var V2GetLlantasAnchoPerfil = function V2GetLlantasAnchoPerfil(value) {
+    setCargandoPerfil('Cargando resultados...');
+    setCargandoAncho(value);
+
+    if (value !== 'Ancho de la llanta' && value !== 'Cargando resultados...') {
+      (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataHome)().search_v2.llantas_ancho_perfil(value).then(function (data) {
+        setCargandoPerfil('Perfil de la llanta');
+        v2_setPerfilLlantas(data[0]);
+      });
+    }
+  };
+
+  var V2GetLlantasAnchoPerfilRin = function V2GetLlantasAnchoPerfilRin(ancho, perfil) {
+    setCargandoRin('Cargando resultados...');
+    setCargandoPerfil(perfil);
+
+    if (perfil !== 'Cargando resultados...' && perfil !== 'Perfil de la llanta' && perfil !== 'Sin resultados') {
+      (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataHome)().search_v2.llantas_ancho_perfil_rin(ancho, perfil).then(function (response) {
+        setCargandoRin('Numero de rin');
+        v2_setRinLlantas(response[0]);
+      });
+    }
+  };
+
+  var V2GoSearchLlantasRin = function V2GoSearchLlantasRin(ancho, perfil, rin, categoria, dispatch, navegar) {
+    if (rin !== 'Numero de rin' && rin !== 'Sin resultados' && rin !== 'Cargando resultados...') {
+      dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Categoria)({
+        name: categoria,
+        type: 'llantas v2'
+      }));
+      dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Filtros)([{
+        type: 'Marca ',
+        value: '--'
+      }, {
+        type: 'Ancho ',
+        value: ancho
+      }, {
+        type: 'Perfil ',
+        value: perfil
+      }, {
+        type: 'N° rin ',
+        value: rin
+      }]));
+      setCargandoRin(rin);
+      dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Productos)(null));
+      $('.llantas-inputs').empty();
+      $('.llantas-inputs').append("\n                <div class=\"d-flex justify-content-center align-items-center\">\n                    <div style=\"width:100px;height:100px;font-size:20px;\" class=\"spinner-border text-secondary d-flex justify-content-center align-items-center\" role=\"status\">\n                        <span class=\"sr-only\">Loading...</span>\n                    </div>\n                </div>\n            ");
+      (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataHome)().search_v2.llantas_ancho_perfil_rin_resultado(ancho, perfil, rin).then(function (data) {
+        dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Productos)(data[0]));
+        dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Busqueda)(true));
+        navegar('/productos/busqueda');
+      });
+    }
+  };
+
+  var CambiarBuscador = function CambiarBuscador() {
+    if (msg === 'Incluir marca') {
+      setMsg('Quitar marca');
+      setConMarca('flex');
+      setSinMarca('none');
+    } else {
+      setMsg('Incluir marca');
+      setConMarca('none');
+      setSinMarca('flex');
     }
   };
 
@@ -958,9 +1066,16 @@ var Search_llantas = function Search_llantas() {
       setMarcaLlantas(data[0]);
       setCargandoMarca('Marca de la llanta');
     });
+    setCargandoAncho('Cargando resultados...');
+    (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataHome)().search_v2.llantas_ancho().then(function (data) {
+      setCargandoAncho('Ancho de la llanta');
+      v2_setAnchoLlantas(data[0]);
+    });
     return function () {
       setMarcaLlantas(null);
       setCargandoMarca('Marca de la llanta');
+      setCargandoAncho('Ancho de la llanta');
+      v2_setAnchoLlantas(null);
     };
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Llantas, {
@@ -970,8 +1085,22 @@ var Search_llantas = function Search_llantas() {
         children: "Llantas por medida"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      style: {
+        'display': conMarca
+      },
       className: "llantas-inputs",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        style: {
+          'cursor': 'pointer'
+        },
+        className: "incluir-marca",
+        onClick: function onClick() {
+          return CambiarBuscador();
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
+          children: msg
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
         value: cargandoMarca,
         ref: Marca_llantas_element,
         onChange: function onChange(e) {
@@ -1040,6 +1169,76 @@ var Search_llantas = function Search_llantas() {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
             value: numero_rin,
             children: numero_rin
+          }, index);
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      style: {
+        'display': sinMarca
+      },
+      className: "llantas-inputs",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        style: {
+          'cursor': 'pointer'
+        },
+        className: "incluir-marca",
+        onClick: function onClick() {
+          return CambiarBuscador();
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
+          children: msg
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+        value: cargandoAncho,
+        ref: v2_Ancho_llantas_element,
+        onChange: function onChange(e) {
+          return V2GetLlantasAnchoPerfil(e.target.value);
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          value: "Ancho de la llanta",
+          children: "Ancho de la llanta"
+        }), v2_anchoLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          value: "Cargando resultados...",
+          children: "Cargando resultados..."
+        }) : v2_anchoLlantas.map(function (ancho, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+            value: ancho,
+            children: ancho
+          }, index);
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+        value: cargandoPerfil,
+        ref: v2_Perfil_llantas_element,
+        onChange: function onChange(e) {
+          return V2GetLlantasAnchoPerfilRin(v2_Ancho_llantas_element.current.value, e.target.value);
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          value: "Perfil de la llanta",
+          children: "Perfil de la llanta"
+        }), v2_perfilLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          value: "Cargando resultados...",
+          children: "Cargando resultados..."
+        }) : v2_perfilLlantas.map(function (perfil, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+            value: perfil,
+            children: perfil
+          }, index);
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+        value: cargandoRin,
+        onChange: function onChange(e) {
+          return V2GoSearchLlantasRin(v2_Ancho_llantas_element.current.value, v2_Perfil_llantas_element.current.value, e.target.value, 'Busqueda', dispath, redirect);
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          value: "Numero de rin",
+          children: "Numero de rin"
+        }), v2_rinLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          value: "Cargando resultados...",
+          children: "Cargando resultados..."
+        }) : v2_rinLlantas.map(function (rin, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+            value: rin,
+            children: rin
           }, index);
         })]
       })]
@@ -1176,7 +1375,7 @@ var _templateObject;
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
-var Search = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:900px;\n    margin-top:40px;\n\n    .contenedor-btns{\n\n        width:100%;\n        display:flex;\n        justify-content:center;\n        height:430px;\n        overflow-y:scroll;\n        padding:4px;\n\n    }\n\n    .main-search{\n\n        width:100%;\n        height:470px;\n    }\n\n    .title-search{\n\n        width:100%;\n        height:70px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        font-size:19px;\n    }\n\n    .Form{\n\n        width:100%;\n        height:400px;\n    }\n\n\n    @media(min-width:800px){\n\n          height:450px;\n\n\n        .contenedor-btns{\n\n            width:100%;\n            height:150px;\n            overflow-y:hidden;\n            overflow-x:scroll;\n\n\n        }\n\n        .btns{\n\n            width:100%;\n            display:flex;\n            justify-content:space-around;\n            align-items:center;\n        }\n        .main-search{\n\n            width:100%;\n            height:300px;\n        }\n\n        .title-search{\n\n            width:100%;\n            height:70px;\n            display:flex;\n            justify-content:center;\n            align-items:center;\n            font-size:18px;\n        }\n\n        .Form{\n\n            width:100%;\n            height:230px;\n        }\n    }\n\n"])));
+var Search = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:600px;\n    margin-top:40px;\n\n    .contenedor-btns{\n\n        width:100%;\n        display:flex;\n        justify-content:center;\n        height:180px;\n        overflow-y:scroll;\n        padding:4px;\n\n    }\n\n    .main-search{\n\n        width:100%;\n        height:470px;\n    }\n\n    .title-search{\n\n        width:100%;\n        height:70px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        font-size:19px;\n    }\n\n    .Form{\n\n        width:100%;\n        height:400px;\n    }\n\n\n    @media(min-width:800px){\n\n          height:450px;\n\n\n        .contenedor-btns{\n\n            width:100%;\n            height:150px;\n            overflow-y:hidden;\n            overflow-x:scroll;\n\n\n        }\n\n        .btns{\n\n            width:100%;\n            display:flex;\n            justify-content:space-around;\n            align-items:center;\n        }\n        .main-search{\n\n            width:100%;\n            height:300px;\n        }\n\n        .title-search{\n\n            width:100%;\n            height:70px;\n            display:flex;\n            justify-content:center;\n            align-items:center;\n            font-size:18px;\n        }\n\n        .Form{\n\n            width:100%;\n            height:230px;\n        }\n    }\n\n"])));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Search);
 
 /***/ }),

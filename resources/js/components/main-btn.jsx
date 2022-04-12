@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Btn_category = styled.div`
 
-    width:300px;
+    width:360px;
     height:100px;
     background:${prop=>prop.color};
     border-radius:10px;
@@ -11,6 +11,7 @@ const Btn_category = styled.div`
     margin-top:25px;
     cursor:pointer;
     box-shadow:3px 3px 8px rgba(0,0,0,0.3);
+    overflow:hidden ;
 
     .textos{
 

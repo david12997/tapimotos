@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LlantasTapimotoController;
 use App\Http\Controllers\MarcasLlantaController;
+use App\Http\Controllers\V2LlatnasTapimoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,7 @@ Route::get('/search/llantas/{marca}/{ancho}/{perfil}',[LlantasTapimotoController
 Route::get('/search/llantas/{marca}/{ancho}/{perfil}/{rin}',[LlantasTapimotoController::class, 'search_for_marca_ancho_perfil_rin']);
 Route::get('/search/all/{data}',[LlantasTapimotoController::class, 'Search_all']);
 
+Route::get('search/v2/llantas/',[V2LlatnasTapimoto::class , 'search_anchos']);
+Route::get('search/v2/llantas/{ancho}',[V2LlatnasTapimoto::class , 'search_for_ancho']);
+Route::get('search/v2/llantas/{ancho}/{perfil}',[V2LlatnasTapimoto::class , 'search_for_ancho_perfil']);
+Route::get('search/v2/llantas/{ancho}/{perfil}/{rin}',[V2LlatnasTapimoto::class , 'search_for_ancho_perfil_rin']);

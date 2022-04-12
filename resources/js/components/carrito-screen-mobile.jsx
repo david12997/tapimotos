@@ -243,6 +243,10 @@ const Screen_carrito = ()=>{
 
         navegar('/pagar');
 
+        $('html, body').animate({
+
+            scrollTop: $('#scrollhere').offset().top
+        },1000)
 
     }
 

@@ -47,7 +47,7 @@ var Conteindo_services = function Conteindo_services() {
       setServicios = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataProducts)().Products.getServices().then(function (data) {
+    (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataProducts)().Products.getServicesPage().then(function (data) {
       setServicios(data[0]);
     });
     return function () {

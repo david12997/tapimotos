@@ -48,14 +48,21 @@ const Buscador_render = ()=>{
         dispatch(Categoria({name:'Busqueda',type:'buscar'}));
         dispatch(Productos(null));
         navegar('/productos/busqueda');
-        DataProducts().Products.SearchAll(data.current.value).then(response=>{
+        localStorage.setItem('data_busqueda',data.current.value);
+        DataProducts().Products.SearchAll(data.current.value,`&page=${1}`,`&page=${1}`,`?page=${1}`).then(response=>{
 
+            console.log(response);
             dispatch(Productos(response));
             dispatch(Busqueda(true))
 
         });
 
         data.current.value = "";
+
+        $('html, body').animate({
+
+            scrollTop: $('#scrollhere').offset().top
+        },1000)
     }
 
     return(

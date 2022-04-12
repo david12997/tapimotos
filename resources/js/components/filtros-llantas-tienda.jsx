@@ -26,6 +26,21 @@ const Filtro_llantas_element = styled.div`
         font-weight:bold;
     }
 
+    .incluir-marca > b{
+        background: #0096d2;
+        color:white;
+        padding:7px ;
+        border-radius:5px;
+        font-size:16px ;
+        margin-left: 80px;
+
+    }
+
+    .incluir-marca{
+
+        margin-bottom:20px ;
+    }
+
 `;
 
 const Filtro_llantas_tienda = ()=>{
@@ -36,6 +51,9 @@ const Filtro_llantas_tienda = ()=>{
     const Ancho_llantas_element = useRef(null);
     const Perfil_llantas_element = useRef(null);
 
+    const v2_Ancho_llantas_element = useRef(null);
+    const v2_Perfil_llantas_element = useRef(null);
+
     const [cargandoMarca, setCargandoMarca] = useState('Marca de la llanta');
     const [cargandoAncho, setCargandoAncho] = useState('Ancho de la llanta');
     const [cargandoPerfil, setCargandoPerfil] = useState('Perfil de la llanta');
@@ -45,6 +63,18 @@ const Filtro_llantas_tienda = ()=>{
     const[llantas_for_marca, set_llantasForMarca] = useState(null);
     const[llantas_marcaAncho, setLlantasMarcaAncho] = useState(null);
     const[llantas_marcaAnchoPerfil, setLlantasMarcaAnchoPerfil] = useState(null);
+
+        /* search llantas sin marca */
+
+        const [v2_anchoLlantas,v2_setAnchoLlantas] = useState(null);
+        const [v2_perfilLlantas,v2_setPerfilLlantas] = useState(null);
+        const [v2_rinLlantas,v2_setRinLlantas] = useState(null);
+
+
+        /* mostar buscador con marca o sin marca */
+        const [msg,setMsg] = useState('Incluir marca');
+        const [conMarca, setConMarca] = useState('none');
+        const [sinMarca, setSinMarca] = useState('block');
 
     let dispath = useDispatch();
     let redirect = useNavigate();
@@ -71,9 +101,6 @@ const Filtro_llantas_tienda = ()=>{
 
     }
 
-
-
-
     const GetLlantasMarcaAncho=(marca,ancho,dispatch)=>{
 
         setCargandoPerfil('Cargando resultados...');
@@ -98,7 +125,6 @@ const Filtro_llantas_tienda = ()=>{
 
     }
 
-
     const GetLlantasMarcaAnchoPerfil=(marca,ancho,perfil,dispatch)=>{
 
         setCargandoRin('Cargando resultados...');
@@ -122,7 +148,6 @@ const Filtro_llantas_tienda = ()=>{
 
     }
 
-
     const GoSearchLlantaRin = (marca,ancho,perfil,rin,categoria,dispatch,navegar) =>{
 
         if(rin !== 'Numero de rin'  && rin !== 'Sin resultados'  && rin !== 'Cargando resultados...' ){
@@ -143,6 +168,10 @@ const Filtro_llantas_tienda = ()=>{
                 console.log('from filtros-llantas-tienda.jsx ',data);
                 dispatch(Productos(data[0]));
                 dispatch(Busqueda(true));
+                $('html, body').animate({
+
+                    scrollTop: $('#scrollhere2').offset().top
+                },1000)
 
 
 
@@ -168,6 +197,107 @@ const Filtro_llantas_tienda = ()=>{
     }
 
 
+
+    /* Metodos search llantas sin marca */
+    const V2GetLlantasAnchoPerfil = (value)=>{
+
+        setCargandoPerfil('Cargando resultados...');
+        setCargandoAncho(value);
+
+        if( value !== 'Ancho de la llanta' && value !== 'Cargando resultados...'){
+
+            DataHome().search_v2.llantas_ancho_perfil(value).then(data=>{
+
+                setCargandoPerfil('Perfil de la llanta');
+                v2_setPerfilLlantas(data[0]);
+
+            })
+        }
+    }
+
+    const V2GetLlantasAnchoPerfilRin = (ancho,perfil)=>{
+
+
+        setCargandoRin('Cargando resultados...');
+        setCargandoPerfil(perfil);
+
+        if( perfil !== 'Cargando resultados...' && perfil !== 'Perfil de la llanta' && perfil !== 'Sin resultados'){
+
+            DataHome().search_v2.llantas_ancho_perfil_rin(ancho,perfil).then(response=>{
+
+                setCargandoRin('Numero de rin');
+                v2_setRinLlantas(response[0]);
+            })
+        }
+
+
+    }
+
+    const V2GoSearchLlantasRin = (ancho, perfil, rin, categoria, dispatch, navegar)=>{
+
+        if(rin !== 'Numero de rin'  && rin !== 'Sin resultados'  && rin !== 'Cargando resultados...' ){
+
+            dispatch(Categoria({name:categoria,type:'llantas v2'}));
+            dispatch(Filtros([
+                {type:'Marca ',value:'--'},
+                {type:'Ancho ',value:ancho},
+                {type:'Perfil ',value:perfil},
+                {type:'N° rin ',value:rin}
+
+            ]));
+
+
+            setCargandoRin(rin);
+            dispatch(Productos(null));
+
+            DataHome().search_v2.llantas_ancho_perfil_rin_resultado(ancho,perfil,rin).then(data=>{
+
+                console.log('from filtros-llantas-tienda.jsx ',data);
+                dispatch(Productos(data[0]));
+                dispatch(Busqueda(true));
+                $('html, body').animate({
+
+                    scrollTop: $('#scrollhere2').offset().top
+                },1000)
+
+
+
+            })
+            setIndexPagebtns();
+
+            $('.filtros-mobile').css('animation-name','close');
+            setTimeout(()=>{
+                $('.filtros-mobile').css('display','none');
+            },600);
+
+            setCargandoMarca('Marca de la llanta');
+            setCargandoAncho('Ancho de la llanta');
+            setCargandoPerfil('Perfil de la llanta');
+            setCargandoRin('Numero de rin')
+
+            navegar('/productos/busqueda');
+        }
+    }
+
+    const CambiarBuscador = ()=>{
+
+        if(msg === 'Incluir marca'){
+
+            setMsg('Quitar marca');
+            setConMarca('block');
+            setSinMarca('none');
+
+        }else{
+
+            setMsg('Incluir marca');
+            setConMarca('none');
+            setSinMarca('block');
+
+        }
+
+    }
+
+
     useEffect(()=>{
 
         setCargandoMarca('Cargando resultados...');
@@ -178,9 +308,20 @@ const Filtro_llantas_tienda = ()=>{
 
         });
 
-        return ()=>{
+        setCargandoAncho('Cargando resultados...');
+        DataHome().search_v2.llantas_ancho().then(data=>{
 
-            setMarcaLlantas('Marca de la llanta');
+            setCargandoAncho('Ancho de la llanta')
+            v2_setAnchoLlantas(data[0]);
+        })
+
+
+        return ()=>{
+            setMarcaLlantas(null);
+            setCargandoMarca('Marca de la llanta');
+
+            setCargandoAncho('Ancho de la llanta')
+            v2_setAnchoLlantas(null);
         }
 
 
@@ -192,7 +333,13 @@ const Filtro_llantas_tienda = ()=>{
     return(
 
         <Filtro_llantas_element>
-            <select  value={cargandoMarca} ref={Marca_llantas_element}   onChange={(e)=>GetLlantasMarca(e.target.value,dispath)}>
+
+            <div style={{'display':conMarca}} className='llantas-inputs'>
+
+                <div style={{'cursor':'pointer'}} className="incluir-marca" onClick={()=>CambiarBuscador()}>
+                    <b>{msg}</b>
+                </div>
+                 <select  value={cargandoMarca} ref={Marca_llantas_element}   onChange={(e)=>GetLlantasMarca(e.target.value,dispath)}>
 
                 <option value="Marca de la llanta">Marca de la llanta</option>
                 {
@@ -226,6 +373,44 @@ const Filtro_llantas_tienda = ()=>{
                 }
 
             </select>
+
+            </div>
+
+             {/* buscador ancjo x perfil x rin */}
+            <div style={{'display':sinMarca}} className='llantas-inputs'>
+            <div style={{'cursor':'pointer'}} className="incluir-marca" onClick={()=>CambiarBuscador()}>
+                <b>{msg}</b>
+            </div>
+
+            <select value={cargandoAncho} ref={v2_Ancho_llantas_element}
+                onChange={(e)=>V2GetLlantasAnchoPerfil(e.target.value)}
+            >
+                <option value="Ancho de la llanta">Ancho de la llanta</option>
+                {
+                    (v2_anchoLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_anchoLlantas.map((ancho,index)=><option value={ancho} key={index}>{ancho}</option>)
+                }
+            </select>
+
+            <select  value={cargandoPerfil}  ref={v2_Perfil_llantas_element}
+                onChange={(e)=>V2GetLlantasAnchoPerfilRin(v2_Ancho_llantas_element.current.value,e.target.value)}
+            >
+                <option value="Perfil de la llanta" >Perfil de la llanta</option>
+                {
+                    (v2_perfilLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_perfilLlantas.map((perfil,index)=><option value={perfil} key={index}>{perfil}</option>)
+                }
+            </select>
+
+            <select value={cargandoRin}
+                onChange={(e)=>V2GoSearchLlantasRin(v2_Ancho_llantas_element.current.value,v2_Perfil_llantas_element.current.value,e.target.value,'Busqueda',dispath,redirect)}
+            >
+                <option value="Numero de rin" >Numero de rin</option>
+                {
+                    (v2_rinLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_rinLlantas.map((rin,index)=><option value={rin} key={index}>{rin}</option>)
+                }
+            </select>
+
+            </div>
+
         </Filtro_llantas_element>
     )
 }

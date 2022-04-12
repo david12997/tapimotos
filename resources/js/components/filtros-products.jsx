@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Buscador_render from "./search-product";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -331,7 +331,7 @@ const redirect = (route,redireccion,dispatch,page_cascos,page_aceites,page_llant
 
 const nextPage = (current_page, max_page, min_page, data, setPage, route,dispatch) =>{
 
-    console.log(data.Productos);
+
     //limit max page
     //data.Productos[0].products.length for category llantas
     //data.Productos[2].data.length for category todo
@@ -347,7 +347,10 @@ const nextPage = (current_page, max_page, min_page, data, setPage, route,dispatc
     UpdateMoreIndexPage(data,buttons,route,current_page);
 
     if(route === 'busqueda'){
-        UpdateStateTienda(route,dispatch,current_page,current_page,current_page,'not null');
+
+        let data_busqueda = localStorage.getItem('data_busqueda');
+        UpdateStateTienda(route,dispatch,current_page,current_page,current_page,data_busqueda);
+
     }else{
 
         UpdateStateTienda(route,dispatch,current_page,current_page,current_page);
@@ -372,7 +375,10 @@ const previusPage = (current_page, max_page, min_page,setPage,route,dispatch) =>
     UpdateLessIndexPage('Less page',buttons,route,current_page);
 
     if(route === 'busqueda'){
-        UpdateStateTienda(route,dispatch,current_page,current_page,current_page,'not null');
+
+        let data_busqueda = localStorage.getItem('data_busqueda');
+        UpdateStateTienda(route,dispatch,current_page,current_page,current_page,data_busqueda);
+
     }else{
 
         UpdateStateTienda(route,dispatch,current_page,current_page,current_page);
@@ -395,7 +401,10 @@ const ClickIndexPage = (category,dispatch,page_cascos,page_aceites,page_llantas,
 
     if(category === 'busqueda'){
 
-        UpdateStateTienda(category,dispatch,page_cascos,page_aceites,page_llantas,'not null');
+        let data_busqueda = localStorage.getItem('data_busqueda');
+        console.log(data_busqueda)
+        UpdateStateTienda(category,dispatch,page_cascos,page_aceites,page_llantas,data_busqueda);
+
     }else{
         UpdateStateTienda(category,dispatch,page_cascos,page_aceites,page_llantas);
     }
@@ -414,11 +423,18 @@ const Filtros_render = ({data_state}) =>{
 
     const [page,setPage] = useState(1);
 
+    useEffect(()=>{
+
+        $('html, body').animate({
+
+            scrollTop: $('#scrollhere2').offset().top
+        },1000)
+    },[])
 
     return(
 
         <Filtros_html>
-            <div className="filtros">
+            <div id="scrollhere2" className="filtros">
 
                 <div className="buscador">
                     <Buscador_render></Buscador_render>
@@ -432,11 +448,11 @@ const Filtros_render = ({data_state}) =>{
                         <span> Filtrar busqueda</span>
                     </div>
 
-                    <select value={(data_state.Categoria !== null) && data_state.Categoria.name } onChange={(e)=>redirect(e.currentTarget.value.toLowerCase(),redireccion,dispatch,1,1,1,setPage)} className="title-category">
+                    <select id="scrollhere" value={(data_state.Categoria !== null) && data_state.Categoria.name } onChange={(e)=>redirect(e.currentTarget.value.toLowerCase(),redireccion,dispatch,1,1,1,setPage)} className="title-category">
                         <option defaultValue="/">Todo</option>
                         <option defaultValue="llantas">Llantas</option>
-                        <option defaultValue="cascos">Cascos</option>
-                        <option defaultValue='aceites' >Aceites</option>
+                        <option style={{'display':'none'}} defaultValue="cascos">Cascos</option>
+                        <option style={{'display':'none'}} defaultValue='aceites' >Aceites</option>
                     </select>
 
                 </div>

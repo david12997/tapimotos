@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const  Search =  styled.div`
 
     width:100%;
-    height:900px;
+    height:600px;
     margin-top:40px;
 
     .contenedor-btns{
@@ -11,7 +11,7 @@ const  Search =  styled.div`
         width:100%;
         display:flex;
         justify-content:center;
-        height:430px;
+        height:180px;
         overflow-y:scroll;
         padding:4px;
 

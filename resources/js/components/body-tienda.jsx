@@ -126,7 +126,13 @@ const setCategory = (category,dispatch,page_cascos,page_aceites,page_llantas,btn
     setIndexPagebtns();
 
     UpdateStateTienda(category,dispatch,page_cascos,page_aceites,page_llantas);
-    navigate(`/productos/${category}`)
+    navigate(`/productos/${category}`);
+
+    $('html, body').animate({
+
+        scrollTop: $('#scrollhere').offset().top
+    },1000)
+
 }
 
 
@@ -146,8 +152,8 @@ const Body_tienda = ({data_state})=>{
     if(data_state.Categoria !== null){
 
         if( data_state.Categoria.type === 'llantas'){ imgFiltro ='/images/ejemplo-llantas.png';width ='100%'}
-        else if( data_state.Categoria.type === 'cascos') {imgFiltro ='/images/casco.png';width='60%'}
-        else if( data_state.Categoria.type === 'aceites') {imgFiltro ='/images/aceite.png';width='65%'}
+       // else if( data_state.Categoria.type === 'cascos') {imgFiltro ='/images/casco.png';width='60%'}
+        //else if( data_state.Categoria.type === 'aceites') {imgFiltro ='/images/aceite.png';width='65%'}
         else { imgFiltro ='/images/ejemplo-llantas.png';width='100%'}
     }else{
 
@@ -157,9 +163,10 @@ const Body_tienda = ({data_state})=>{
 
     const AllProducts = ()=>{
 
+        if (data_state.Productos === null) return [];
         let Products = []
 
-        data_state.Productos[2].data.map((llantas,indice)=>Products.push({
+        data_state.Productos[0].data.map((llantas,indice)=>Products.push({
             name:llantas.nombre_llanta,
             img:llantas.img,
             price:llantas.precio_llanta,
@@ -167,7 +174,7 @@ const Body_tienda = ({data_state})=>{
             category:'Llantas'})
         );
 
-        data_state.Productos[1].map((casco,indice)=>Products.push({
+       /* data_state.Productos[1].map((casco,indice)=>Products.push({
             name:casco.name,
             img:(casco.images.length !==0) ? casco.images[0].src :'/images/casco.png',
             price:casco.regular_price,
@@ -181,16 +188,19 @@ const Body_tienda = ({data_state})=>{
             price:aceite.regular_price,
             all:aceite,
             category:'Aceites'})
-        );
+        );*/
 
        return Products.sort((a,b)=>(a.price<b.price) &&  Math.random()-0.5);
     }
 
     const AllProductsSearch = () =>{
 
+
+        if (data_state.Productos === null) return [];
+
         let Products = [];
 
-        if( data_state.Productos[0] !== undefined && data_state.Productos[0].length !== 0){
+        /*if( data_state.Productos[0] !== undefined && data_state.Productos[0].length !== 0){
 
             data_state.Productos[0].map((aceite,indice)=>Products.push({
                 name:aceite.name,
@@ -211,10 +221,10 @@ const Body_tienda = ({data_state})=>{
                 category:'Cascos'})
             );
         }
+        */
+        if(data_state.Productos[0] !== undefined && data_state.Productos[0].data.length !== 0){
 
-        if(data_state.Productos[2] !== undefined && data_state.Productos[2].length !== 0){
-
-            data_state.Productos[2].map((llantas,indice)=>Products.push({name:llantas.nombre_llanta,img:llantas.img,price:llantas.precio_llanta,all:llantas,category:'Llantas'}));
+            data_state.Productos[0].data.map((llantas,indice)=>Products.push({name:llantas.nombre_llanta,img:llantas.img,price:llantas.precio_llanta,all:llantas,category:'Llantas'}));
         }
 
         return Products.sort((a,b)=>(a.price<b.price) &&  Math.random()-0.5);
@@ -253,11 +263,10 @@ const Body_tienda = ({data_state})=>{
         }
 
 
-
-
     },[btn1,btn2,btn3]);
 
 
+    //console.log(AllProductsSearch());
 
     return(
 
@@ -307,47 +316,49 @@ const Body_tienda = ({data_state})=>{
                     <div  ref={btn1} className='Llantas' onClick={(e)=>setCategory('llantas',dispatch,1,1,1,e.currentTarget,navigate)}>
                         <img style={{width:'100%'}} src="/images/llantas.png"></img>
                     </div>
-                    <div ref={btn2} className='Aceites' onClick={(e)=>setCategory('aceites',dispatch,1,1,1,e.currentTarget,navigate)}>
+                    <div style={{'display':'none'}} ref={btn2} className='Aceites' onClick={(e)=>setCategory('aceites',dispatch,1,1,1,e.currentTarget,navigate)}>
                         <img style={{width:'100%'}} src="/images/aceite.png"></img>
                     </div>
-                    <div ref={btn3} className='Cascos' onClick={(e)=>setCategory('cascos',dispatch,1,1,1,e.currentTarget,navigate)}>
+                    <div style={{'display':'none'}} ref={btn3} className='Cascos' onClick={(e)=>setCategory('cascos',dispatch,1,1,1,e.currentTarget,navigate)}>
                         <img style={{width:'100%'}} src="/images/casco.png"></img>
                     </div>
                 </div>
             </div>
 
 
-            <div className='container-productos'>
+            <div  className='container-productos'>
                 {
                     (data_state.Productos === null )
                     ?
                     <Spinner width="250px" height="250px" size="20px"></Spinner>
                     :
-                    (data_state.Categoria.name === 'Todo')
+                    (data_state.Categoria.name === 'Todo') && AllProducts().length !== 0
                     ?
                     AllProducts().map((product,indice)=><Card_render all_data={product} key={indice} img={product.img} name={product.name} price={product.price}/>)
                     :
-                    (data_state.Categoria.name === 'Llantas')
+                    (data_state.Categoria.name === 'Llantas') && data_state.Productos[0].products.length !== 0
                     ?
                     data_state.Productos[0].products.map((llantas,indice)=><Card_render all_data={{all:llantas,category:'Llantas',img:llantas.img,name:llantas.nombre_llanta,price:llantas.precio_llanta}} key={indice} img={llantas.img} name={llantas.nombre_llanta} price={llantas.precio_llanta}/>)
                     :
-                    (data_state.Categoria.name === 'Cascos')
+                    (data_state.Categoria.name === 'Cascos') && data_state.Productos[0].length !== 0
                     ?
-                    data_state.Productos[0].map((casco,index)=><Card_render all_data={casco} key={index} img="/images/casco.png" name={casco.name} price={casco.regular_price}/>)
+                    data_state.Productos[0].map((casco,index)=><Card_render all_data={casco} key={index} img={(casco.images.length !==0) ? casco.images[0].src :'/images/casco.png'} name={casco.name} price={casco.regular_price}/>)
                     :
-                    (data_state.Categoria.name === 'Aceites')
+                    (data_state.Categoria.name === 'Aceites')  && data_state.Productos[0].length !== 0
                     ?
-                    data_state.Productos[0].map((aceite,index)=><Card_render all_data={aceite} key={index} img="/images/aceite.png" name={aceite.name} price={aceite.regular_price}/>)
+                    data_state.Productos[0].map((aceite,index)=><Card_render all_data={aceite} key={index} img={(aceite.images.length !==0) ? aceite.images[0].src :'/images/aceite.png'} name={aceite.name} price={aceite.regular_price}/>)
                     :
-                    (data_state.Categoria.name === 'Busqueda') && (data_state.Categoria.type !== 'buscar')
+                    (data_state.Categoria.name === 'Busqueda') && (data_state.Categoria.type === 'llantas' || data_state.Categoria.type === 'llantas v2') &&  data_state.Productos.length !== 0
                     ?
                     data_state.Productos.map((product,index)=><Card_render all_data={{all:product,category:'Llantas',img:product.img,name:product.nombre_llanta,price:product.precio_llanta}} key={index} img={product.img} name={product.nombre_llanta} price={product.precio_llanta}/>)
                     :
-                    (data_state.Categoria.name === 'Busqueda') && (data_state.Categoria.type === 'buscar')
+                    (data_state.Categoria.name === 'Busqueda') && (data_state.Categoria.type === 'buscar') && AllProductsSearch().length !== 0
                     ?
                     AllProductsSearch().map((product,indice)=><Card_render all_data={product} key={indice} img={product.img} name={product.name} price={product.price}/>)
                     :
-                    <div>Ups, categoria erronea.</div>
+                    <div style={{background:'#ff890c', color:'white',fontSize:'18px', padding:'10px'}}>
+                        <b>Ups, No encontramos resultados, intentalo de nuevo.</b>
+                    </div>
                 }
 
 

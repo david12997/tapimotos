@@ -123,6 +123,8 @@ const Creditos_render =  ()=>{
 
         <Creditos>
             <br></br>
+            <br></br>
+            <br></br>
             <hr></hr>
 
             <div className="title-main d-flex justify-content-center align-items-center">

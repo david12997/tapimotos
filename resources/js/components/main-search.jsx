@@ -12,8 +12,8 @@ const Main_search = () => {
 
     let defaultData = [
         {'name':'LLANTAS','discount':'20% OFF','img':'./images/llantas.png'},
-        {'name':'CASCOS','discount':'20% OFF','img':'./images/casco.png'},
-        {'name':'ACEITES','discount':'20% OFF','img':'./images/aceite.png'}
+        //{'name':'LLANTAS POR MARCA','discount':'20% OFF','img':'./images/llantas.png'}
+
     ];
 
     const [categories, setCategories] = useState(defaultData);
@@ -23,13 +23,15 @@ const Main_search = () => {
 
     useEffect(()=>{
 
-
+        /*
         //defaultData must be equal to data[0] at  DataHome().main_search.response()
         DataHome().main_search.response().then(data =>{
 
-            (data[0] !== 'Error can not get data') && setCategories(data[0])
+            console.log(data[0][0]);
+            //(data[0] !== 'Error can not get data') && setCategories(data[0])
+            (data[0] !== 'Error can not get data') && setCategories([data[0][0]])
 
-        });
+        });*/
 
         return()=>{
 
@@ -55,13 +57,16 @@ const Main_search = () => {
             else{buttons[i].firstChild.style.background ='#0096d2';}
         }
 
-        window.scrollTo(0,780)
+        $('html, body').animate({
+
+            scrollTop: $('#scrollhere').offset().top
+        },1000)
     }
 
     return (
         <Search>
-
-            <div className='contenedor-btns'>
+            <hr></hr>
+            <div style={{'overflow':'hidden'}} className='contenedor-btns'>
 
                 <div className='btns'>
 
@@ -80,12 +85,13 @@ const Main_search = () => {
                 </div>
 
             </div>
-
             <div className='main-search'>
 
-                <div className='title-search'>
+                <div id='scrollhere' className='title-search'>
                     <b><li> {nameCategory}</li></b>
                 </div>
+
+
 
                 <div className='Form'>
 

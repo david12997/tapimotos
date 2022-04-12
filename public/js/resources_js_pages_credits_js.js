@@ -47,7 +47,7 @@ var Conteindo_credits = function Conteindo_credits() {
       setCreditos = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataProducts)().Products.getCredits().then(function (data) {
+    (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataProducts)().Products.getCreditsPage().then(function (data) {
       setCreditos(data[0]);
     });
     return function () {

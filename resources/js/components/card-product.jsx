@@ -17,17 +17,19 @@ import { useNavigate } from "react-router-dom";
 const Card_element = styled.div`
 
     width:300px;
-    height:460px;
+    height:500px;
     margin:5px;
     background:white;
     box-shadow:0px 0px 4px rgba(0,0,0,0.4);
     border-radius:7px;
     margin-top:25px;
+    position:relative ;
+    padding-top:25px ;
 
     .img-product{
 
         width:100%;
-        height:150px;
+        height:170px;
         display:flex;
         justify-content:center;
         align-items:center;
@@ -111,7 +113,7 @@ const Card_element = styled.div`
         display:flex;
         justify-content:center;
         align-items:center;
-        curosr:pointer
+        cursor:pointer
     }
 
     .ver-detalle{
@@ -126,6 +128,31 @@ const Card_element = styled.div`
 
     }
 
+    .identificador{
+
+        width:100%;
+        height:30px;
+        background:#ededed ;
+        position:absolute ;
+        margin-top:-25px ;
+        border-top-left-radius:7px ;
+        border-top-right-radius:7px ;
+        display:flex ;
+        justify-content:center ;
+        align-items:center ;
+        color:black ;
+        font-size:18px ;
+
+
+    }
+
+    .disponible{
+
+        position:absolute;
+        color:gray ;
+        margin-top:-20px ;
+        font-size:14px ;
+    }
 
 `;
 
@@ -139,7 +166,7 @@ const Card_render = ({img,name,price, all_data}) =>{
 
     let añadido = 0;
 
-
+    console.log(all_data)
 
     const UpdateCarrito_component = (btn) =>{
 
@@ -252,6 +279,9 @@ const Card_render = ({img,name,price, all_data}) =>{
     return(
 
         <Card_element >
+            <div className="identificador">
+               <b>{all_data.all.identificador.toUpperCase()}</b>
+            </div>
             <div className="img-product">
                 <img style={{height:'100%'}} src={img}/>
 
@@ -261,6 +291,7 @@ const Card_render = ({img,name,price, all_data}) =>{
             </div>
             <div className="price-product">
                 <p><b>$ {new Intl.NumberFormat().format(Math.ceil(parseInt(price)))} COP</b> <b style={{color:'gray'}}>C/U</b> </p>
+                <p className="disponible"><b>Disponibles: {all_data.all.disponibilidad} Unidad(es)</b></p>
             </div>
             <div className="actions-card">
                 <div className="container-cantidad">

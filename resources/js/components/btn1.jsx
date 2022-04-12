@@ -49,6 +49,7 @@ const Btn1_render = ({width,height, title,color})=>{
             <div className="btn1">
                 <b>{title}</b>
             </div>
+
         </Btn1>
     )
 

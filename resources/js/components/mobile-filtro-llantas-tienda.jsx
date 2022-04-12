@@ -95,7 +95,7 @@ const Filtro_llantas_mobile_tienda =()=>{
                 }>
 
                     <FontAwesomeIcon style={{fontSize:'20px'}} icon={faAngleLeft} />
-                    <div style={{marginLeft:'40%'}}>Filtros</div>
+                    <div style={{marginLeft:'40%',fontSize:'18px'}}>Filtros</div>
 
                 </div>
             </div>
