@@ -15,14 +15,15 @@ class CreateLlantasTapimotosTable extends Migration
     {
         Schema::create('llantas_tapimotos', function (Blueprint $table) {
             $table->bigInteger('id_llanta')->primary();
+            $table->string('identificador');
             $table->string('nombre_llanta');
             $table->string('marca_llanta');
-            $table->integer('precio_llanta');
             $table->string('ancho_llanta');
             $table->string('perfil_llanta');
             $table->string('numero_rin');
-            $table->string('disponibilidad');
+            $table->integer('disponibilidad');
             $table->string('img');
+            $table->integer('precio_llanta');
         });
     }
 
