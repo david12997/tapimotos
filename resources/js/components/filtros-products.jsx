@@ -151,11 +151,11 @@ const Filtros_html = styled.div`
 
             border-right:2px solid white;
             display:flex;
-            width:300px;
+            width:310px;
             justify-content:space-around;
-            aign-items:center
-            padding:5px;
-            font-size:15px;
+            align-items:center;
+            padding:4px;
+            font-size:14px;
         }
 
         .container-filter{
@@ -184,6 +184,8 @@ const Filtros_html = styled.div`
 
 
     }
+
+
 
 
 `;
@@ -345,6 +347,7 @@ const nextPage = (current_page, max_page, min_page, data, setPage, route,dispatc
 
     let buttons = document.getElementsByClassName('index-page');
     UpdateMoreIndexPage(data,buttons,route,current_page);
+
 
     if(route === 'busqueda'){
 

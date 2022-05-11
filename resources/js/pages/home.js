@@ -42,6 +42,8 @@ const Home = () => {
             <Main_img></Main_img>
             <Btn_whatsapp></Btn_whatsapp>
             <Main_search></Main_search>
+            <br></br>
+            <br></br>
             <Creditos_render></Creditos_render>
             <Services_render></Services_render>
             <Contacto_render></Contacto_render>

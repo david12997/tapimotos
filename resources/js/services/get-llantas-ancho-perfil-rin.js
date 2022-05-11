@@ -12,8 +12,13 @@ const ParseData = (data)=>{
     let parse_data = Object.entries(data.data);
 
     //guardar el rin de las llanatas como entero
-    parse_data.map((llanta,index)=>
-       rin_llanta.push(parseInt(llanta[1].numero_rin))
+    parse_data.map((llanta,index)=>{
+
+        if (llanta[1].numero_rin  === 'N-A') rin_llanta.push(llanta[1].numero_rin)
+        else rin_llanta.push(parseInt(llanta[1].numero_rin))
+
+    }
+
     )
 
     //eliminar repetidos

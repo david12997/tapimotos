@@ -107,7 +107,20 @@ var Pay_component = function Pay_component(_ref) {
     Buy.append('data_products', JSON.stringify(resumen));
     (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataProducts)().Products.Pay(_services_store__WEBPACK_IMPORTED_MODULE_1__.Domain + 'pagos/crear-pago', Buy).then(function (response) {
       console.log(response);
-      window.location.href = response.init_point;
+      var Mp = new MercadoPago('APP_USR-a98b17ae-47a6-4a35-b92d-01919002b97e');
+      Mp.checkout({
+        preference: {
+          id: response.preference_id
+        },
+        render: {
+          container: '.cho-container',
+          label: 'Pagar la compra'
+        },
+        autoOpen: true
+      });
+      setSpinner(false);
+      setStep(2);
+      localStorage.setItem('data_preference', JSON.stringify(response)); //window.location.href = response.init_point;
     });
   };
 
@@ -381,9 +394,9 @@ var Pay_component = function Pay_component(_ref) {
                 type: "email",
                 placeholder: "Ej: email@email.com"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("li", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
               className: "list-group-item",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
                 type: "submit",
                 style: {
                   width: '100%',
@@ -394,7 +407,9 @@ var Pay_component = function Pay_component(_ref) {
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
                   children: "Pagar"
                 })
-              })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                className: "cho-container"
+              })]
             })]
           })]
         })]

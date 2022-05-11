@@ -275,6 +275,7 @@ const Filtro_llantas_tienda = ()=>{
             setCargandoPerfil('Perfil de la llanta');
             setCargandoRin('Numero de rin')
 
+            localStorage.setItem('data_busqueda',`${ancho}x${perfil}x${rin}`);
             navegar('/productos/busqueda');
         }
     }

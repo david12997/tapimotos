@@ -23,13 +23,23 @@ const ParseData = (data)=>{
 
 
 
-async function Get_llantas_for_marcaAnchoPerfilRin(marca,ancho,perfil,rin){
+async function Get_llantas_for_marcaAnchoPerfilRin(marca,ancho,perfil,rin, page){
 
     const response = [];
 
     try {
 
-        const data = await Get(Domain + 'api/search/llantas/'+marca+'/'+ancho+'/'+perfil+'/'+rin);
+        let data;
+
+        if (page === undefined || page === null || page === ''){
+
+             data = await Get(Domain + 'api/search/llantas/'+marca+'/'+ancho+'/'+perfil+'/'+rin);
+
+        }else{
+
+            data = await Get(Domain + 'api/search/llantas/'+marca+'/'+ancho+'/'+perfil+'/'+rin+page);
+        }
+
         (data === undefined) ? response.push('Error can not get data') : response.push(ParseData(data));
 
 

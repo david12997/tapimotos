@@ -58,3 +58,23 @@ Route::get('/pagos/estado/{status}', [VentaController::class,'store'])->middlewa
 Route::get('/pagos/transaccion/pdf',[VentaController::class,'Pdf']);
 
 
+Route::post('/mercadopago/notificaciones',function(){
+
+    require base_path('vendor/autoload.php');
+    MercadoPago\SDK::setAccessToken(config('services.mercadopago.token'));
+
+    $payment = MercadoPago\Payment::find_by_id($_POST["data"]["id"]);
+
+    $pago = fopen(base_path('public/assets/prueba1.txt'),'a+');
+    fwrite($pago,'variable payment');
+    fwrite($pago,'\n');
+    fwrite($pago,json_encode($payment));
+    fwrite($pago,'\n');
+    fwrite($pago,'variable post');
+    fwrite($pago,'\n');
+    fwrite($pago,json_encode($_POST));
+
+    return response('OK',200);
+
+
+});

@@ -6,13 +6,16 @@ import {useNavigate} from 'react-router-dom';
 import {DataHome} from "../services/store";
 import { useDispatch } from 'react-redux';
 import {  Productos, Paginacion, Filtros, Categoria, Busqueda } from '../database/index';
+import Buscador_render from "./search-product";
 
 
 const Llantas = styled.div`
 
     width:100%;
-    height:390px;
+    height:410px;
     background:#eeecec;
+    position:relative;
+    margin-top:58px ;
 
     .llantas-title{
 
@@ -32,7 +35,7 @@ const Llantas = styled.div`
     .llantas-inputs{
 
         width:100%;
-        margin-top:14px;
+        margin-top:40px;
         height:320px;
     }
 
@@ -57,6 +60,8 @@ const Llantas = styled.div`
         display:flex ;
         justify-content:center ;
         align-items:center;
+        position:absolute ;
+        top:78px
     }
 
     .incluir-marca > b{
@@ -68,10 +73,23 @@ const Llantas = styled.div`
 
     }
 
+    .container-buscador-render{
+
+        position:absolute;
+        top:-70px;
+        left:16% ;
+    }
+
     @media(min-width:800px){
 
         height:225px;
+        margin-top:0px ;
 
+        .container-buscador-render{
+
+            top:5px;
+            left:80% ;
+        }
 
         .llantas-title{
 
@@ -129,7 +147,7 @@ const Search_llantas = ()=>{
 
 
     /* mostar buscador con marca o sin marca */
-    const [msg,setMsg] = useState('Incluir marca');
+    const [msg,setMsg] = useState('Quitar marca');
     const [conMarca, setConMarca] = useState('none');
     const [sinMarca, setSinMarca] = useState('flex');
 
@@ -234,7 +252,8 @@ const Search_llantas = ()=>{
 
                 console.log('from search-llantas,jsx ',data);
                 dispatch(Productos(data[0]));
-                dispatch(Busqueda(true))
+                dispatch(Busqueda(true));
+                localStorage.setItem('data_busqueda',`${ancho}x${perfil}x${rin}`);
                 navegar('/productos/busqueda');
 
 
@@ -313,7 +332,8 @@ const Search_llantas = ()=>{
             DataHome().search_v2.llantas_ancho_perfil_rin_resultado(ancho,perfil,rin).then(data=>{
 
                 dispatch(Productos(data[0]));
-                dispatch(Busqueda(true))
+                dispatch(Busqueda(true));
+                localStorage.setItem('data_busqueda',`${ancho}x${perfil}x${rin}`);
                 navegar('/productos/busqueda');
 
 
@@ -325,24 +345,28 @@ const Search_llantas = ()=>{
 
     const CambiarBuscador = ()=>{
 
+
         if(msg === 'Incluir marca'){
 
             setMsg('Quitar marca');
-            setConMarca('flex');
+            window.screen.width > 600 && setConMarca('flex');
+            window.screen.width < 600 && setConMarca('block');
             setSinMarca('none');
 
         }else{
 
             setMsg('Incluir marca');
             setConMarca('none');
-            setSinMarca('flex');
-
+            window.screen.width > 600 && setSinMarca('flex');
+            window.screen.width < 600 && setSinMarca('block');
         }
 
     }
 
 
     useEffect(()=>{
+
+        CambiarBuscador();
 
         setCargandoMarca('Cargando resultados...');
         DataHome().search_llantas.response().then(data=>{
@@ -374,85 +398,88 @@ const Search_llantas = ()=>{
     return(
 
         <Llantas>
-
-        <div className='llantas-title'>
-            <b>Llantas por medida</b>
-        </div>
-
-        {/*   buscador marca x ancho x perfil x rin */ }
-        <div style={{'display':conMarca}} className='llantas-inputs'>
-
-            <div style={{'cursor':'pointer'}} className="incluir-marca" onClick={()=>CambiarBuscador()}>
-                <b>{msg}</b>
-            </div>
-            <select  value={cargandoMarca} ref={Marca_llantas_element}   onChange={(e)=>GetLlantasMarca(e.target.value)}>
-
-                <option value="Marca de la llanta">Marca de la llanta</option>
-                {
-                    (marcaLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  marcaLlantas.map((marca,index)=><option value={marca.nombre} key={index}>{marca.nombre}</option>)
-                }
-
-            </select>
-
-            <select value={cargandoAncho} ref={Ancho_llantas_element} onChange={(e)=>GetLlantasMarcaAncho(Marca_llantas_element.current.value,e.target.value)}>
-                <option value="Ancho de la llanta">Ancho de la llanta</option>
-                {
-                    (llantas_for_marca === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_for_marca.map((ancho_llanta,index)=><option value={ancho_llanta} key={index}>{ancho_llanta}</option>)
-                }
-            </select>
-
-            <select  value={cargandoPerfil}  ref={Perfil_llantas_element} onChange={(e)=>GetLlantasMarcaAnchoPerfil(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,e.target.value)}>
-                <option value="Perfil de la llanta" >Perfil de la llanta</option>
-                {
-                    (llantas_marcaAncho === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_marcaAncho.map((perfil_llanta,index)=><option value={perfil_llanta} key={index}>{perfil_llanta}</option>)
-                }
-            </select>
-
-            <select value={cargandoRin} onChange={(e)=>GoSearchLlantaRin(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,Perfil_llantas_element.current.value,e.target.value,'Busqueda',dispath,redirect)}>
-                <option value="Numero de rin" >Numero de rin</option>
-                {
-                    (llantas_marcaAnchoPerfil === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_marcaAnchoPerfil.map((numero_rin,index)=><option value={numero_rin} key={index}>{numero_rin}</option>)
-                }
-
-            </select>
-
-        </div>
-
-
-        {/* buscador ancjo x perfil x rin */}
-        <div style={{'display':sinMarca}} className='llantas-inputs'>
-            <div style={{'cursor':'pointer'}} className="incluir-marca" onClick={()=>CambiarBuscador()}>
-                <b>{msg}</b>
+            <div className="container-buscador-render">
+                <Buscador_render></Buscador_render>
             </div>
 
-            <select value={cargandoAncho} ref={v2_Ancho_llantas_element}
-                onChange={(e)=>V2GetLlantasAnchoPerfil(e.target.value)}
-            >
-                <option value="Ancho de la llanta">Ancho de la llanta</option>
-                {
-                    (v2_anchoLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_anchoLlantas.map((ancho,index)=><option value={ancho} key={index}>{ancho}</option>)
-                }
-            </select>
+            <div className='llantas-title'>
+                <b>Llantas por medida</b>
+            </div>
 
-            <select  value={cargandoPerfil}  ref={v2_Perfil_llantas_element}
-                onChange={(e)=>V2GetLlantasAnchoPerfilRin(v2_Ancho_llantas_element.current.value,e.target.value)}
-            >
-                <option value="Perfil de la llanta" >Perfil de la llanta</option>
-                {
-                    (v2_perfilLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_perfilLlantas.map((perfil,index)=><option value={perfil} key={index}>{perfil}</option>)
-                }
-            </select>
+            {/*   buscador marca x ancho x perfil x rin */ }
+            <div style={{'display':conMarca}} className='llantas-inputs'>
 
-            <select value={cargandoRin}
-                onChange={(e)=>V2GoSearchLlantasRin(v2_Ancho_llantas_element.current.value,v2_Perfil_llantas_element.current.value,e.target.value,'Busqueda',dispath,redirect)}
-            >
-                <option value="Numero de rin" >Numero de rin</option>
-                {
-                    (v2_rinLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_rinLlantas.map((rin,index)=><option value={rin} key={index}>{rin}</option>)
-                }
-            </select>
+                <div style={{'cursor':'pointer'}} className="incluir-marca" onClick={()=>CambiarBuscador()}>
+                    <b>{msg}</b>
+                </div>
+                <select  value={cargandoMarca} ref={Marca_llantas_element}   onChange={(e)=>GetLlantasMarca(e.target.value)}>
 
-        </div>
+                    <option value="Marca de la llanta">Marca de la llanta</option>
+                    {
+                        (marcaLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  marcaLlantas.map((marca,index)=><option value={marca.nombre} key={index}>{marca.nombre}</option>)
+                    }
+
+                </select>
+
+                <select value={cargandoAncho} ref={Ancho_llantas_element} onChange={(e)=>GetLlantasMarcaAncho(Marca_llantas_element.current.value,e.target.value)}>
+                    <option value="Ancho de la llanta">Ancho de la llanta</option>
+                    {
+                        (llantas_for_marca === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_for_marca.map((ancho_llanta,index)=><option value={ancho_llanta} key={index}>{ancho_llanta}</option>)
+                    }
+                </select>
+
+                <select  value={cargandoPerfil}  ref={Perfil_llantas_element} onChange={(e)=>GetLlantasMarcaAnchoPerfil(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,e.target.value)}>
+                    <option value="Perfil de la llanta" >Perfil de la llanta</option>
+                    {
+                        (llantas_marcaAncho === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_marcaAncho.map((perfil_llanta,index)=><option value={perfil_llanta} key={index}>{perfil_llanta}</option>)
+                    }
+                </select>
+
+                <select value={cargandoRin} onChange={(e)=>GoSearchLlantaRin(Marca_llantas_element.current.value,Ancho_llantas_element.current.value,Perfil_llantas_element.current.value,e.target.value,'Busqueda',dispath,redirect)}>
+                    <option value="Numero de rin" >Numero de rin</option>
+                    {
+                        (llantas_marcaAnchoPerfil === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> : llantas_marcaAnchoPerfil.map((numero_rin,index)=><option value={numero_rin} key={index}>{numero_rin}</option>)
+                    }
+
+                </select>
+
+            </div>
+
+
+            {/* buscador ancjo x perfil x rin */}
+            <div style={{'display':sinMarca}} className='llantas-inputs'>
+                <div style={{'cursor':'pointer'}} className="incluir-marca" onClick={()=>CambiarBuscador()}>
+                    <b>{msg}</b>
+                </div>
+
+                <select value={cargandoAncho} ref={v2_Ancho_llantas_element}
+                    onChange={(e)=>V2GetLlantasAnchoPerfil(e.target.value)}
+                >
+                    <option value="Ancho de la llanta">Ancho de la llanta</option>
+                    {
+                        (v2_anchoLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_anchoLlantas.map((ancho,index)=><option value={ancho} key={index}>{ancho}</option>)
+                    }
+                </select>
+
+                <select  value={cargandoPerfil}  ref={v2_Perfil_llantas_element}
+                    onChange={(e)=>V2GetLlantasAnchoPerfilRin(v2_Ancho_llantas_element.current.value,e.target.value)}
+                >
+                    <option value="Perfil de la llanta" >Perfil de la llanta</option>
+                    {
+                        (v2_perfilLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_perfilLlantas.map((perfil,index)=><option value={perfil} key={index}>{perfil}</option>)
+                    }
+                </select>
+
+                <select value={cargandoRin}
+                    onChange={(e)=>V2GoSearchLlantasRin(v2_Ancho_llantas_element.current.value,v2_Perfil_llantas_element.current.value,e.target.value,'Busqueda',dispath,redirect)}
+                >
+                    <option value="Numero de rin" >Numero de rin</option>
+                    {
+                        (v2_rinLlantas === null) ?   <option value="Cargando resultados...">Cargando resultados...</option> :  v2_rinLlantas.map((rin,index)=><option value={rin} key={index}>{rin}</option>)
+                    }
+                </select>
+
+            </div>
 
         </Llantas>
     )

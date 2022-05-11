@@ -4,6 +4,7 @@ use App\Http\Controllers\LlantasTapimotoController;
 use App\Http\Controllers\MarcasLlantaController;
 use App\Http\Controllers\V2LlatnasTapimoto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +35,15 @@ Route::get('search/v2/llantas/',[V2LlatnasTapimoto::class , 'search_anchos']);
 Route::get('search/v2/llantas/{ancho}',[V2LlatnasTapimoto::class , 'search_for_ancho']);
 Route::get('search/v2/llantas/{ancho}/{perfil}',[V2LlatnasTapimoto::class , 'search_for_ancho_perfil']);
 Route::get('search/v2/llantas/{ancho}/{perfil}/{rin}',[V2LlatnasTapimoto::class , 'search_for_ancho_perfil_rin']);
+
+Route::get('/methods',function(){
+
+    $response = Http::withHeaders([
+
+        'Authorization'=>'Bearer '.config('services.mercadopago.token')
+    ])->get('https://api.mercadopago.com/v1/payment_methods');
+
+    echo $response;
+});
+
+

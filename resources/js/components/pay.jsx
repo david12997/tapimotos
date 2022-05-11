@@ -87,6 +87,8 @@ const Pay_component = ({data_pay, type_pay})=>{
         DataProducts().Products.Pay(Domain+'pagos/auth',data).then(response=>{ console.log(response);})
 
 
+
+
         return()=>{
 
             const data = new FormData();
@@ -136,7 +138,25 @@ const Pay_component = ({data_pay, type_pay})=>{
         DataProducts().Products.Pay(Domain+'pagos/crear-pago',Buy).then(response=>{
 
             console.log(response);
-            window.location.href = response.init_point;
+
+            const Mp = new MercadoPago('APP_USR-a98b17ae-47a6-4a35-b92d-01919002b97e');
+
+            Mp.checkout({
+
+                preference:{
+                    id:response.preference_id
+                },
+                render:{
+                    container:'.cho-container',
+                    label:'Pagar la compra'
+                },
+                autoOpen:true
+            });
+
+            setSpinner(false);
+            setStep(2);
+            localStorage.setItem('data_preference',JSON.stringify(response));
+            //window.location.href = response.init_point;
         })
 
     }
@@ -303,6 +323,7 @@ const Pay_component = ({data_pay, type_pay})=>{
                                     <button  type="submit" style={{width:'100%',fontSize:'20px',boxShadow:'3px 3px 8px rgba(0,0,0,0.3)'}} className="btn btn-primary text-white">
                                         <b>Pagar</b>
                                     </button>
+                                    <div className="cho-container"></div>
                                 </li>
                             </ul>
                         </div>

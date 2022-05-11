@@ -16,8 +16,8 @@ import { useNavigate } from "react-router-dom";
 
 const Card_element = styled.div`
 
-    width:300px;
-    height:500px;
+    width:310px;
+    height:530px;
     margin:5px;
     background:white;
     box-shadow:0px 0px 4px rgba(0,0,0,0.4);
@@ -63,8 +63,8 @@ const Card_element = styled.div`
     .price-product{
 
         width:100%;
-        height:40px;
-        font-size:17px;
+        height:70px;
+        font-size:19px;
         color:green;
         padding:7px;
     }
@@ -150,7 +150,14 @@ const Card_element = styled.div`
 
         position:absolute;
         color:gray ;
-        margin-top:-20px ;
+        margin-top:-18px ;
+        font-size:14px ;
+    }
+    .tipo{
+
+        position:absolute;
+        color:gray ;
+        margin-top:3px ;
         font-size:14px ;
     }
 
@@ -290,15 +297,16 @@ const Card_render = ({img,name,price, all_data}) =>{
             </div>
             <div className="price-product">
                 <p><b>$ {new Intl.NumberFormat().format(Math.ceil(parseInt(price)))} COP</b> <b style={{color:'gray'}}>C/U</b> </p>
-                <p className="disponible"><b>Disponibles: {all_data.all.disponibilidad} Unidad(es)</b></p>
+                <p className="disponible"><b>Disponibles: <span style={{color:'black'}}>{all_data.all.disponibilidad} Unidad(es)</span></b></p>
+                <p  className="tipo"> <b>Tipo de llanta: <span style={{color:'black'}}>{all_data.all.tipo_llanta }</span></b></p>
             </div>
             <div className="actions-card">
                 <div className="container-cantidad">
                     <b style={{color:'gray'}}>Cantidad</b>
                     <div className="controls-cuantity">
-                        <div onClick={()=>LessCuantity(4)} style={{fontWeight:'bold'}} className="btn-less btn btn-danger"><b>-</b></div>
+                        <div onClick={()=>LessCuantity( parseInt(all_data.all.disponibilidad))} style={{fontWeight:'bold'}} className="btn-less btn btn-danger"><b>-</b></div>
                         <input type="number" className="cuantity" readOnly value={cuantity}></input>
-                        <div onClick={()=>MoreCuantity(4)} style={{fontWeight:'bold'}} className="btn-more btn btn-success"><b>+</b></div>
+                        <div onClick={()=>MoreCuantity(parseInt(all_data.all.disponibilidad))} style={{fontWeight:'bold'}} className="btn-more btn btn-success"><b>+</b></div>
                     </div>
                 </div>
                 <div className="iconos">

@@ -12,10 +12,10 @@ const ParseData = (data)=>{
     //convertir objeto de objetos en array
     let parse_data = Object.entries(data.data);
 
-
+    //console.log(parse_data);
     //guardar el ancho de las llantas
     parse_data.map((llanta,index)=>
-       ancho_llanta.push(llanta[1].ancho_llanta)
+       ancho_llanta.push(llanta[1].ancho_llanta.trim())
     )
 
     //eliminar repetidos

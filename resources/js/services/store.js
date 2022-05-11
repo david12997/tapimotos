@@ -23,8 +23,8 @@ import Get_llantas_ancho_perfil_rin from "./get-llantas-ancho-perfil-rin";
 import Get_llantas_for_AnchoPerfilRin from "./get-llantas-search-v2";
 
 //DOMAIN
-export const Domain = 'https://tapimotosdk.com/';
-//export const Domain = 'http://127.0.0.1:8000/';
+//export const Domain = 'https://tapimotosdk.com/';
+export const Domain = 'https://portalorion.ml/';
 
 
 const DataHome = () =>{
@@ -59,7 +59,7 @@ const DataHome = () =>{
 
             llantas_for_marcaAnchoPerfil:(marca,ancho,perfil)=> Get_llantas_for_marcaAnchoPerfil(marca,ancho,perfil).then(data=>data),
 
-            llantas_for_marcaAnchoPerfilRin:(marca,ancho,perfil,rin)=> Get_llantas_for_marcaAnchoPerfilRin(marca,ancho,perfil,rin).then(data=>data),
+            llantas_for_marcaAnchoPerfilRin:(marca,ancho,perfil,rin,page)=> Get_llantas_for_marcaAnchoPerfilRin(marca,ancho,perfil,rin,page).then(data=>data),
 
         },
         search_v2:{
@@ -72,7 +72,7 @@ const DataHome = () =>{
 
             llantas_ancho_perfil_rin:(ancho,perfil)=>Get_llantas_ancho_perfil_rin(ancho,perfil).then(data=>data),
 
-            llantas_ancho_perfil_rin_resultado:(ancho,perfil,rin)=>Get_llantas_for_AnchoPerfilRin(ancho,perfil,rin).then(data=>data)
+            llantas_ancho_perfil_rin_resultado:(ancho,perfil,rin,page)=>Get_llantas_for_AnchoPerfilRin(ancho,perfil,rin,page).then(data=>data)
         }
 
     }

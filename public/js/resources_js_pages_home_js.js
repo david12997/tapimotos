@@ -187,7 +187,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Main = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:100px;\n    display:flex;\n    justify-content:center;\n    align-items:center;\n    margin-top:30px;\n    cursor:pointer;\n\n    .container-btn-whatsapp{\n\n        width:90%;\n        height:65%;\n        background:#319713;\n        border-radius:9px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        font-size:18px;\n        box-shadow:3px 3px 8px rgba(0,0,0,0.3);\n    }\n\n    .img-whatsapp{\n\n        width:50px;\n        margin-right:9%;\n    }\n\n    b{\n        color:white;\n    }\n\n    @media(min-width:800px){\n\n        .container-btn-whatsapp{\n\n            width:40%;\n            height:70%;\n            background:#319713;\n            border-radius:9px;\n            display:flex;\n            justify-content:center;\n            align-items:center;\n            font-size:19px;\n            box-shadow:3px 3px 8px rgba(0,0,0,0.3);\n        }\n\n        .img-whatsapp{\n\n            margin-left:-80px;\n        }\n\n\n    }\n "])));
+var Main = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:100px;\n    display:flex;\n    justify-content:center;\n    align-items:center;\n    margin-top:30px;\n    cursor:pointer;\n\n    .container-btn-whatsapp{\n\n        width:90%;\n        height:65%;\n        background:#319713;\n        border-radius:9px;\n        display:flex;\n        justify-content:center;\n        align-items:center;\n        font-size:16px;\n        box-shadow:3px 3px 8px rgba(0,0,0,0.3);\n    }\n\n    .img-whatsapp{\n\n        width:40px;\n        margin-right:7%;\n    }\n\n    b{\n        color:white;\n    }\n\n    @media(min-width:800px){\n\n        .container-btn-whatsapp{\n\n            width:40%;\n            height:70%;\n            background:#319713;\n            border-radius:9px;\n            display:flex;\n            justify-content:center;\n            align-items:center;\n            font-size:19px;\n            box-shadow:3px 3px 8px rgba(0,0,0,0.3);\n        }\n\n        .img-whatsapp{\n\n            margin-left:-80px;\n        }\n\n\n\n    }\n "])));
 
 var Btn_whatsapp = function Btn_whatsapp() {
   var redirect = function redirect() {
@@ -211,7 +211,7 @@ var Btn_whatsapp = function Btn_whatsapp() {
             src: "./images/logo-whatsapp.svg"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("b", {
-          children: "\xBFQue estas buscando?"
+          children: "\xBFQu\xE9 repuestos est\xE1s buscando?"
         })]
       })
     })
@@ -800,12 +800,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _services_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/store */ "./resources/js/services/store.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _database_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../database/index */ "./resources/js/database/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _search_product__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./search-product */ "./resources/js/components/search-product.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 var _templateObject;
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -830,7 +831,8 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Llantas = styled_components__WEBPACK_IMPORTED_MODULE_5__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:390px;\n    background:#eeecec;\n\n    .llantas-title{\n\n        width:70%;\n        margin-left:15%;\n        height:60px;\n        background:rgb(233, 128, 8);\n        color:white;\n        border-radius:0px 0px 10px 10px;\n        display:flex;\n        justify-content:Center;\n        align-items:center;\n        font-size:16px;\n\n    }\n\n    .llantas-inputs{\n\n        width:100%;\n        margin-top:14px;\n        height:320px;\n    }\n\n    select{\n\n        width:80%;\n        height:45px;\n        border:0px;\n        margin-left:10%;\n        margin-top:28px;\n        border-radius:7px;\n        color:gray;\n        box-shadow:0px 0px 8px rgba(0,0,0,0.3);\n        background:white;\n\n    }\n\n    .incluir-marca{\n\n        width:100%;\n        height:22px;\n        display:flex ;\n        justify-content:center ;\n        align-items:center;\n    }\n\n    .incluir-marca > b{\n        background: #0096d2;\n        color:white;\n        padding:7px ;\n        border-radius:5px;\n        font-size:16px ;\n\n    }\n\n    @media(min-width:800px){\n\n        height:225px;\n\n\n        .llantas-title{\n\n            width:20%;\n            margin-left:5%;\n        }\n\n        .llantas-inputs{\n\n            height:130px;\n            display:flex;\n            justify-content:space-around;\n            align-items:center;\n            flex-wrap:wrap;\n        }\n\n        select{\n\n            width:250px;\n            margin-left:0;\n            font-size:18px;\n\n        }\n    }\n"])));
+
+var Llantas = styled_components__WEBPACK_IMPORTED_MODULE_6__["default"].div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n\n    width:100%;\n    height:410px;\n    background:#eeecec;\n    position:relative;\n    margin-top:58px ;\n\n    .llantas-title{\n\n        width:70%;\n        margin-left:15%;\n        height:60px;\n        background:rgb(233, 128, 8);\n        color:white;\n        border-radius:0px 0px 10px 10px;\n        display:flex;\n        justify-content:Center;\n        align-items:center;\n        font-size:16px;\n\n    }\n\n    .llantas-inputs{\n\n        width:100%;\n        margin-top:40px;\n        height:320px;\n    }\n\n    select{\n\n        width:80%;\n        height:45px;\n        border:0px;\n        margin-left:10%;\n        margin-top:28px;\n        border-radius:7px;\n        color:gray;\n        box-shadow:0px 0px 8px rgba(0,0,0,0.3);\n        background:white;\n\n    }\n\n    .incluir-marca{\n\n        width:100%;\n        height:22px;\n        display:flex ;\n        justify-content:center ;\n        align-items:center;\n        position:absolute ;\n        top:78px\n    }\n\n    .incluir-marca > b{\n        background: #0096d2;\n        color:white;\n        padding:7px ;\n        border-radius:5px;\n        font-size:16px ;\n\n    }\n\n    .container-buscador-render{\n\n        position:absolute;\n        top:-70px;\n        left:16% ;\n    }\n\n    @media(min-width:800px){\n\n        height:225px;\n        margin-top:0px ;\n\n        .container-buscador-render{\n\n            top:5px;\n            left:80% ;\n        }\n\n        .llantas-title{\n\n            width:20%;\n            margin-left:5%;\n        }\n\n        .llantas-inputs{\n\n            height:130px;\n            display:flex;\n            justify-content:space-around;\n            align-items:center;\n            flex-wrap:wrap;\n        }\n\n        select{\n\n            width:250px;\n            margin-left:0;\n            font-size:18px;\n\n        }\n    }\n"])));
 
 var Search_llantas = function Search_llantas() {
   var Marca_llantas_element = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
@@ -898,7 +900,7 @@ var Search_llantas = function Search_llantas() {
   /* mostar buscador con marca o sin marca */
 
 
-  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Incluir marca'),
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Quitar marca'),
       _useState24 = _slicedToArray(_useState23, 2),
       msg = _useState24[0],
       setMsg = _useState24[1];
@@ -914,7 +916,7 @@ var Search_llantas = function Search_llantas() {
       setSinMarca = _useState28[1];
 
   var dispath = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-  var redirect = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
+  var redirect = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
 
   var GetLlantasMarca = function GetLlantasMarca(value) {
     setCargandoAncho('Cargando resultados...');
@@ -986,6 +988,7 @@ var Search_llantas = function Search_llantas() {
         console.log('from search-llantas,jsx ', data);
         dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Productos)(data[0]));
         dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Busqueda)(true));
+        localStorage.setItem('data_busqueda', "".concat(ancho, "x").concat(perfil, "x").concat(rin));
         navegar('/productos/busqueda');
       });
     }
@@ -1043,6 +1046,7 @@ var Search_llantas = function Search_llantas() {
       (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataHome)().search_v2.llantas_ancho_perfil_rin_resultado(ancho, perfil, rin).then(function (data) {
         dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Productos)(data[0]));
         dispatch((0,_database_index__WEBPACK_IMPORTED_MODULE_3__.Busqueda)(true));
+        localStorage.setItem('data_busqueda', "".concat(ancho, "x").concat(perfil, "x").concat(rin));
         navegar('/productos/busqueda');
       });
     }
@@ -1051,16 +1055,19 @@ var Search_llantas = function Search_llantas() {
   var CambiarBuscador = function CambiarBuscador() {
     if (msg === 'Incluir marca') {
       setMsg('Quitar marca');
-      setConMarca('flex');
+      window.screen.width > 600 && setConMarca('flex');
+      window.screen.width < 600 && setConMarca('block');
       setSinMarca('none');
     } else {
       setMsg('Incluir marca');
       setConMarca('none');
-      setSinMarca('flex');
+      window.screen.width > 600 && setSinMarca('flex');
+      window.screen.width < 600 && setSinMarca('block');
     }
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    CambiarBuscador();
     setCargandoMarca('Cargando resultados...');
     (0,_services_store__WEBPACK_IMPORTED_MODULE_1__.DataHome)().search_llantas.response().then(function (data) {
       setMarcaLlantas(data[0]);
@@ -1078,18 +1085,21 @@ var Search_llantas = function Search_llantas() {
       v2_setAnchoLlantas(null);
     };
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(Llantas, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(Llantas, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "container-buscador-render",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_search_product__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "llantas-title",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
         children: "Llantas por medida"
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       style: {
         'display': conMarca
       },
       className: "llantas-inputs",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         style: {
           'cursor': 'pointer'
         },
@@ -1097,87 +1107,87 @@ var Search_llantas = function Search_llantas() {
         onClick: function onClick() {
           return CambiarBuscador();
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
           children: msg
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
         value: cargandoMarca,
         ref: Marca_llantas_element,
         onChange: function onChange(e) {
           return GetLlantasMarca(e.target.value);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Marca de la llanta",
           children: "Marca de la llanta"
-        }), marcaLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        }), marcaLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Cargando resultados...",
           children: "Cargando resultados..."
         }) : marcaLlantas.map(function (marca, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             value: marca.nombre,
             children: marca.nombre
           }, index);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
         value: cargandoAncho,
         ref: Ancho_llantas_element,
         onChange: function onChange(e) {
           return GetLlantasMarcaAncho(Marca_llantas_element.current.value, e.target.value);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Ancho de la llanta",
           children: "Ancho de la llanta"
-        }), llantas_for_marca === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        }), llantas_for_marca === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Cargando resultados...",
           children: "Cargando resultados..."
         }) : llantas_for_marca.map(function (ancho_llanta, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             value: ancho_llanta,
             children: ancho_llanta
           }, index);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
         value: cargandoPerfil,
         ref: Perfil_llantas_element,
         onChange: function onChange(e) {
           return GetLlantasMarcaAnchoPerfil(Marca_llantas_element.current.value, Ancho_llantas_element.current.value, e.target.value);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Perfil de la llanta",
           children: "Perfil de la llanta"
-        }), llantas_marcaAncho === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        }), llantas_marcaAncho === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Cargando resultados...",
           children: "Cargando resultados..."
         }) : llantas_marcaAncho.map(function (perfil_llanta, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             value: perfil_llanta,
             children: perfil_llanta
           }, index);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
         value: cargandoRin,
         onChange: function onChange(e) {
           return GoSearchLlantaRin(Marca_llantas_element.current.value, Ancho_llantas_element.current.value, Perfil_llantas_element.current.value, e.target.value, 'Busqueda', dispath, redirect);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Numero de rin",
           children: "Numero de rin"
-        }), llantas_marcaAnchoPerfil === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        }), llantas_marcaAnchoPerfil === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Cargando resultados...",
           children: "Cargando resultados..."
         }) : llantas_marcaAnchoPerfil.map(function (numero_rin, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             value: numero_rin,
             children: numero_rin
           }, index);
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       style: {
         'display': sinMarca
       },
       className: "llantas-inputs",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         style: {
           'cursor': 'pointer'
         },
@@ -1185,58 +1195,58 @@ var Search_llantas = function Search_llantas() {
         onClick: function onClick() {
           return CambiarBuscador();
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("b", {
           children: msg
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
         value: cargandoAncho,
         ref: v2_Ancho_llantas_element,
         onChange: function onChange(e) {
           return V2GetLlantasAnchoPerfil(e.target.value);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Ancho de la llanta",
           children: "Ancho de la llanta"
-        }), v2_anchoLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        }), v2_anchoLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Cargando resultados...",
           children: "Cargando resultados..."
         }) : v2_anchoLlantas.map(function (ancho, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             value: ancho,
             children: ancho
           }, index);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
         value: cargandoPerfil,
         ref: v2_Perfil_llantas_element,
         onChange: function onChange(e) {
           return V2GetLlantasAnchoPerfilRin(v2_Ancho_llantas_element.current.value, e.target.value);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Perfil de la llanta",
           children: "Perfil de la llanta"
-        }), v2_perfilLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        }), v2_perfilLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Cargando resultados...",
           children: "Cargando resultados..."
         }) : v2_perfilLlantas.map(function (perfil, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             value: perfil,
             children: perfil
           }, index);
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("select", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("select", {
         value: cargandoRin,
         onChange: function onChange(e) {
           return V2GoSearchLlantasRin(v2_Ancho_llantas_element.current.value, v2_Perfil_llantas_element.current.value, e.target.value, 'Busqueda', dispath, redirect);
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Numero de rin",
           children: "Numero de rin"
-        }), v2_rinLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+        }), v2_rinLlantas === null ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
           value: "Cargando resultados...",
           children: "Cargando resultados..."
         }) : v2_rinLlantas.map(function (rin, index) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("option", {
             value: rin,
             children: rin
           }, index);
@@ -1438,7 +1448,7 @@ var Home = function Home() {
     }
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_main_img__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_btn_whatsapp__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_main_search__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_credits__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_services__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_contacto__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_asesores__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_main_img__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_btn_whatsapp__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_main_search__WEBPACK_IMPORTED_MODULE_7__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_credits__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_services__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_contacto__WEBPACK_IMPORTED_MODULE_3__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_asesores__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_footer__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
   });
 };
 

@@ -20,14 +20,14 @@ import styled from 'styled-components';
         display:flex;
         justify-content:center;
         align-items:center;
-        font-size:18px;
+        font-size:16px;
         box-shadow:3px 3px 8px rgba(0,0,0,0.3);
     }
 
     .img-whatsapp{
 
-        width:50px;
-        margin-right:9%;
+        width:40px;
+        margin-right:7%;
     }
 
     b{
@@ -55,6 +55,7 @@ import styled from 'styled-components';
         }
 
 
+
     }
  `;
 
@@ -74,7 +75,7 @@ const Btn_whatsapp = () => {
                     <div className='img-whatsapp'>
                         <img style={{width:'100%',transform:'rotate(346deg)'}} src='./images/logo-whatsapp.svg'></img>
                     </div>
-                    <b>¿Que estas buscando?</b>
+                    <b>¿Qué repuestos estás buscando?</b>
 
                 </div>
 

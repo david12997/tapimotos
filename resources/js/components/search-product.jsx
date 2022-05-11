@@ -47,13 +47,14 @@ const Buscador_render = ()=>{
 
         dispatch(Categoria({name:'Busqueda',type:'buscar'}));
         dispatch(Productos(null));
-        navegar('/productos/busqueda');
+
         localStorage.setItem('data_busqueda',data.current.value);
+
         DataProducts().Products.SearchAll(data.current.value,`&page=${1}`,`&page=${1}`,`?page=${1}`).then(response=>{
 
-            console.log(response);
             dispatch(Productos(response));
-            dispatch(Busqueda(true))
+            dispatch(Busqueda(true));
+            navegar('/productos/busqueda');
 
         });
 

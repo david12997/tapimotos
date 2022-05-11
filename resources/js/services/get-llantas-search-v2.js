@@ -14,13 +14,23 @@ const ParseData = (data)=>{
 
 
 
-async function Get_llantas_for_AnchoPerfilRin(ancho,perfil,rin){
+async function Get_llantas_for_AnchoPerfilRin(ancho,perfil,rin,page){
 
     const response = [];
 
     try {
 
-        const data = await Get(Domain + 'api/search/v2/llantas/'+ancho+'/'+perfil+'/'+rin);
+        let data;
+
+        if (page === undefined || page === null || page === ''){
+
+            data = await Get(Domain + 'api/search/v2/llantas/'+ancho+'/'+perfil+'/'+rin);
+
+        }else{
+
+            data = await Get(Domain + 'api/search/v2/llantas/'+ancho+'/'+perfil+'/'+rin+page);
+        }
+
         (data === undefined) ? response.push('Error can not get data') : response.push(ParseData(data));
 
 

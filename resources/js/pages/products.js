@@ -13,6 +13,8 @@ import  { DataHome, DataProducts } from '../services/store';
 import {  Productos, Paginacion, Filtros, Categoria, Busqueda } from '../database/index';
 import { useDispatch, useSelector } from 'react-redux';
 import Body_tienda from '../components/body-tienda';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -41,7 +43,7 @@ export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,pag
 
         if(category_store.type === 'llantas'){
 
-            DataHome().search_llantas.llantas_for_marcaAnchoPerfilRin(filtros[0].value,filtros[1].value,filtros[2].value,filtros[3].value).then(data=>{
+            DataHome().search_llantas.llantas_for_marcaAnchoPerfilRin(filtros[0].value,filtros[1].value,filtros[2].value,filtros[3].value,`?page=${page_llantas}`).then(data=>{
 
                 dispatch( Productos(data[0]));
 
@@ -50,7 +52,9 @@ export const UpdateStateTienda = (category,dispatch,page_cascos,page_aceites,pag
 
         if(category_store.type === 'llantas v2'){
 
-            DataHome().search_v2.llantas_ancho_perfil_rin_resultado(filtros[1].value,filtros[2].value,filtros[3].value).then(data=>{
+            console.log('llantas v2 con paginado')
+
+            DataHome().search_v2.llantas_ancho_perfil_rin_resultado(filtros[1].value,filtros[2].value,filtros[3].value,`?page=${page_llantas}`).then(data=>{
 
                 dispatch( Productos(data[0]));
 
@@ -164,6 +168,13 @@ const  Products = () => {
     }
 
 
+    const Subir = ()=>{
+
+        $('html, body').animate({
+
+            scrollTop: $('#scrollhere2').offset().top
+        },1000)
+    }
 
 
     useEffect(()=>{
@@ -185,7 +196,7 @@ const  Products = () => {
 
         }else if(category === 'busqueda'  && StateTienda.Productos !== null){
 
-            let data_busqueda = JSON.parse(localStorage.getItem('category'));
+            let data_busqueda = localStorage.getItem('data_busqueda');
             UpdateStateTienda(category,dispatch,1,1,1,data_busqueda);
         }else{
 
@@ -202,11 +213,17 @@ const  Products = () => {
 
 
         <div>
-
+           <div id='scroll-here-3' style={{display:'none'}}></div>
          <Filtros_render data_state={StateTienda}></Filtros_render>
          <Body_tienda data_state={StateTienda}></Body_tienda>
          <br></br>
          <br></br>
+        <div
+            style={{display:'flex', justifyContent:'center', width:'100%',cursor:'pointer'}}
+        >
+            <div onClick={()=>Subir()} style={{fontSize:'18px', color:'#ff890c'}}> <b>Subir <FontAwesomeIcon icon={faAngleUp}/></b></div>
+         </div>
+
          <br></br>
          <br></br>
          <br></br>

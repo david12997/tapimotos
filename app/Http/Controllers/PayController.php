@@ -13,7 +13,8 @@ class PayController extends Controller
     {
 
 
-        $_SESSION['dominio'] = 'http://127.0.0.1:8000/';
+        $_SESSION['dominio'] = 'https://portalorion.ml/';
+
         $_SESSION['pay_tapimotos'] = json_decode($_POST['pay_tapimotos'],true);
         $_SESSION['data_products'] = json_decode($_POST['data_products'],true);
 
@@ -23,15 +24,34 @@ class PayController extends Controller
 
         // Agrega credenciales
         MercadoPago\SDK::setAccessToken(config('services.mercadopago.token'));
+        MercadoPago\SDK::setIntegratorId('dev_24c65fb163bf11ea96500242ac130004');
 
         $preference = new MercadoPago\Preference();
 
-        //exclude method pay efecty
+        //exclude method
         $preference->payment_methods = array(
 
-            "excluded_payment_types"=>array(
-                array("id"=>"ticket")
-            )
+            "excluded_payment_methods"=>array(
+                array("id"=>"visa")
+            ),
+            'installments'=>6
+        );
+
+        //payer
+        $payer = new MercadoPago\Payer();
+
+        $payer->name = 'Lalo';
+        $payer->surname = 'Landa';
+        $payer->email = 'test_user_83958037@testuser.com';
+        $payer->phone=array(
+            'area_code'=>'11',
+            'number'=>'3102414148'
+        );
+        $payer->address=array(
+
+            'zip_code'=>'110811',
+            'street_name'=>'Falsa',
+            'street_number'=>123
         );
 
         //access back url
@@ -47,20 +67,26 @@ class PayController extends Controller
         $preference->auto_return = "approved";
 
         $shipment = new Shipments();
-        $shipment->cost = intval(20000);
+        $shipment->cost = intval(35000);
         $shipment->mode = "not_specified";
 
 
         // Crea un ítem en la preferencia
         $item = new MercadoPago\Item();
+        $item->id=1234;
         $item->title = 'Productos';
+        $item->description="Dispositivo móvil de Tienda e-commerce";
+        $item->picture_url = $_SESSION['data_products'][0]['image'];
         $item->quantity = intval(1);
         $item->unit_price = $_SESSION['pay_tapimotos']['total_pay'];
 
 
-        // Crea un objeto de preferencia
+        // Crea un objeto de preferencia7
+        $preference->payer = $payer;
         $preference->items = array($item);
         $preference->shipments = $shipment;
+        $preference->external_reference="davidc12997@gmail.com";
+        $preference->notification_url = $_SESSION['dominio'].'mercadopago/notificaciones?source_news=webhooks';
         $preference->save();
 
         //eliminar autenticacion
@@ -69,7 +95,7 @@ class PayController extends Controller
 
 
 
-        echo json_encode(['init_point'=>$preference->init_point]);
+        echo json_encode(['init_point'=>$preference->init_point,'prefrence_id'=>$preference->id,'preference'=>$preference]);
 
     }
 
